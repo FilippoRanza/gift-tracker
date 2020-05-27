@@ -3,50 +3,102 @@
 @section('body')
 <h2>My Gift Lists</h2>
     @if (isset($error))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <div>
-            <h1>ERROR</h1>
-            <p>List {{ $error }} already exists!</p>
+            <h4>List "{{ $error }}" already exists!</h4>
         </div>
-    @endif
-    <div>
-        <h3>Make New List</h3>
-        <form method="POST" action="{{ route('list:new') }}">
-            @csrf
-            <input type="text" placeholder="name" name="name">
-            <label for="guest_only">Guest Only</label> 
-            <input type="checkbox" id="guest_only" name="guest_only">
-            <input type="submit">
-        </form>
-    </div>
-    <hr>
-    <div>
-        <h3>Lists</h3>
-        <ul>
-            @foreach ($user_lists as $list)
-                <li><a href="{{ route('list:manage', ['id' => $list->id]) }}">{{ $list->name }}</a>
-                    <form method="POST" action="{{ route('list:delete') }}">
-                        @csrf
-                        <input type="hidden" value="{{ $list->id }}" name="list">
-                        <input type="submit" value="Delete">
-                    </form>
-                </li>
-            @endforeach
-        </ul>
-        <h3>Old Lists</h3>
-        <ul>
-            @foreach ($old_lists as $list)
-                <li>
-                    <a href="{{ route('list:old', ['id' => $list->id]) }}">
-                        {{ $list->name }} 
-                        @if ($list->duplicated)
-                        - {{ $list->updated_at->diffForHumans() }}    
-                        @endif
-                        
-                    </a>
-                </li>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
 
-            @endforeach
-        </ul>
+    @endif
+    <ul class="nav nav-tabs" role="tablist" >
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#active">Active Lists</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add">Add List</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#old">Archived Lists</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab">
+                <div class="container">
+                    <br>
+                    <div class="input-group mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Create a new List</h4>
+                                <form method="POST" action="{{ route('list:new') }}">
+                                    @csrf
+                                    <input type="text" class="form-control" placeholder="name" name="name">
+                                    <div class="form-check">
+                                        <input  type="checkbox" class="form-check-input"  id="guest_only" name="guest_only"> 
+                                        <label  class="form-check-label" for="guest_only">Guest Only</label>
+                                    </div>
+                                
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        <div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="active-tab">
+            <div class="container">
+                <h3>Lists</h3>
+                <ul class="list-group">
+                    @foreach ($user_lists as $list)
+                        <li class="list-group-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ $list->name }}</h4>
+                                    <div class="input-group">
+
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <a class="btn btn-primary" href="{{ route('list:manage', ['id' => $list->id]) }}">Go</a> 
+                                            </div>
+                                            <div class="col">
+                                                <form method="POST" action="{{ route('list:delete') }}">
+                                                    @csrf
+                                                    <input type="hidden" value="{{ $list->id }}" name="list">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        <div class="tab-pane fade show" id="old" role="tabpanel" aria-labelledby="old-tab">
+            <div class="container">
+                <h3>Old Lists</h3>
+                <ul class="list-group">
+                    @foreach ($old_lists as $list)
+                        <li class="list-group-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"> 
+                                        {{ $list->name }} 
+                                        @if ($list->duplicated)
+                                        - {{ $list->updated_at->diffForHumans() }}    
+                                        @endif</h4>
+                                    <div class="input-group">
+                                        <a class="btn btn-primary" href="{{ route('list:old', ['id' => $list->id]) }}">
+                                            Go
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     </div>
 
 @endsection

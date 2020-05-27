@@ -6,8 +6,13 @@
 
     <div>
         @if (isset($item_err))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <h2>ERROR</h2>
             <h4>The Item {{ $item_err }} has already been inserted into the list {{ $list->name }}</h4>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         @endif
         @if (isset($guest_only_handle))
             <div>
