@@ -4,6 +4,8 @@
   Home - {{ $user->name }}
 @endsection
 
-@section('foot')
-  <a href="{{ route('logout') }}">logout</a>  
+@section('navbar')
+    @include('private.nav_bar')
 @endsection
+
+
