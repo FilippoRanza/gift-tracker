@@ -1,6 +1,7 @@
 @extends('private.user_base')
 
 @section('body')
+<div>
 <h2>My Gift Lists</h2>
     @if (isset($error))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -14,9 +15,9 @@
 
     @endif
     <ul class="nav nav-tabs" role="tablist" >
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#active">Active Lists</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#add">Add List</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#old">Archived Lists</a></li>
+        <li class="nav-item"><a class="nav-link" id="active-link" onclick="set_current('active', 'active-link');" data-toggle="tab" href="#active">Active Lists</a></li>
+        <li class="nav-item"><a class="nav-link" id="add-link" onclick="set_current('add', 'add-link');" data-toggle="tab" href="#add">Add List</a></li>
+        <li class="nav-item"><a class="nav-link" id="old-link" onclick="set_current('old', 'old-link');" data-toggle="tab" href="#old">Archived Lists</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab">
@@ -43,7 +44,7 @@
                     </div>
                 </div>
             </div>
-        <div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="active-tab">
+        <div class="tab-pane fade show" id="active" role="tabpanel" aria-labelledby="active-tab">
             <div class="container">
                 <h3>Lists</h3>
                 <ul class="list-group">
@@ -100,5 +101,10 @@
             </div>
         </div>
     </div>
-
+</div>
+<script>
+    $(document).ready(function() {
+        reset_previous('active', 'active-link');
+    });
+</script>
 @endsection
