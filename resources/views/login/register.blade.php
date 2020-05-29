@@ -3,7 +3,7 @@
 @section('title', 'register')
 
 @section('body')
-
+    <script src="{{ URL::to('/') }}/static/scripts/validate_new_password.js"></script>
     @if (isset($password_error))
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <h3>Password and Confirm Field don't match</h3>
@@ -33,11 +33,15 @@
                         @csrf
                         <input type="text" required="required" class="form-control" name="name" placeholder="user name">
                         <br>
-                        <input type="email" required="required" name="email"  class="form-control" placeholder="email">
+                        <input type="email" required="required" name="email"  class="form-control input" placeholder="email">
                         <br>
-                        <input type="password" required="required" name="password" class="form-control" placeholder="password">
+                        <input type="password" oninput="check_password('password-field', 'progress', 'confirm-field');" id="password-field" required="required" name="password" class="form-control" placeholder="password">
                         <br>
-                        <input type="password" required="required" name="confirm" class="form-control"  placeholder="confirm password">
+                        <div class="progress">
+                            <div class="progress-bar bg-gradient-success" id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br>
+                        <input type="password" required="required" oninput="compare_password('password-field', 'confirm-field');" name="confirm" class="form-control input" id="confirm-field"  placeholder="confirm password">
                         <br>
                         <input type="submit" class="btn btn-primary">
                     </form>
