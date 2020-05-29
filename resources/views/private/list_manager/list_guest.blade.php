@@ -4,11 +4,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Add new Guest</h4>
-                    <form method="POST" class="input-group form-inline" action="{{ route('list:add_guest') }}">
+                    <form  method="POST" class="input-group form-inline" action="{{ route('list:add_guest') }}">
                         @csrf
                         <input type="hidden" value="{{ $list->id }}" name="list">
-                        <input type="text" class="form-control" name="name" autofocus placeholder="Name">
-                        <input type="submit" class="btn btn-primary mb-2">
+                        <input type="text" id="guest-name" required="required" class="form-control" name="name" autofocus placeholder="Name">
+                        <input type="submit" id="add-guest" class="btn btn-primary mb-2" >
                     </form>
                 </div>
             </div>

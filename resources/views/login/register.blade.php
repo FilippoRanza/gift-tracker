@@ -31,13 +31,13 @@
                     <h2 class="main_title">Gift Tracker</h2>
                     <form method="POST" action="{{ route('register:action') }}">
                         @csrf
-                        <input type="text" class="form-control" name="name" placeholder="user name">
+                        <input type="text" required="required" class="form-control" name="name" placeholder="user name">
                         <br>
-                        <input type="email" name="email"  class="form-control" placeholder="email">
+                        <input type="email" required="required" name="email"  class="form-control" placeholder="email">
                         <br>
-                        <input type="password" name="password" class="form-control" placeholder="password">
+                        <input type="password" required="required" name="password" class="form-control" placeholder="password">
                         <br>
-                        <input type="password" name="confirm" class="form-control"  placeholder="confirm password">
+                        <input type="password" required="required" name="confirm" class="form-control"  placeholder="confirm password">
                         <br>
                         <input type="submit" class="btn btn-primary">
                     </form>

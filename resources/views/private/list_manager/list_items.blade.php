@@ -9,10 +9,10 @@
                             @csrf
                             <input type="hidden" value="{{ $list->id }}" name="list">
                             <label class="col-form-label" for="name">Name</label>
-                            <input type="text"  class="form-control" name="name" id="name" placeholder="Name" autofocus>
+                            <input  type="text" id="name"  required="required" class="form-control" name="name" id="name" placeholder="Name" autofocus>
                             <label class="col-form-label" for="price">Price</label>
-                            <input type="number" class="form-control" step="0.01" id="price" name="price" placeholder="€">
-                            <button class="btn btn-primary form-control" type="submit">Add Item</button>        
+                            <input type="number" id="price" required="required" class="form-control" step="0.01" id="price" name="price" placeholder="€">
+                            <button class="btn btn-primary form-control" id="add-item"  type="submit">Add Item</button>        
                         </form>
                     </div>
                 </div>    

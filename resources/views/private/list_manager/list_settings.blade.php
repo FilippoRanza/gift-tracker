@@ -59,12 +59,12 @@
                     <form method="POST"  action="{{ route('list:recipient') }}">
                         @csrf
                         <input type="hidden" value="{{ $list->id }}" name="list">    
-                        <input type="text" id="set-recipient" class="form-control" placeholder="recipient" value="{{ $recipient }}" name="recipient">
+                        <input type="text" id="set-recipient" required="required" class="form-control" placeholder="recipient" value="{{ $recipient }}" name="recipient">
                     
                         @if ($recipient)
-                            <button class="btn btn-primary " >Update</button> 
+                            <button class="btn btn-primary " id="add-recipient" >Update</button> 
                         @else
-                            <button class="btn btn-primary " >Set</button> 
+                            <button class="btn btn-primary " id="add-recipient">Set</button> 
                         @endif
                     </form>
                     @if($recipient)

@@ -25,9 +25,9 @@
                     <h2 class="main_title">Gift Tracker</h2>
                     <form method="POST" action="{{ route('login:action') }}">
                         @csrf
-                        <input type="text" name="name" placeholder="user name"  class="form-control" autofocus>
+                        <input type="text" required="required" name="name" placeholder="user name"  class="form-control" autofocus>
                         <br>
-                        <input type="password" name="password"  class="form-control" placeholder="password">
+                        <input type="password" required="required" name="password"  class="form-control" placeholder="password">
                         <br>
                         <input type="submit" class="btn btn-primary">
                     </form>

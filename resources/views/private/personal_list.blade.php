@@ -29,7 +29,7 @@
                                 <h4 class="card-title">Create a new List</h4>
                                 <form method="POST" action="{{ route('list:new') }}">
                                     @csrf
-                                    <input type="text" class="form-control" placeholder="name" name="name">
+                                    <input type="text" required="required" class="form-control" placeholder="name" name="name">
                                     <div class="form-check">
                                         <input  type="checkbox" class="form-check-input"  id="guest_only" name="guest_only"> 
                                         <label  class="form-check-label" for="guest_only">Guest Only</label>
