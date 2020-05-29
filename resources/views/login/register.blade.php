@@ -35,13 +35,18 @@
                         <br>
                         <input type="email" required="required" name="email"  class="form-control input" placeholder="email">
                         <br>
-                        <input type="password" oninput="check_password('password-field', 'progress', 'confirm-field');" id="password-field" required="required" name="password" class="form-control" placeholder="password">
+                        <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control" placeholder="password">
                         <br>
-                        <div class="progress">
-                            <div class="progress-bar bg-gradient-success" id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="password-strength">
+                            <span id="box-1" class="strength-block block-1"></span>
+                            <span id="box-2" class="strength-block block-2"></span>
+                            <span id="box-3" class="strength-block block-3"></span>
+                            <span id="box-4" class="strength-block block-4"></span>
+                            <span id="box-5" class="strength-block block-5"></span>
                         </div>
+                        
                         <br>
-                        <input type="password" required="required" oninput="compare_password('password-field', 'confirm-field');" name="confirm" class="form-control input" id="confirm-field"  placeholder="confirm password">
+                        <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="confirm password">
                         <br>
                         <input type="submit" class="btn btn-primary">
                     </form>

@@ -1,4 +1,14 @@
 
+/*
+    elements name are hard coded
+    it seems ok in JS
+*/
+
+var pass_item = "password-field";
+var bar_item = "progress";
+var confirm_item = "confirm-field";
+
+ 
 function password_strength(password){
     test = [
         (password.length >= 6),
@@ -8,22 +18,34 @@ function password_strength(password){
         (password.search(/[_\(\)&%$£!]/) > -1)
     ];
     pass = test.reduce((acc, curr) => acc + curr);
-    return (pass / test.length) * 100;
+    return pass;
 }
 
-function check_strength(pass_item, bar_item) {
+function show_progress(strength) {
+    console.log(strength);
+    for(i = 1; i <= 5; i++) {
+        var box = document.getElementById(`box-${i}`);        
+    
+        if(i > strength) {
+            box.classList.remove('enable-block');
+        } else {
+            box.classList.add('enable-block');
+        }
+    }
+}
+
+function check_strength() {
     var pass = document.getElementById(pass_item);
     var strength = password_strength(pass.value);
-    var bar = document.getElementById(bar_item);
-    bar.setAttribute('style', `width: ${strength}%`);
+    show_progress(strength);
 } 
 
-function check_password(pass_item, bar_item, confirm_item) {
-    check_strength(pass_item, bar_item);
-    compare_password(pass_item, confirm_item);
+function check_password() {
+    check_strength();
+    compare_password();
 }
 
-function compare_password(pass_item, confirm_item) {
+function compare_password() {
     var pass = document.getElementById(pass_item);
     var confirm = document.getElementById(confirm_item);
     console.log('call');

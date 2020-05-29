@@ -20,3 +20,43 @@
     color: orangered;
 }
 
+
+.password-strength {
+    display: flex;
+    height: 1rem;
+    width: 100%;
+    background-color: gainsboro;
+}
+
+.strength-block {
+    width: 0%;
+    height: 100%;
+    margin: 0;
+    transition: width 500ms;  
+    
+}
+
+.enable-block {
+    width: 20%;
+}
+
+
+
+.block-1 {
+    
+    background: linear-gradient(to right, red, orangered);
+}
+
+.block-2 {
+    background: linear-gradient(to right, orangered, yellow);
+}
+.block-3 {
+    background: linear-gradient(to right, yellow, yellowgreen);
+}
+.block-4 {
+    background: linear-gradient(to right, yellowgreen, lime);
+}
+.block-5 {
+    border-radius: 0;
+    background: linear-gradient(to right, lime, green);
+}
