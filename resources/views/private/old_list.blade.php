@@ -1,23 +1,73 @@
 @extends('private.user_base')
 
 @section('body')
-    <h2>{{ $list->name }} - {{ $data->owner }}</h2>
-    <h4>Archived List</h4>
-    <hr>
-
-    <p>
-        Purchase done by {{  $data->buyer }} {{ $data->date->diffForHumans() }}
-    </p>
+<br>
+<div class="container">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h2>{{ $data->name }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        List:
+                    </div>
+                    <div class="col-6">
+                        {{ $list->name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Price:
+                    </div>
+                    <div class="col-6">
+                       € {{ $data->price / 100 }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        Buyer:
+                    </div>
+                    <div class="col-6">
+                        {{ $data->buyer }}
+                    </div>
+                </div>
+                @if ($list->recipient)
+                    <div class="row">
+                        <div class="col-6">
+                            Recipient:
+                        </div>
+                        <div class="col-6">
+                            {{ $list->recipient }}
+                        </div>
+                    </div>
+                @endif
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <h4>Patecipants</h4>
+                    </div>
+                </div>          
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="list-group">
+                            @foreach ($data->guests as $guest)
+                                <li class="list-group-item">{{ $guest }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <p>
-        Object: {{ $data->name }} - € {{  $data->price / 100 }}
-    </p>
-    <p>Paricipants</p>
-    <ul>
-        @foreach ($data->guests as $guest)
-            <li>{{ $guest }}</li>
-        @endforeach
-    </ul>
+</div>
+
+
+
 
 @endsection
 

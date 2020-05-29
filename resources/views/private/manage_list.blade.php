@@ -15,11 +15,24 @@
     @endif
     <div>
         @if (isset($user_err))
-            <h3>Error</h3>
-            <p>User {{ $user_err }} is not present</p>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h3>Error</h3>
+                <p>User {{ $user_err }} does not EXIST</p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
         @elseif(isset($guest_err))
-            <h3>Error</h3>
-            <p>User {{ $guest_err }} has already been added to {{ $list->name }}</p>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h3>Error</h3>
+                <p>User {{ $guest_err }} has already been added to {{ $list->name }}</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            
         @endif
         
     </div>
