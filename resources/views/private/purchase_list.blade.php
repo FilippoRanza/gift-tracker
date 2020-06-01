@@ -10,7 +10,7 @@
             <li class="list-group-item">
                 <div class="container">
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-sm-8">
                             <h4>{{ $purchase->item }}</h4>
                             <ul>
                                 <li>For: {{ $purchase->recipient }}</li>
@@ -19,7 +19,7 @@
                             
                             
                         </div>
-                        <div class="col-4">
+                        <div class="col-sm-4">
                             <form class="form-group" action="{{ route('purchase:delete') }}" method="POST">
                                 @csrf
                                 <input type="hidden" value="{{ $purchase->id }}" name="purchase">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-sm-8">
                             <a type="button" class="btn btn-primary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">Info</a>
                         </div>
                     </div>

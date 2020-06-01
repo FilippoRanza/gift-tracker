@@ -11,7 +11,7 @@
                             <label class="col-form-label" for="name">Name</label>
                             <input  type="text" id="name"  required="required" class="form-control" name="name" id="name" placeholder="Name" autofocus>
                             <label class="col-form-label" for="price">Price</label>
-                            <input type="number" id="price" required="required" class="form-control" step="0.01" id="price" name="price" placeholder="€">
+                            <input type="number" id="price" min="0.01" required="required" class="form-control" step="0.01" id="price" name="price" placeholder="€">
                             <button class="btn btn-primary form-control" id="add-item"  type="submit">Add Item</button>        
                         </form>
                     </div>

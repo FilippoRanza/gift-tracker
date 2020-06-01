@@ -3,7 +3,7 @@
 @section('body')
 <br>
 <div class="container">
-    <div class="col-6">
+    <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
                 <div class="row">
@@ -12,35 +12,35 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         List:
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         {{ $list->name }}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         Price:
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                        € {{ $data->price / 100 }}
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         Buyer:
                     </div>
-                    <div class="col-6">
+                    <div class="col-sm-6">
                         {{ $data->buyer }}
                     </div>
                 </div>
                 @if ($list->recipient)
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             Recipient:
                         </div>
-                        <div class="col-6">
+                        <div class="col-sm-6">
                             {{ $list->recipient }}
                         </div>
                     </div>

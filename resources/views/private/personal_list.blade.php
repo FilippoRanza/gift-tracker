@@ -23,7 +23,7 @@
         <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab">
                 <div class="container">
                     <br>
-                    <div class="input-group mb-3">
+                    <div class="">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Create a new List</h4>
@@ -46,33 +46,48 @@
             </div>
         <div class="tab-pane fade show" id="active" role="tabpanel" aria-labelledby="active-tab">
             <div class="container">
-                <h3>Lists</h3>
-                <ul class="list-group">
-                    @foreach ($user_lists as $list)
-                        <li class="list-group-item">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ $list->name }}</h4>
-                                    <div class="input-group">
-
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <a class="btn btn-primary" href="{{ route('list:manage', ['id' => $list->id]) }}">Go</a> 
-                                            </div>
-                                            <div class="col">
-                                                <form method="POST" action="{{ route('list:delete') }}">
-                                                    @csrf
-                                                    <input type="hidden" value="{{ $list->id }}" name="list">
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                                </form>
+                @if (count($user_lists))
+                    <h3>Lists</h3>
+                    <ul class="list-group">
+                        @foreach ($user_lists as $list)
+                            <li class="list-group-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ $list->name }}</h4>
+                                        <div class="input-group">
+                                        
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <a class="btn btn-primary" href="{{ route('list:manage', ['id' => $list->id]) }}">Go</a> 
+                                                </div>
+                                                <div class="col">
+                                                    <form method="POST" action="{{ route('list:delete') }}">
+                                                        @csrf
+                                                        <input type="hidden" value="{{ $list->id }}" name="list">
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </li>
+                        @endforeach
+                    </ul>    
+                @else
+                    <br>
+                    <div class="">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Add a New List</h3>
+                                <h5 class="card-subtitle">There are no active list</h5>
+                                <form autofocus onsubmit="document.getElementById('add-link').click();">
+                                    <button class="btn btn-primary form-control"  type="submit">Create a new List</button>
+                                </form>
                             </div>
-                        </li>
-                    @endforeach
-                </ul>
+                        </div>
+                    </div>    
+                @endif         
             </div>
         </div>
         <div class="tab-pane fade show" id="old" role="tabpanel" aria-labelledby="old-tab">
