@@ -253,8 +253,14 @@ class GiftListController extends Controller
     }
 
     function check_unique_guest($guest, $list) {
-        $tmp = ListGuest::all()->where('list_id', $list)->where('user_id', $guest);
-        return $tmp->count() == 0;
+        $owner_id = GiftList::find($list)->owner;
+        if($owner_id == $guest) {
+            $output = false;
+        } else {
+            $tmp = ListGuest::all()->where('list_id', $list)->where('user_id', $guest);
+            $output = $tmp->count() == 0;
+        }
+        return $output;
     }
 
     function user_list_home($err=null) {
