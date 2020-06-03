@@ -67,3 +67,11 @@
     max-width: auto;
     height: auto;
 }
+
+.profile-pic {
+    height: 3rem; 
+    width: auto;
+    border-radius: 50%;
+}
+
+

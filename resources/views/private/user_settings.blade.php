@@ -25,11 +25,13 @@
                     </script>
                     <input type="submit" class="btn btn-primary form-control">
                 </form>
-                <hr>
-                <form method="POST" action="{{ route('settings:del-profile-pic') }}">
-                    @csrf
-                    <input type="submit" class="btn btn-danger" value="Remove Profile Picture">
-                </form>
+                @if ($user->profile_pic)
+                    <hr>
+                    <form method="POST" action="{{ route('settings:del-profile-pic') }}">
+                        @csrf
+                        <input type="submit" class="btn btn-danger" value="Remove Profile Picture">
+                    </form>
+                @endif
             </div>
         </div>
     </div>

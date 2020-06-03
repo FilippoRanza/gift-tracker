@@ -27,7 +27,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4>{{ $debt->name }}</h4>
+                        <h4>
+                            @if ($debt->pic)
+                                <img src="{{ URL::to('/') }}/storage/{{ $debt->pic }}" class="profile-pic">
+                            @endif
+                            {{ $debt->name }}
+                        </h4>
                         @if ($debt->debt->amount > 0)
                             Debt: <span style="color:red">€ {{-$debt->debt->amount  / 100 }} </span>
                         @else

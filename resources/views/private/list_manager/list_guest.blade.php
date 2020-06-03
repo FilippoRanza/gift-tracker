@@ -30,6 +30,9 @@
                                     <input type="hidden" value="{{ $guest->id }}" name="guest">
                                     <input type="hidden" value="{{ $list->id }}" name="list">
                                     <div class="col">
+                                        @if ($guest->profile_pic)
+                                            <img src="{{ URL::to('/') }}/storage/{{ $guest->profile_pic }}" class="profile-pic">
+                                        @endif
                                         <label for="delete"> {{ $guest->name }} </label>
                                     </div>
                                     <div class="col">

@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class DebtInfo 
 {
-    function __construct($debt, $name, $marked)
+    function __construct($debt, $name, $marked, $pic)
     {
         $this->debt = $debt;
         $this->name = $name;
+        $this->pic = $pic;
         $this->marked = $marked;
     }
 
@@ -86,9 +87,9 @@ class DebtController extends Controller
     function collect_debt_info($debts) {
         $output = [];
         foreach($debts as $debt) {
-            $user = User::find($debt->to_id)->name;
+            $user = User::find($debt->to_id);
             $relative = $this->get_relative($debt);
-            $info = new DebtInfo($debt, $user, $relative->confirm_settle);
+            $info = new DebtInfo($debt, $user->name, $relative->confirm_settle, $user->profile_pic);
             array_push($output, $info);
         }
         return $output;

@@ -9,8 +9,13 @@
                 <li class="list-group-item">
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-3">
-                                <h4>{{ $debt->name }}</h4>
+                            <div class="col-sm-3"> 
+                                <h4>
+                                    @if ($debt->pic)
+                                        <img src="{{ URL::to('/') }}/storage/{{ $debt->pic }}" class="profile-pic">
+                                    @endif
+                                    {{ $debt->name }}
+                                </h4>
                                 <span style="color: green">
                                     € {{ -$debt->debt->amount / 100 }}
                                 </span>
