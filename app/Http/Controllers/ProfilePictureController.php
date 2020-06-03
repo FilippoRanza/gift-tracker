@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
+
 define("PIC_PATH", join(DIRECTORY_SEPARATOR, array('static', 'image', 'profile')));
 
 function get_picture_path($name) 
@@ -22,13 +23,21 @@ class ProfilePictureController extends Controller
 
     public function set_profile_pic(Request $req)
     {
+        /*
         $this->validate($req,[
             'image' => 'required|image|mimes:jpeg,png,jpg,gif'
         ]);
+        */
+        
         $user = User::findOrFail(Auth::id());
-        $path = $req->image->store('', 'public');
-        error_log($path);
-        $user->profile_pic = $path;
+        $base_64 = $req->image;
+        $base_64 = str_replace('data:image/png;base64,', '', $base_64);
+        $image = base64_decode($base_64);
+        $name = uniqid() . '.png';
+        
+        Storage::disk('public')->put($name, $image);
+        
+        $user->profile_pic = $name;
         $user->save();
         return Redirect::to(route('settings:index'));
     }
