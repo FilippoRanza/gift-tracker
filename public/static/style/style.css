@@ -60,3 +60,10 @@
     border-radius: 0;
     background: linear-gradient(to right, lime, green);
 }
+
+
+.img-preview {
+    display: block;
+    max-width: auto;
+    height: auto;
+}

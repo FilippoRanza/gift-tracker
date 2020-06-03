@@ -102,4 +102,12 @@ Route::group(['prefix' => '/poll', 'middleware' => 'auth'], function ()  {
 });
 
 
+//user settings 
+Route::group(['prefix' => '/user/settings', 'middleware' => 'auth'], function () {
+    Route::get('/', ['as' => 'settings:index', 'uses' => 'SettingsController@index']);
+    Route::post('/profile/picture/set', ['as' => 'settings:set-profile-pic', 'uses' => 'ProfilePictureController@set_profile_pic']);
+    Route::post('/profile/picture/delete', ['as' => 'settings:del-profile-pic', 'uses' => 'ProfilePictureController@delete_profile_pic']);
+});
+
+
 Route::redirect('/', route('user:home'));
