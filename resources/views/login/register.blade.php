@@ -3,25 +3,12 @@
 @section('title', 'register')
 
 @section('body')
-    
-    @if (isset($password_error))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <h3>Password and Confirm Field don't match</h3>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        
-    @endif
-
+    @includeWhen(isset($password_error), 'error', ['message' => "Password and Confirm Field don't match"])
     @if (isset($username_error))
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <h3>{{ $username_error }} has already been taken, try with a new one</h3>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+        @include('error', ['message' => "$username_error has already been taken, try with a new one"])    
     @endif
+    
+
     <br>    
     <br>
     <div class="container">

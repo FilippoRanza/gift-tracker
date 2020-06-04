@@ -9,12 +9,7 @@
 @section('body')
 
     @if (isset($login_error))
-        <div class="alert alert-warning  alert-dismissible fade show" role="alert">
-            <h3>Username or Password is INCORRECT!</h3>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>    
+        @include('error', ['message' => 'Username or Password is INCORRECT!'])
     @endif
     <br>
     <br>

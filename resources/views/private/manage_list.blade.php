@@ -3,38 +3,11 @@
 
 @section('body')
     <h3>{{ $list->name }} - {{ $user->name }}</h3>
-
-    @if (isset($item_err))
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <h2>ERROR</h2>
-        <h4>The Item {{ $item_err }} has already been inserted into the list {{ $list->name }}</h4>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    @endif
+    
     <div>
-        @if (isset($user_err))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <h3>Error</h3>
-                <p>User {{ $user_err }} does not EXIST</p>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-        @elseif(isset($guest_err))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <h3>Error</h3>
-                <p>User {{ $guest_err }} has already been added to {{ $list->name }}</p>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            
-            
-        @endif
-        
+        @includeWhen(isset($item_err), 'error', ['message' => "The Item $item_err has already been inserted into the list $list->name"])
+        @includeWhen(isset($user_err), 'error', ['message' => "User $user_err does not EXIST"])
+        @includeWhen(isset($guest_err), 'error', ['message' => "User $guest_err has already been added to $list->name "])
     </div>
 
     <ul class="nav nav-tabs" role="tablist" >
