@@ -26,7 +26,7 @@ function get_unique_name($ext, $curr_len=20)
         $str_token = get_random_string($curr_len++);
         $num_token = random_int(PHP_INT_MIN, PHP_INT_MAX);
         $now = time();
-        $str = "$num_token$now$str_token";
+        $str = "$num_token$now$str_token$iter";
         $hash = sha1($str);
         $name = $hash . '.' . $ext;
         if(!Storage::disk('public')->exists($name)) {
