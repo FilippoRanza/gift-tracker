@@ -52,7 +52,6 @@ function remove_image() {
 function post() {
     var preview = document.getElementById('image-preview');
     if(preview.hasChildNodes()) {
-        console.log('aa');
         var canvas = preview.childNodes[0];
         var data = canvas.toDataURL('image/png');
         var input  = document.getElementById('upload-data');
@@ -60,3 +59,7 @@ function post() {
         document.forms['image-form'].submit();
     }
 }
+
+
+
+

@@ -62,7 +62,13 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
+                <script>
+                    $("#image-selector").on('hidden.bs.modal', function(event) {
+                        var preview = document.getElementById('preview-container');
+                        preview.innerHTML = prev;
+                    });
+                </script>
             </div>
         </div>
     </div>
