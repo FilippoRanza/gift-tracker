@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
+define('PIC_HEADER', 'data:image/png;base64,');
+
 function get_random_string($len) 
 {
     $output = "";
@@ -46,15 +48,20 @@ class ProfilePictureController extends Controller
         $user = User::findOrFail(Auth::id());
         $this->remove_profile_pic();
         $base_64 = $req->image;
-        $base_64 = str_replace('data:image/png;base64,', '', $base_64);
-        $image = base64_decode($base_64);
-        $name = get_unique_name('png');
-        
-        Storage::disk('public')->put($name, $image);
-        
-        $user->profile_pic = $name;
-        $user->save();
-        return Redirect::to(route('settings:index'));
+        if (substr_compare($base_64, PIC_HEADER, 0, 22) == 0) {
+            $base_64 = str_replace(PIC_HEADER, '', $base_64);
+            $image = base64_decode($base_64);
+            $name = get_unique_name('png');
+            
+            Storage::disk('public')->put($name, $image);
+            
+            $user->profile_pic = $name;
+            $user->save();
+            $output = Redirect::to(route('settings:index'));
+        } else {
+            $output = abort(406);
+        }
+        return $output;
     }
     
     public function delete_profile_pic()
