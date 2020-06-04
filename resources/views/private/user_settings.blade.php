@@ -16,11 +16,12 @@
 
 <h2>Settings</h2>
 <hr>
+@includeWhen(isset($error), 'error', ['message' => 'The old password is incorrect, check again'])
 <div class="container">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Set Profile Picture</h4>    
-            <div class="">
+            <div class="input-group">
                 <form id="image-form" method="POST" enctype="multipart/form-data" action="{{ route('settings:set-profile-pic') }}">
                     @csrf
                     <span id="image-preview">
@@ -33,13 +34,7 @@
                     <input type="hidden" id="upload-data" name="image">
                     <input type="button" onclick="post();" value="Set Profile Picture" class="btn btn-primary form-control">
                 </form>
-                @if ($user->profile_pic)
-                    <hr>
-                    <form method="POST" action="{{ route('settings:del-profile-pic') }}">
-                        @csrf
-                        <input type="submit" class="btn btn-danger" value="Remove Profile Picture">
-                    </form>
-                @endif
+
                 <div class="modal" id="image-selector" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -70,12 +65,28 @@
                     });
                 </script>
             </div>
+            @if ($user->profile_pic)
+            <hr>
+            <form method="POST" action="{{ route('settings:del-profile-pic') }}">
+                @csrf
+                <input type="submit" class="btn btn-danger" value="Remove Profile Picture">
+            </form>
+        @endif
         </div>
     </div>
     <br>
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Reset Password</h4>    
+            <h4 class="card-title">Reset Password</h4>
+            <div class="input-group">
+                <form method="POST" action="{{ route('settings:reset') }}">
+                    @csrf
+                    <input class="form-control" required="required" type="password" placeholder="old password" name="old">
+                    <br>
+                    @include('input_new_password')
+                    <input type="submit" class="btn btn-primary form-control" value="Reset Password">
+                </form>
+            </div>    
         </div>
     </div>
 
