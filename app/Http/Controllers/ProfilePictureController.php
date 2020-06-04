@@ -8,14 +8,33 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
-
-define("PIC_PATH", join(DIRECTORY_SEPARATOR, array('static', 'image', 'profile')));
-
-function get_picture_path($name) 
+function get_random_string($len) 
 {
-    return join(DIRECTORY_SEPARATOR, array(PIC_PATH, $name));
+    $output = "";
+    for($i = 0; $i < $len; $i++) {
+        $curr = random_int(0, 255);
+        $output .= chr($curr);
+    }
+    return $output;
 }
 
+
+function get_unique_name($ext, $curr_len=20) 
+{
+    
+    for($iter = 0;; $iter++) {
+        $str_token = get_random_string($curr_len++);
+        $num_token = random_int(PHP_INT_MIN, PHP_INT_MAX);
+        $now = time();
+        $str = "$num_token$now$str_token";
+        $hash = sha1($str);
+        $name = $hash . '.' . $ext;
+        if(!Storage::disk('public')->exists($name)) {
+            break;
+        }
+    }
+    return $name;
+}
 
 class ProfilePictureController extends Controller
 {
@@ -23,17 +42,13 @@ class ProfilePictureController extends Controller
 
     public function set_profile_pic(Request $req)
     {
-        /*
-        $this->validate($req,[
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif'
-        ]);
-        */
         
         $user = User::findOrFail(Auth::id());
+        $this->remove_profile_pic();
         $base_64 = $req->image;
         $base_64 = str_replace('data:image/png;base64,', '', $base_64);
         $image = base64_decode($base_64);
-        $name = uniqid() . '.png';
+        $name = get_unique_name('png');
         
         Storage::disk('public')->put($name, $image);
         
@@ -44,13 +59,18 @@ class ProfilePictureController extends Controller
     
     public function delete_profile_pic()
     {
+        $this->remove_profile_pic();
+        return Redirect::to(route('settings:index'));
+    }
+
+    function remove_profile_pic() 
+    {
         $user = User::find(Auth::id());
         if($user->profile_pic) {
             Storage::disk('public')->delete($user->profile_pic);
             $user->profile_pic = "";
             $user->save();
         }
-        return Redirect::to(route('settings:index'));
     }
 
 }
