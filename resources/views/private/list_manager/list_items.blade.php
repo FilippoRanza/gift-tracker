@@ -68,12 +68,12 @@
                                                     <input type="submit" class="btn btn-primary form-control" value="Select">
                                                 @endif
                                             </form>
-                                        
-                                            <form method="POST" class="col" action="{{ route('list:remove_item') }}">
+                                            
+                                            <form class="col" method="POST" action="{{ route('item-settings:index') }}" >
                                                 @csrf
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
-                                                <input type="submit" class="btn btn-danger form-control" value="Delete">
+                                                <input type="submit" class="btn btn-secondary form-control" value="Modify">
                                             </form>
                                         </div>
                                     @endif

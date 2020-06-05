@@ -113,5 +113,12 @@ Route::group(['prefix' => '/user/settings', 'middleware' => 'auth'], function ()
 
 });
 
+//item settings 
+Route::group(['prefix' => '/item/settings', 'middleware' => 'auth'], function() {
+    Route::post('/index', ['as' => 'item-settings:index', 'uses' => 'ItemSettingsController@index']);
+    Route::post('/set/price', ['as' => 'item-settings:update-price', 'uses' => 'ItemSettingsController@update_price']);
+});
+
+
 
 Route::redirect('/', route('user:home'));
