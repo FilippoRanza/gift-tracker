@@ -26,7 +26,7 @@
                 <div class="col-sm-1">
                 </div>
                 <div class="col-sm-6">
-                    <form id="image-form" method="POST" enctype="multipart/form-data" action="{{ route('settings:set-profile-pic') }}">
+                    <form id="image-form" method="POST" action="{{ route('settings:set-profile-pic') }}">
                         @csrf
                         <span id="image-preview">
     

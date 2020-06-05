@@ -11,7 +11,7 @@
     </div>
 
     <br>
-    <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control" id="confirm-field"  placeholder="confirm password">
+    <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="confirm password">
     <br>
 </span>
 <script src="{{ URL::to('/') }}/static/scripts/validate_new_password.js"></script>
