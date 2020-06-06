@@ -119,6 +119,7 @@ Route::group(['prefix' => '/item/settings', 'middleware' => 'auth'], function() 
     Route::post('/set/price', ['as' => 'item-settings:update-price', 'uses' => 'ItemSettingsController@update_price']);
     Route::post('/set/url', ['as' => 'item-settings:update-url', 'uses' => 'ItemSettingsController@update_url']);
     Route::post('/delete/url', ['as' => 'item-settings:del-url', 'uses' => 'ItemSettingsController@delete_url']);
+    Route::post('/set/name', ['as' => 'item-settings:rename', 'uses' => 'ItemSettingsController@update_name']);
 });
 
 

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\GiftList;
 use App\ListGuest;
 use App\Vote;
 use Illuminate\Support\Facades\Auth;
@@ -23,4 +25,10 @@ function has_voted($list_id) {
                 ->where('user', Auth::id());
     return $tmp->count() == 1;
 } 
+
+function check_unique_item($name, $list) {
+    $list = GiftList::findOrFail($list);
+    $items = $list->items();
+    return $items->where('name', $name)->count() == 0;
+}
 

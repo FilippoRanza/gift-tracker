@@ -69,7 +69,7 @@ class GiftListController extends Controller
     }
 
     public function insert_item(Request $req) {
-        if($this->check_unique_item($req->name, $req->list)) {
+        if(check_unique_item($req->name, $req->list)) {
             $item = new Item();
             $item->name = $req->name;
             $amount = $req->price;
@@ -244,12 +244,6 @@ class GiftListController extends Controller
             }
         } 
         return $output;
-    }
-
-    function check_unique_item($name, $list) {
-        $list = GiftList::findOrFail($list);
-        $items = $list->items();
-        return $items->where('name', $name)->count() == 0;
     }
 
     function check_unique_guest($guest, $list) {

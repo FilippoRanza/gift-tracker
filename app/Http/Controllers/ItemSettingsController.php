@@ -6,7 +6,8 @@ use App\GiftList;
 use App\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\Console\Input\Input;
+
+require 'list_helper.php';
 
 class ItemSettingsController extends Controller
 {
@@ -17,7 +18,18 @@ class ItemSettingsController extends Controller
     }
 
     public function update_name(Request $req) {
-
+        $new_name = $req->name;
+        $item = Item::find($req->item);
+        if(check_unique_item($new_name, $req->list)) {
+            $item->name = $new_name;
+            $item->save();
+            $output = ['rename' => true];
+        }elseif($new_name == $item->name) {
+            $output = ['rename' => true];
+        } else {
+            $output = ['rename' => false, 'name' => $item->name];
+        }
+        return response()->json($output);
     }
 
     public function update_price(Request $req) {
