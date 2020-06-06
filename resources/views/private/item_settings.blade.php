@@ -27,7 +27,8 @@
 
 </script>
 
-    <h3>Item Settings</h3>
+    <h3>Item Info</h3>
+    <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">Back to {{ $list->name }}</a></h6>
     <hr>
 
     <div class="container">
