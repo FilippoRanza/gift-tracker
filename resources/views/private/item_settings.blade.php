@@ -3,7 +3,7 @@
 @section('body')
 <meta name="csrf-token" content="{{ csrf_token() }}"> 
 <script>
-    function update_price(url, form) {
+    function run_ajax(url, form, callback = undefined) {
         
         var data = $(form).serializeArray();
         var post_data = {'_token': $('meta[name=csrf-token]').attr('content')};
@@ -18,7 +18,10 @@
             type: "post",
             dataType: "json",
         }).done(function (json) {
-            console.log('price update');
+            console.log('ajax success');
+            if(callback !== undefined) {
+                callback(json);
+            }
         });      
     }
 
@@ -54,24 +57,29 @@
                             </div> 
                         </div>
                     </form>
-                    <script>
-                        $('#price-form').on('submit', function() {
-                            update_price('{{ route('item-settings:update-price') }}', '#price-form');
-                            return false;
-                        });
-                    </script>
+
                     <hr>
-                    <form>
-                        <div class="form-group">
-                            <label for="url">URL</label>
-                            <div class="form-inline">
-                                <input type="hidden" value="{{ $item->id }}" name="item">
-                                <input type="hidden" value="{{ $list->id }}" name="list">
-                                <input class="form-control input" type="url" id="url" name="name" value="{{ $item->site }}">
-                                <input type="submit" class="btn btn-primary">
-                            </div>                        
-                        </div>
-                    </form>
+                    <div class="form-group col-xs-6">
+                        <form id="url-form">
+                            <div class="">
+                                <label for="url">URL</label>
+                                <div class="form-inline">
+                                    <input type="hidden" value="{{ $item->id }}" name="item">
+                                    <input class="form-control input" type="url" id="url-field" name="url" value="{{ $item->site }}">
+                                    <input type="submit" class="btn btn-primary">
+                                </div>                        
+                            </div>
+                        </form>
+                        <form 
+                            @if (strlen($item->site) == 0)
+                                hidden
+                            @endif
+                        id="remove-url-form" class="form-inline">
+                            <input type="hidden" value="{{ $item->id }}" name="item">
+                            <input type="submit" class="btn btn-danger">
+                        </form>
+                    </div>
+
             </div>
         </div>
         <br>
@@ -96,6 +104,35 @@
             </div>
         </div>
     </div>
+    <script>
+        
+        $('#price-form').on('submit', function() {
+            run_ajax('{{ route('item-settings:update-price') }}', '#price-form');
+            return false;
+        });
+  
+        $('#url-form').on('submit', function() {
+            run_ajax('{{ route('item-settings:update-url') }}', '#url-form', function(json) {
+                if(json['url']) {
+                    $('#remove-url-form').removeAttr('hidden');
+                    $('#remove-url-form').show();
+                }
+            });
+            return false;
+        });
 
+        $('#remove-url-form').on('submit', function() {
+            run_ajax('{{ route('item-settings:del-url') }}', '#remove-url-form', function (json) {
+                
+                if(!json['url']) {
+                    $('#remove-url-form').hide();
+                    $('#url-field').val('');
+                }
+            });
+            return false;
+        });
+
+
+    </script>
 
 @endsection

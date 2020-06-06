@@ -22,14 +22,26 @@ class ItemSettingsController extends Controller
 
     public function update_price(Request $req) {
         $item = Item::find($req->item);
-        error_log($req->price);
         $item->price = $req->price * 100;
         $item->save();
         return response()->json(['price' => $item->price]);
     }
 
     public function update_url(Request $req) {
+        $item = Item::find($req->item);
+        error_log($req->url);
+        $item->site = $req->url;
+        $item->save();
+        return response()->json(['url' => true]);
+    }
 
+
+    public function delete_url(Request $req) {
+        $item = Item::find($req->item);
+        $item->site = "";
+        $item->save();
+        error_log('ok');
+        return response()->json(['url' => false]);
     }
 
 }

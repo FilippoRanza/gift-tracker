@@ -117,6 +117,8 @@ Route::group(['prefix' => '/user/settings', 'middleware' => 'auth'], function ()
 Route::group(['prefix' => '/item/settings', 'middleware' => 'auth'], function() {
     Route::post('/index', ['as' => 'item-settings:index', 'uses' => 'ItemSettingsController@index']);
     Route::post('/set/price', ['as' => 'item-settings:update-price', 'uses' => 'ItemSettingsController@update_price']);
+    Route::post('/set/url', ['as' => 'item-settings:update-url', 'uses' => 'ItemSettingsController@update_url']);
+    Route::post('/delete/url', ['as' => 'item-settings:del-url', 'uses' => 'ItemSettingsController@delete_url']);
 });
 
 

@@ -75,6 +75,11 @@
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                                 <input type="submit" class="btn btn-secondary form-control" value="Modify">
                                             </form>
+                                            @if ($item->site)
+                                                <div class="col">
+                                                    <a class="btn btn-success form-control" href={{ $item->site }}>web</a>
+                                                </div>
+                                            @endif
                                         </div>
                                     @endif
                                 </div>
