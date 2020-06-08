@@ -64,7 +64,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Item Image</h4>
-                @include('private.picture_upload', ['set_pic_url' => 'item-settings:set-pic', 'del_pic_url' => 'item-settings:del-pic', 'has_pic' => $item->picture, 'id' => $item->id])
+                @include('private.picture_upload', ['set_pic_url' => 'item-settings:set-pic', 'del_pic_url' => 'item-settings:del-pic', 'has_pic' => $item->picture, 'id' => $item->id, 'target' => 'Item'])
             </div>
         </div>
         <br>

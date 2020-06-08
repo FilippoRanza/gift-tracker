@@ -74,4 +74,9 @@
     border-radius: 50%;
 }
 
+.preview-pic {
+    height: 7rem;
+    width: auto;
+
+}
 

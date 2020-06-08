@@ -17,12 +17,18 @@
         <div class="col-sm-6">
             <form id="image-form">
                 @csrf
-                <span id="image-preview"></span>
+                <span id="old-picture" class="preview-pic">
+                    @if ($has_pic)
+                    <img class="preview-pic img-thumbnail rounded" src="{{ URL::to('/') }}/storage/{{ $has_pic }}">
+                    @endif
+                </span>
+                
+                <span  id="image-preview"></span>
                 <br>
                 <span id="image-select-container">
                     <div class="custom-file">
                         <input id="image-select" class="custom-file-input"  type="file" accept="image/*" onchange="toogle_image_selector(event)">
-                        <label class="custom-file-label" for="image-select">Profile Picture</label>
+                        <label class="custom-file-label" for="image-select">Select Picture</label>
                     </div>
                     
                 </span>
@@ -30,7 +36,7 @@
                     <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
                 @endif
                 <input type="hidden" id="upload-data" name="image">
-                <input type="submit"  value="Set Profile Picture" class="btn btn-primary form-control">
+                <input type="submit"  value="Set {{ $target }} Picture" class="btn btn-primary form-control">
             </form>
         </div>
     </div> 
@@ -51,7 +57,7 @@
                     @if (isset($id))
                         <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
                     @endif
-                    <input type="submit" class="btn btn-danger form-control" value="Remove Profile Picture">
+                    <input type="submit" class="btn btn-danger form-control" value="Remove {{ $target }} Picture">
                 </form>    
             </div>
         </div>

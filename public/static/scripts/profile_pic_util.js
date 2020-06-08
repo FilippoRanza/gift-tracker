@@ -26,11 +26,12 @@ function toogle_image_selector(event) {
 function get_cropped_image() {
     var canvas = crop.getCroppedCanvas();
     canvas.classList.add('img-thumbnail');
-
+    canvas.classList.add('preview-pic');
     var preview = document.getElementById('image-preview');
     if(preview.hasChildNodes()) {
         preview.removeChild(preview.childNodes[0]);
     }
+    $('#old-picture').hide();
     preview.appendChild(canvas); 
 
     $('#image-selector').modal('hide');
