@@ -28,12 +28,12 @@ Route::group(['prefix' => '/login'], function() {
     Route::get('logout', ['as' => 'logout', 'uses' => 'LoginRegisterManager@logout']);
 });
 
-Route::group(['prefix' => '/home', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => '/home', 'middleware' => ['auth', 'set_locale']], function() {
     Route::get('/', ['as' => 'user:home', 'uses' => 'HomeController@home']);
 });
 
 //user's gift list
-Route::group(['prefix' => '/userlist', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => '/userlist', 'middleware' => ['auth', 'set_locale']], function() {
 
     Route::get('/', ['as' => 'list:show', 'uses' => 'GiftListController@home']);
     
@@ -64,7 +64,7 @@ Route::group(['prefix' => '/userlist', 'middleware' => 'auth'], function() {
 
 
 // purchase managment
-Route::group(['prefix' => '/purchase', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/purchase', 'middleware' => ['auth', 'set_locale']], function () {
     Route::get('/list', ['as' => 'purchase:list', 'uses' => 'PurchaseController@list']);
     Route::get('/list/{id}', ['as' => 'purchase:info', 'uses' => 'PurchaseController@info']);
     Route::post('/make', ['as' => 'purchase:make', 'uses' => 'PurchaseController@purchase']);
@@ -78,7 +78,7 @@ Route::group(['prefix' => '/purchase', 'middleware' => 'auth'], function () {
 });
 
 // debt managment
-Route::group(['prefix' => '/debt', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/debt', 'middleware' =>['auth', 'set_locale']], function () {
     Route::get('/list', ['as' => 'debt:list', 'uses' => 'DebtController@list']);
     Route::post('/settle', ['as' => 'debt:settle', 'uses' => 'DebtController@settle']);
     Route::post('/settle/refuse', 
@@ -103,7 +103,7 @@ Route::group(['prefix' => '/poll', 'middleware' => 'auth'], function ()  {
 
 
 //user settings 
-Route::group(['prefix' => '/user/settings', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/user/settings', 'middleware' => ['auth', 'set_locale']], function () {
     Route::get('/', ['as' => 'settings:index', 'uses' => 'SettingsController@index']);
     
     Route::post('/profile/picture/set', ['as' => 'settings:set-profile-pic', 'uses' => 'ProfilePictureController@set_profile_pic']);
@@ -114,7 +114,7 @@ Route::group(['prefix' => '/user/settings', 'middleware' => 'auth'], function ()
 });
 
 //item settings 
-Route::group(['prefix' => '/item/settings', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => '/item/settings', 'middleware' => ['auth', 'set_locale']], function() {
     Route::post('/index', ['as' => 'item-settings:index', 'uses' => 'ItemSettingsController@index']);
     
     Route::post('/set/price', ['as' => 'item-settings:update-price', 'uses' => 'ItemSettingsController@update_price']);
@@ -127,6 +127,12 @@ Route::group(['prefix' => '/item/settings', 'middleware' => 'auth'], function() 
     Route::post('/set/picture', ['as' => 'item-settings:set-pic', 'uses' => 'ItemPictureController@set_item_picture']);
     Route::post('/delete/picture', ['as' => 'item-settings:del-pic', 'uses' => 'ItemPictureController@remove_item_picture']);
 
+});
+
+//locale settings
+Route::group(['prefix' => '/locale', 'middleware' => 'auth'], function() {
+    Route::post('/set', ['as' => 'locale:set', 'uses' => 'LocaleController@set_locale']);
+    Route::get('/list', ['as' => 'locale:list', 'uses' => 'LocaleController@available_locales']);
 });
 
 

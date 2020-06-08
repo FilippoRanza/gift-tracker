@@ -2,7 +2,7 @@
 
 
 @section('body')
-    <h1>{{ $user->name }}'s purchase list</h1>
+    <h1>{{ __('purchase_list.title') }}</h1>
     <hr>
 
     <ul class="list-group">
@@ -13,8 +13,8 @@
                         <div class="col-sm-8">
                             <h4>{{ $purchase->item }}</h4>
                             <ul>
-                                <li>For: {{ $purchase->recipient }}</li>
-                                <li>Price: € {{ $purchase->price / 100 }}</li>
+                                <li>{{ __('purchase_list.for') }}: {{ $purchase->recipient }}</li>
+                                <li>{{ __('purchase_list.price') }}: € {{ $purchase->price / 100 }}</li>
                             </ul>
                             
                             
@@ -23,18 +23,18 @@
                             <form class="form-group" action="{{ route('purchase:delete') }}" method="POST">
                                 @csrf
                                 <input type="hidden" value="{{ $purchase->id }}" name="purchase">
-                                <input type="submit" class="btn btn-danger form-control" value="Delete">
+                                <input type="submit" class="btn btn-danger form-control" value="{{ __('purchase_list.delete') }}">
                             </form>                             
                             <form class="form-group" action="{{ route('purchase:void') }}" method="POST">
                                 @csrf
                                 <input type="hidden" value="{{ $purchase->id }}" name="purchase">
-                                <input type="submit" class="btn btn-warning form-control" value="Void">
+                                <input type="submit" class="btn btn-warning form-control" value="{{ __('purchase_list.void') }}">
                             </form>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8">
-                            <a type="button" class="btn btn-primary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">Info</a>
+                            <a type="button" class="btn btn-primary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">{{ __('purchase_list.info') }}</a>
                         </div>
                     </div>
                 </div>                          

@@ -6,22 +6,22 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('list:show') }}">My Lists</a>
+            <a class="nav-link" href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('list:guest') }}">Contribute List</a>
+            <a class="nav-link" href="{{ route('list:guest') }}">{{ __('nav_bar.contribute-list') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('purchase:list') }}">My Purchases</a>
+            <a class="nav-link" href="{{ route('purchase:list') }}">{{ __('nav_bar.user-purchase') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="{{ route('debt:list') }}">My Debts</a> 
+            <a class="nav-link"  href="{{ route('debt:list') }}">{{ __('nav_bar.user-debt') }}</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('settings:index') }}">Settings</a>
+            <a class="nav-link" href="{{ route('settings:index') }}">{{ __('nav_bar.user-settings') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}">logout</a>  
+            <a class="nav-link" href="{{ route('logout') }}">{{ __('nav_bar.logout') }}</a>  
           </li>
         </ul>
         <ul class="navbar-nav ml-md-auto">

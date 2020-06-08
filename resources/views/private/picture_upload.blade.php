@@ -28,7 +28,7 @@
                 <span id="image-select-container">
                     <div class="custom-file">
                         <input id="image-select" class="custom-file-input"  type="file" accept="image/*" onchange="toogle_image_selector(event)">
-                        <label class="custom-file-label" for="image-select">Select Picture</label>
+                        <label class="custom-file-label" for="image-select">{{ __('picture_upload.browse') }}</label>
                     </div>
                     
                 </span>
@@ -36,7 +36,7 @@
                     <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
                 @endif
                 <input type="hidden" id="upload-data" name="image">
-                <input type="submit"  value="Set {{ $target }} Picture" class="btn btn-primary form-control">
+                <input type="submit"  value="{{ __('picture_upload.select', ['target' => $target]) }}" class="btn btn-primary form-control">
             </form>
         </div>
     </div> 
@@ -57,7 +57,7 @@
                     @if (isset($id))
                         <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
                     @endif
-                    <input type="submit" class="btn btn-danger form-control" value="Remove {{ $target }} Picture">
+                    <input type="submit" class="btn btn-danger form-control" value="{{ __('picture_upload.remove', ['target' => $target]) }}">
                 </form>    
             </div>
         </div>
@@ -68,7 +68,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Adjust Image</h5>
+              <h5 class="modal-title">{{ __('picture_upload.adjust') }}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -81,8 +81,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" onclick="remove_image();" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="get_cropped_image();">Save changes</button>
+              <button type="button" class="btn btn-secondary" onclick="remove_image();" data-dismiss="modal">{{ __('picture_upload.close') }}</button>
+              <button type="button" class="btn btn-primary" onclick="get_cropped_image();">{{ __('picture_upload.save') }}</button>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 
 <span>
-    <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control" placeholder="password">
+    <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control" placeholder="{{ __('set_password.new-password') }}">
     <br>
     <div class="password-strength">
         <span id="box-1" class="strength-block block-1"></span>
@@ -11,7 +11,7 @@
     </div>
 
     <br>
-    <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="confirm password">
+    <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="{{ __('set_password.confirm-password') }}">
     <br>
 </span>
 <script src="{{ URL::to('/') }}/static/scripts/validate_new_password.js"></script>

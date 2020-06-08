@@ -3,7 +3,7 @@
 @section('body')
 
     @if (count($confirm))
-        <h2>Confirm Settle</h2>        
+        <h2>{{ __('debt_notification.confirm-settle') }}</h2>        
         <ul class="list-group">
             @foreach ($confirm as $debt)
                 <li class="list-group-item">
@@ -24,21 +24,21 @@
                                 <form method="POST" class="form-group" action="{{ route('debt:settle') }}">
                                     @csrf
                                     <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
-                                    <input type="submit" class="btn btn-success form-control" value="Accept Settle">
+                                    <input type="submit" class="btn btn-success form-control" value="{{ __('debt_notification.accept') }}">
                                 </form>
                             </div>
                             <div class="col-sm-3">
                                 <form method="POST" class="form-group" action="{{ route('debt:refuse') }}">
                                     @csrf
                                     <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
-                                    <input type="submit" class="btn btn-danger form-control" value="Refuse Settle">
+                                    <input type="submit" class="btn btn-danger form-control" value="{{ __('debt_notification.refuse') }}">
                                 </form>
                             </div>
                             <div class="col-sm-3">
                                 <form method="POST" class="form-group" action="{{ route('debt:mark') }}">
                                     @csrf
                                     <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
-                                    <input type="submit" class="btn btn-secondary form-control" value="Mark as Seen">
+                                    <input type="submit" class="btn btn-secondary form-control" value="{{ __('debt_notification.seen') }}">
                                 </form>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
     @endif
 
     @if (count($refused))
-        <h2>Refused Settle</h2>
+        <h2>{{ __('debt_notification.refused-settle') }}</h2>
         <ul class="list-group">
            @foreach ($refused as $debt)
             <li class="list-group-item">
@@ -65,7 +65,7 @@
                             <form method="POST" class="form-group" action="{{ route('debt:mark') }}">
                                 @csrf
                                 <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
-                                <input type="submit" class="btn btn-secondary form-control" value="Mark as Seen">
+                                <input type="submit" class="btn btn-secondary form-control" value="{{ __('debt_notification.seen') }}">
                             </form>
                         </div>
                     </div>

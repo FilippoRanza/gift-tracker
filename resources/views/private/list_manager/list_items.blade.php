@@ -3,16 +3,16 @@
         <div class="card">
             <div class="input-group">
                 <div class="card-body">
-                    <h4 class="card-title">Add new Item</h4>
+                    <h4 class="card-title">{{ __('list_items.add-title') }}</h4>
                     <div class="form-group col">
                         <form  method="POST" action="{{ route('list:add_item') }}">
                             @csrf
                             <input type="hidden" value="{{ $list->id }}" name="list">
-                            <label class="col-form-label" for="name">Name</label>
-                            <input  type="text" id="name"  required="required" class="form-control" name="name" id="name" placeholder="Name" autofocus>
-                            <label class="col-form-label" for="price">Price</label>
+                            <label class="col-form-label" for="name">{{ __('list_items.name') }}</label>
+                            <input  type="text" id="name"  required="required" class="form-control" name="name" id="name" placeholder="{{ __('list_items.name') }}" autofocus>
+                            <label class="col-form-label" for="price">{{ __('list_items.price') }}</label>
                             <input type="number" id="price" min="0.01" required="required" class="form-control" step="0.01" id="price" name="price" placeholder="€">
-                            <button class="btn btn-primary form-control" id="add-item"  type="submit">Add Item</button>        
+                            <button class="btn btn-primary form-control" id="add-item"  type="submit">{{ __('list_items.add-item') }}</button>        
                         </form>
                     </div>
                 </div>    
@@ -29,13 +29,13 @@
             <form method="POST" action="{{ route('purchase:automatic') }}">
                 @csrf
                 <input type="hidden" value="{{ $list->id }}" name="list">
-                <input type="submit" class="btn btn-success" value="Make Automatic Purchase">
+                <input type="submit" class="btn btn-success" value="{{ __('list_items.automatic') }}">
             </form>
         </div>
     @endif
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Current Items</h5>
+            <h5 class="card-title">{{ __('list_items.current-title') }}</h5>
             <ul class="list-group">
                 @foreach ($items as $item)
                     <li class="list-group-item">
@@ -46,7 +46,7 @@
                                         <img src="{{ URL::to('/') }}/storage/{{ $item->picture }}" class="profile-pic">
                                     @endif
                                     {{ $item->name }}</h3>
-                                <h6 class="card-title">Price € {{ $item->price / 100 }}</h6>
+                                <h6 class="card-title">{{ __('list_items.price') }} € {{ $item->price / 100 }}</h6>
                                 <div class="input-group">
                                     @if ($list->poll)
                                         <form method="POST" class="form-row" action="{{ route('vote:vote') }}">
@@ -54,9 +54,9 @@
                                             <input type="hidden" value="{{ $item->id }}" name="item">
                                             <input type="hidden" value="{{ $list->id }}" name="list">
                                             @if ($voted)
-                                                <input type="submit" class="btn btn-success form-control" value="Vote" disabled>    
+                                                <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.vote') }}" disabled>    
                                             @else
-                                                <input type="submit" class="btn btn-success form-control" value="Vote">
+                                                <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.vote') }}">
                                             @endif
                                         
                                         </form>
@@ -67,9 +67,9 @@
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                                 @if ($guest_only)
-                                                    <input type="submit" class="btn btn-primary form-control" value="Select" disabled>
+                                                    <input type="submit" class="btn btn-primary form-control" value="{{ __('list_items.select') }}" disabled>
                                                 @else
-                                                    <input type="submit" class="btn btn-primary form-control" value="Select">
+                                                    <input type="submit" class="btn btn-primary form-control" value="{{ __('list_items.select') }}">
                                                 @endif
                                             </form>
                                             
@@ -77,11 +77,11 @@
                                                 @csrf
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
-                                                <input type="submit" class="btn btn-secondary form-control" value="Modify">
+                                                <input type="submit" class="btn btn-secondary form-control" value="{{ __('list_items.modify') }}">
                                             </form>
                                             @if ($item->site)
                                                 <div class="col">
-                                                    <a class="btn btn-success form-control" href={{ $item->site }}>web</a>
+                                                    <a class="btn btn-success form-control" href={{ $item->site }}>{{ __('list_items.web') }}</a>
                                                 </div>
                                             @endif
                                         </div>

@@ -3,12 +3,12 @@
         <div class="container mb-3">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Add new Guest</h4>
+                    <h4 class="card-title">{{ __('list_guest.add-title') }}</h4>
                     <form  method="POST" class="input-group form-inline" action="{{ route('list:add_guest') }}">
                         @csrf
                         <input type="hidden" value="{{ $list->id }}" name="list">
-                        <input type="text" id="guest-name" required="required" class="form-control" name="name" autofocus placeholder="Name">
-                        <input type="submit" id="add-guest" class="btn btn-primary mb-2" >
+                        <input type="text" id="guest-name" required="required" class="form-control" name="name" autofocus placeholder="{{ __('list_guest.input-name') }}">
+                        <input type="submit" id="add-guest" class="btn btn-primary mb-2" value="{{ __('list_guest.submit') }}" >
                     </form>
                 </div>
             </div>
@@ -19,7 +19,7 @@
     <div class="container mb-3">
         <div class="card">
             <div class="card-body">
-                <h5>Current Guests</h5>
+                <h5>{{ __('list_guest.current-title') }}</h5>
                 <ul class="list-group">
                     @foreach ($guests as $guest)
                         <li class="list-group-item">
@@ -37,9 +37,9 @@
                                     </div>
                                     <div class="col">
                                         @if ($list->poll)
-                                            <input type="submit" id="delete" class="btn btn-danger " value="Delete" disabled>
+                                            <input type="submit" id="delete" class="btn btn-danger " value="{{ __('list_guest.delete') }}" disabled>
                                         @else
-                                            <input type="submit" id="delete" class="btn btn-danger " value="Delete">    
+                                            <input type="submit" id="delete" class="btn btn-danger " value="{{ __('list_guest.delete') }}">    
                                         @endif
                                     </div>
                                 </form>

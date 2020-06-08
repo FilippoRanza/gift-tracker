@@ -1,17 +1,13 @@
 @extends('private.user_base')
 
 @section('body')
-<h2>My Debts</h2>
+<h2>{{ __('debt_home.title') }}</h2>
 <hr>
 
 @if ($notify)
     <div class="alert alert-dark alert-dismissible fade show" role="alert"> 
         <a href="{{ route('debt:notification') }}" type="button" class="btn btn-success">
-            @if ($notify == 1)
-                Notification
-            @else
-                Notifications
-            @endif
+            {{ trans_choice('debt_home.notify', $notify) }}
             <span class="badge badge-light">{{ $notify }}</span>
         </a>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -34,9 +30,9 @@
                             {{ $debt->name }}
                         </h4>
                         @if ($debt->debt->amount > 0)
-                            Debt: <span style="color:red">€ {{-$debt->debt->amount  / 100 }} </span>
+                            {{ __('debt_home.debt') }}: <span style="color:red">€ {{-$debt->debt->amount  / 100 }} </span>
                         @else
-                            Credit: <span style="color:green">€ {{-$debt->debt->amount  / 100 }} </span>    
+                            {{ __('debt_home.credit') }}: <span style="color:green">€ {{-$debt->debt->amount  / 100 }} </span>    
                         @endif
                         
                     </div>
@@ -46,13 +42,13 @@
                             <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
                             @if ($debt->debt->amount > 0)
                                 @if ($debt->marked)
-                                    <input type="submit" class="btn btn-info form-control" value="Waiting for Confirm" disabled>
+                                    <input type="submit" class="btn btn-info form-control" value="{{ __('debt_home.confirm') }}" disabled>
                                 @else
-                                    <input type="submit" class="btn btn-info form-control" value="Mask as Settle">    
+                                    <input type="submit" class="btn btn-info form-control" value="{{ __('debt_home.mark') }}">    
                                 @endif
                                 
                             @else
-                                <input type="submit" class="btn btn-primary form-control" value="Settle">
+                                <input type="submit" class="btn btn-primary form-control" value="{{ __('debt_home.settle') }}">
                             @endif
                         </form>
                     </div>

@@ -5,17 +5,17 @@
     <h3>{{ $list->name }} - {{ $user->name }}</h3>
     
     <div>
-        @includeWhen(isset($item_err), 'error', ['message' => "The Item $item_err has already been inserted into the list $list->name"])
-        @includeWhen(isset($user_err), 'error', ['message' => "User $user_err does not EXIST"])
-        @includeWhen(isset($guest_err), 'error', ['message' => "User $guest_err has already been added to $list->name "])
+        @includeWhen(isset($item_err), 'error', ['message' => __('manage_list.item-err', ['item' => $item_err, 'list' => $list->name])])
+        @includeWhen(isset($user_err), 'error', ['message' => __('manage_list.user-err', ['name' => $user_err])])
+        @includeWhen(isset($guest_err), 'error', ['message' => __('manage_list.guest-err', ['guest' => $guest_err, 'list' => $list->name])])
     </div>
 
     <ul class="nav nav-tabs" role="tablist" >
-        <li class="nav-item"><a class="nav-link" id="item-link" onclick="set_current('item', 'item-link');" data-toggle="tab" href="#item">List's Items</a></li>
-        <li class="nav-item"><a class="nav-link" id="guest-link" onclick="set_current('guest', 'guest-link');" data-toggle="tab" href="#guest">List's Guests</a></li>
+        <li class="nav-item"><a class="nav-link" id="item-link" onclick="set_current('item', 'item-link');" data-toggle="tab" href="#item">{{ __('manage_list.item-tab') }}</a></li>
+        <li class="nav-item"><a class="nav-link" id="guest-link" onclick="set_current('guest', 'guest-link');" data-toggle="tab" href="#guest">{{ __('manage_list.guest-tab') }}</a></li>
 
         @if (isset($guest_only_handle))
-            <li class="nav-item"><a class="nav-link" id="settings-link" onclick="set_current('settings', 'settings-link');" data-toggle="tab"  href="#settings">Settings</a></li>    
+            <li class="nav-item"><a class="nav-link" id="settings-link" onclick="set_current('settings', 'settings-link');" data-toggle="tab"  href="#settings">{{ __('manage_list.settings-tab') }}</a></li>    
         @endif
     </ul>
     <br>

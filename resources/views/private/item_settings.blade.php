@@ -4,34 +4,34 @@
 <meta name="csrf-token" content="{{ csrf_token() }}"> 
 <script src="{{ URL::to('/') }}/static/scripts/run_ajax.js"></script>
 
-    <h3>Item Info</h3>
-    <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">Back to {{ $list->name }}</a></h6>
+    <h3>{{ __('item_settings.title') }}</h3>
+    <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('item_settings.back') }}{{ $list->name }}</a></h6>
     <hr>
 
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Item Info</h4>
+                <h4 class="card-title">{{ __('item_settings.info') }}</h4>
                     <form id="rename-form">
                     
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">{{ __('item_settings.name') }}</label>
                             <div class="form-inline">
                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                 <input class="form-control input" type="text" id="name-field" name="name" value="{{ $item->name }}">
-                                <input type="submit" class="btn btn-primary">
+                                <input type="submit" class="btn btn-primary" value="{{ __('item_settings.set-name') }}">
                             </div>
                         </div>
                     </form>
                     <hr>
                     <form id="price-form">
                         <div class="form-group">
-                            <label for="price">Price</label>
+                            <label for="price">{{ __('item_settings.price') }}</label>
                             <div class="form-inline">
                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                 <input class="form-control input" type="number" min="0.01" step="0.01" id="price" name="price" value="{{ $item->price / 100 }}">
-                                <input type="submit" value="update price" class="btn btn-primary" >
+                                <input type="submit" value="{{ __('item_settings.set-price') }}" class="btn btn-primary" >
                             </div> 
                         </div>
                     </form>
@@ -40,11 +40,11 @@
                     <div class="form-group col-xs-6">
                         <form id="url-form">
                             <div class="">
-                                <label for="url">URL</label>
+                                <label for="url">{{ __('item_settings.url') }}</label>
                                 <div class="form-inline">
                                     <input type="hidden" value="{{ $item->id }}" name="item">
                                     <input class="form-control input" type="url" id="url-field" name="url" value="{{ $item->site }}">
-                                    <input type="submit" class="btn btn-primary">
+                                    <input type="submit" class="btn btn-primary" value="{{ __('item_settings.set-url') }}">
                                 </div>                        
                             </div>
                         </form>
@@ -54,7 +54,7 @@
                             @endif
                         id="remove-url-form" class="form-inline">
                             <input type="hidden" value="{{ $item->id }}" name="item">
-                            <input type="submit" class="btn btn-danger">
+                            <input type="submit" value="{{ __('item_settings.remove-url') }}" class="btn btn-danger">
                         </form>
                     </div>
 
@@ -63,20 +63,20 @@
         <br>
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Item Image</h4>
-                @include('private.picture_upload', ['set_pic_url' => 'item-settings:set-pic', 'del_pic_url' => 'item-settings:del-pic', 'has_pic' => $item->picture, 'id' => $item->id, 'target' => 'Item'])
+                <h4 class="card-title">{{ __('item_settings.image') }}</h4>
+                @include('private.picture_upload', ['set_pic_url' => 'item-settings:set-pic', 'del_pic_url' => 'item-settings:del-pic', 'has_pic' => $item->picture, 'id' => $item->id, 'target' => __('item_settings.target')])
             </div>
         </div>
         <br>
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Delete</h4>
+                <h4 class="card-title">{{ __('item_settings.delete') }}</h4>
                 <div class="form-inline">
                     <form method="POST" class="col" action="{{ route('list:remove_item') }}">
                         @csrf
                         <input type="hidden" value="{{ $item->id }}" name="item">
                         <input type="hidden" value="{{ $list->id }}" name="list">
-                        <input type="submit" class="btn btn-danger form-control" value="Delete">
+                        <input type="submit" class="btn btn-danger form-control" value="{{ __('item_settings.delete') }}">
                     </form>
                 </div>
             </div>

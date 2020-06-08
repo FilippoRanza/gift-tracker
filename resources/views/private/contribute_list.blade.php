@@ -5,7 +5,7 @@
 
 @section('body')
     @if ($active_list)
-        <h2>My Active Contribute List</h2>
+        <h2>{{ __('contribute_list.active-title') }}</h2>
         <ul class="list-group">
             @foreach ($active_list as $list)
                 <li class="list-group-item">
@@ -18,7 +18,7 @@
                                     </a>
                                 </h4>
                                 <ul>
-                                    <li>Owner: {{ $list->owner }} </li>
+                                    <li>{{ __('contribute_list.owner') }}: {{ $list->owner }} </li>
                                 </ul>
                             </div>
                             <div class="col-sm-3">
@@ -26,9 +26,9 @@
                                     @csrf
                                     <input type="hidden" value="{{ $list->id }}" name="list"> 
                                     @if ($list->poll)
-                                        <input type="submit" class="btn btn-warning form-control" value="Unsubscribe" disabled>
+                                        <input type="submit" class="btn btn-warning form-control" value="{{ __('contribute_list.unsubscribe') }}" disabled>
                                     @else
-                                        <input type="submit" class="btn btn-warning form-control" value="Unsubscribe">    
+                                        <input type="submit" class="btn btn-warning form-control" value="{{ __('contribute_list.unsubscribe') }}">    
                                     @endif
                                 </form>
                             </div>
@@ -39,7 +39,7 @@
         </ul>
     @endif
     @if ($archived_list)    
-        <h2>My Archived Contribute List</h2>
+        <h2>{{ __('contribute_list.archived-title') }}</h2>
         <ul class="list-group">
             @foreach ($archived_list as $list)
                 <li class="list-group-item">
@@ -52,7 +52,7 @@
                                     </a>
                                 </h4>
                                 <ul>
-                                    <li>Owner: {{ $list->owner }} </li>
+                                    <li>{{ __('contribute_list.owner') }}: {{ $list->owner }} </li>
                                 </ul>
                             </div>
                         </div>

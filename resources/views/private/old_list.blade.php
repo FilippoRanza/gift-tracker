@@ -13,7 +13,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        List:
+                        {{ __('old_list.list') }}:
                     </div>
                     <div class="col-sm-6">
                         {{ $list->name }}
@@ -21,7 +21,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        Price:
+                        {{ __('old_list.price') }}:
                     </div>
                     <div class="col-sm-6">
                        € {{ $data->price / 100 }}
@@ -29,7 +29,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        Buyer:
+                        {{ __('old_list.buyer') }}:
                     </div>
                     <div class="col-sm-6">
                         {{ $data->buyer }}
@@ -38,7 +38,7 @@
                 @if ($list->recipient)
                     <div class="row">
                         <div class="col-sm-6">
-                            Recipient:
+                            {{ __('old_list.recipient') }}:
                         </div>
                         <div class="col-sm-6">
                             {{ $list->recipient }}
@@ -48,7 +48,7 @@
                 <hr>
                 <div class="row">
                     <div class="col">
-                        <h4>Patecipants</h4>
+                        <h4>{{ __('old_list.partecipants') }}</h4>
                     </div>
                 </div>          
                 <div class="row">
