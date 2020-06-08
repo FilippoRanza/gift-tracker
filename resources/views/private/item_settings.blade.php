@@ -2,30 +2,7 @@
 
 @section('body')
 <meta name="csrf-token" content="{{ csrf_token() }}"> 
-<script>
-    function run_ajax(url, form, callback = undefined) {
-        
-        var data = $(form).serializeArray();
-        var post_data = {'_token': $('meta[name=csrf-token]').attr('content')};
-        var key;
-        for(key in data) {
-            var obj = data[key];
-            post_data[obj['name']] = obj['value'];   
-        }
-        $.ajax({
-            url: url,
-            data: post_data,
-            type: "post",
-            dataType: "json",
-        }).done(function (json) {
-            console.log('ajax success');
-            if(callback !== undefined) {
-                callback(json);
-            }
-        });      
-    }
-
-</script>
+<script src="{{ URL::to('/') }}/static/scripts/run_ajax.js"></script>
 
     <h3>Item Info</h3>
     <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">Back to {{ $list->name }}</a></h6>
@@ -87,7 +64,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Item Image</h4>
-                @include('private.picture_upload', ['set_pic_url' => 'settings:set-profile-pic', 'del_pic_url' => 'settings:del-profile-pic', 'has_pic' => $item->picture  ])
+                @include('private.picture_upload', ['set_pic_url' => 'item-settings:set-pic', 'del_pic_url' => 'item-settings:del-pic', 'has_pic' => $item->picture, 'id' => $item->id])
             </div>
         </div>
         <br>

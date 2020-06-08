@@ -15,11 +15,9 @@
         <div class="col-sm-1">
         </div>
         <div class="col-sm-6">
-            <form id="image-form" method="POST" action="{{ route($set_pic_url) }}">
+            <form id="image-form">
                 @csrf
-                <span id="image-preview">
-
-                </span>
+                <span id="image-preview"></span>
                 <br>
                 <span id="image-select-container">
                     <div class="custom-file">
@@ -28,24 +26,37 @@
                     </div>
                     
                 </span>
+                @if (isset($id))
+                    <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
+                @endif
                 <input type="hidden" id="upload-data" name="image">
-                <input type="button" onclick="post();" value="Set Profile Picture" class="btn btn-primary form-control">
+                <input type="submit"  value="Set Profile Picture" class="btn btn-primary form-control">
             </form>
         </div>
-    </div>  
-    @if ($has_pic)
+    </div> 
+    <div 
+        @if (!$has_pic)
+            hidden
+        @endif
+        id="delete-div"
+    >
         <hr>
         <div class="row">
             <div class="col-sm-1">
             </div>
             <div class="col-sm-6">
-                <form method="POST" action="{{ route($del_pic_url) }}">
+                <form id="delete-picture">
                     @csrf
+
+                    @if (isset($id))
+                        <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
+                    @endif
                     <input type="submit" class="btn btn-danger form-control" value="Remove Profile Picture">
                 </form>    
             </div>
         </div>
-    @endif
+    </div> 
+
 
     <div class="modal" id="image-selector" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -75,5 +86,37 @@
             var preview = document.getElementById('preview-container');
             preview.innerHTML = prev;
         });
+        @if(isset($update_id))
+        var update = "#{{ $update_id }}";
+        @else
+        var update = undefined;
+        @endif
+
+        $('#image-form').on('submit', function() {
+            
+            if (setup_post()){
+                run_ajax("{{ route($set_pic_url) }}", "#image-form", function(json) {
+                   if(json['update']) {
+                       $('#delete-div').removeAttr('hidden');
+                       $('#delete-div').show();
+                       if(update !== undefined) {
+                            $(update).attr('src', `{{ URL::to('/') }}/storage/${json['picture']}`);
+                       }
+                   }
+                });
+            }
+            return false;
+        });
+
+        $('#delete-div').on('submit', function() {
+            run_ajax("{{ route($del_pic_url) }}", "#delete-div", function(json) {
+                if(json['update']) {
+                    $('#delete-div').hide();
+                }
+            })
+            return false;
+        });
+
+
     </script> 
 </span>

@@ -49,15 +49,18 @@ function remove_image() {
     console.log('remove');
 }
 
-function post() {
+function setup_post() {
     var preview = document.getElementById('image-preview');
     if(preview.hasChildNodes()) {
         var canvas = preview.childNodes[0];
         var data = canvas.toDataURL('image/png');
         var input  = document.getElementById('upload-data');
         input.value = data;
-        document.forms['image-form'].submit();
+        stat = true;
+    } else {
+        stat = false;
     }
+    return stat;
 }
 
 

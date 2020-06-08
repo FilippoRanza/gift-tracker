@@ -2,7 +2,8 @@
 
 
 @section('body')
-
+<meta name="csrf-token" content="{{ csrf_token() }}"> 
+<script src="{{ URL::to('/') }}/static/scripts/run_ajax.js"></script>
 
 <h2>Settings</h2>
 <hr>
@@ -12,7 +13,7 @@
         
         <div class="card-body">
             <h4 class="card-title">Set Profile Picture</h4>  
-            @include('private.picture_upload', ['set_pic_url' => 'settings:set-profile-pic', 'del_pic_url' => 'settings:del-profile-pic', 'has_pic' => $user->profile_pic  ])
+            @include('private.picture_upload', ['set_pic_url' => 'settings:set-profile-pic', 'del_pic_url' => 'settings:del-profile-pic', 'has_pic' => $user->profile_pic, 'update_id' => 'profile-pic-navbar'])
         </div>
     </div>
     <br>

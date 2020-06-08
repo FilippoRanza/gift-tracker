@@ -28,7 +28,7 @@
             <li class="nav-item">
               <a class="nav-link">
                 @if ($user->profile_pic)
-                  <img class="navbar-nav-svg rounded" src="{{ URL::to('/') }}/storage/{{ $user->profile_pic }}">
+                  <img class="navbar-nav-svg rounded" id="profile-pic-navbar" src="{{ URL::to('/') }}/storage/{{ $user->profile_pic }}">
                 @else
                   {{ $user->name }}  
                 @endif

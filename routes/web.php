@@ -116,10 +116,17 @@ Route::group(['prefix' => '/user/settings', 'middleware' => 'auth'], function ()
 //item settings 
 Route::group(['prefix' => '/item/settings', 'middleware' => 'auth'], function() {
     Route::post('/index', ['as' => 'item-settings:index', 'uses' => 'ItemSettingsController@index']);
+    
     Route::post('/set/price', ['as' => 'item-settings:update-price', 'uses' => 'ItemSettingsController@update_price']);
+    
     Route::post('/set/url', ['as' => 'item-settings:update-url', 'uses' => 'ItemSettingsController@update_url']);
     Route::post('/delete/url', ['as' => 'item-settings:del-url', 'uses' => 'ItemSettingsController@delete_url']);
+    
     Route::post('/set/name', ['as' => 'item-settings:rename', 'uses' => 'ItemSettingsController@update_name']);
+
+    Route::post('/set/picture', ['as' => 'item-settings:set-pic', 'uses' => 'ItemPictureController@set_item_picture']);
+    Route::post('/delete/picture', ['as' => 'item-settings:del-pic', 'uses' => 'ItemPictureController@remove_item_picture']);
+
 });
 
 

@@ -41,7 +41,11 @@
                     <li class="list-group-item">
                         <div class="card" style="border:0px">
                             <div class="card-body">
-                                <h3 class="card-title">{{ $item->name }}</h3>
+                                <h3 class="card-title">
+                                    @if ($item->picture)
+                                        <img src="{{ URL::to('/') }}/storage/{{ $item->picture }}" class="profile-pic">
+                                    @endif
+                                    {{ $item->name }}</h3>
                                 <h6 class="card-title">Price € {{ $item->price / 100 }}</h6>
                                 <div class="input-group">
                                     @if ($list->poll)
