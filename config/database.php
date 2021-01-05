@@ -1,13 +1,8 @@
 <?php
 
 use Illuminate\Support\Str;
-$fake_database = [
-    'host' => '',
-    'port' => '',
-    'pass' => '',
-    'user' => ''
-];
-$DATABASE = parse_url(env('DATABASE_URL', $fake_database));
+
+$DATABASE = parse_url(env('DATABASE_URL', 'postgres://aaa:aaa@aaa:1234/aaa'));
 
 
 
