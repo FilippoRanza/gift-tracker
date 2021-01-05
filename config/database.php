@@ -1,8 +1,13 @@
 <?php
 
 use Illuminate\Support\Str;
-
-$DATABASE = parse_url(env('DATABASE_URL', ''));
+$fake_database = [
+    'host' => '',
+    'port' => '',
+    'pass' => '',
+    'user' => ''
+];
+$DATABASE = parse_url(env('DATABASE_URL', $fake_database));
 
 
 
