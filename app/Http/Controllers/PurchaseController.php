@@ -154,12 +154,17 @@ class PurchaseController extends Controller
     }
 
     function make_purchase($list, $item) {
-        $this->compute_guests_debts($list, $item);
-        $this->update_purchase($list, $item);
-
-        $list->done = true;
-        $list->save();
-        return Redirect::to(route('purchase:list'));
+        
+        if(!$list->done) {
+            $this->compute_guests_debts($list, $item);
+            $this->update_purchase($list, $item);
+            $list->done = true;
+            $list->save();
+            $redirect =  Redirect::to(route('purchase:list'));
+        } else {
+            abort(404);
+        }
+        return $redirect;
     }
 
 }
