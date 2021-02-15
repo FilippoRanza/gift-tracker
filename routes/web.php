@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::group(['prefix' => '/login'], function() {
+    Route::get('/home', ['as' => 'login', 'uses' => 'WorldHomeController@home']);
     // user login
-    Route::get('/login', ['as' => 'login', 'uses' => 'LoginRegisterManager@login_page']);
+    Route::get('/login', ['as' => 'login:page', 'uses' => 'LoginRegisterManager@login_page']);
     Route::post('/login', ['as' => 'login:action', 'uses' => 'LoginRegisterManager@login_action']);
 
 
