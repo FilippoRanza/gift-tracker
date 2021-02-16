@@ -18,10 +18,14 @@
         <div class="col-lg-12">
         </br>
           <div class="jumbotron">
-            <h1 class="display-4 main_title">Gift Tracker</h1>
-            <p class="lead">Hai mai avuto problemi nel fare regali od acquisti personali che richiedessero una spesa comune? E' difficile tener traccia di chi 
-            ha già saldato il suo debito e chi no? Se la risposta è si, allora sei nel posto giusto!</p>
-            
+            <div class="col-lg-11">
+              <h1 class="display-4 main_title">Gift Tracker</h1>
+              <p class="lead">Hai mai avuto problemi nel fare regali od acquisti personali che richiedessero una spesa comune? E' difficile tener traccia di chi 
+              ha già saldato il suo debito e chi no? Se la risposta è si, allora sei nel posto giusto!</p>
+            </div>
+            <div class="col-lg-1 text-center">
+              <img src="https://img.icons8.com/nolan/96/question-mark.png"/> 
+            </div>
             <hr class="my-4">
             <p>Gift Traker è il sito che ti permette di seguire ogni passaggio dalla creazione di una lista di oggetti all'acquisto degli stessi
             in modo facile e veloce. Ogni membro dovrà registrarsi e potrà cosi nell'apposita sezione gestire tutte le transazioni per suddividere la spesa.</p>
@@ -30,7 +34,6 @@
               <button class="btn btn-secondary btn-lg" action="{{ route('register:page') }}" > Registrazione </button>
             </p>
           </div>
-          <img src="https://img.icons8.com/nolan/96/question-mark.png"/> 
         </div>
         
 
