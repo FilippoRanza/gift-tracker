@@ -64,7 +64,7 @@
       <div class="col-lg-4">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
-            
+            <!-- -->
             <h1 class="display-4 main_title"> <img class="width=90% height=auto" src="https://img.icons8.com/nolan/100/combo-chart.png"/> Debitore o Creditore?</h1>
             <p class="lead">Salda i tuoi debiti o controlla i tuoi creditori con un click</p>
           </div>
