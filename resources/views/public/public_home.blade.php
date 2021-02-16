@@ -30,8 +30,8 @@
             <p>Gift Traker è il sito che ti permette di seguire ogni passaggio dalla creazione di una lista di oggetti all'acquisto degli stessi
             in modo facile e veloce. Ogni membro dovrà registrarsi e potrà cosi nell'apposita sezione gestire tutte le transazioni per suddividere la spesa.</p>
             <p class="lead text-center">
-              <button class="btn btn-secondary  btn-lg" action="{{ route('login:page') }}" > Login </button>
-              <button class="btn btn-secondary  btn-lg" action="{{ route('register:page') }}" > Registrazione </button>
+              <button class="btn btn-secondary  btn-lg"  data-toggle="tooltip" data-placement="top" title="Accedi con il tuo account" action="{{ route('login:page') }}" > Login </button>
+              <button class="btn btn-secondary  btn-lg"  data-toggle="tooltip" data-placement="top" title="Non hai un account? Registrati ora!" action="{{ route('register:page') }}" > Registrazione </button>
             </p>
           </div>
         </div>
