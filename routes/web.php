@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['prefix' => '/login'], function() {
+Route::group(['prefix' => '/public'], function() {
     Route::get('/home', ['as' => 'login', 'uses' => 'WorldHomeController@home']);
     // user login
     Route::get('/login', ['as' => 'login:page', 'uses' => 'LoginRegisterManager@login_page']);

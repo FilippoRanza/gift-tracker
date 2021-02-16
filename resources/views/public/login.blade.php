@@ -6,6 +6,12 @@
 @endsection
 
 
+
+@section('navbar')
+  @include('public.public_navbar')
+@endsection
+
+
 @section('body')
 
     @if (isset($login_error))

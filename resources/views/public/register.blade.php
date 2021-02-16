@@ -2,6 +2,12 @@
 
 @section('title', 'register')
 
+
+@section('navbar')
+  @include('public.public_navbar')
+@endsection
+
+
 @section('body')
     @includeWhen(isset($password_error), 'error', ['message' => "Password and Confirm Field don't match"])
     @if (isset($username_error))

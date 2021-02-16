@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Redirect;
 class LoginRegisterManager extends Controller
 {
     public function login_page() {
-        return view('login.login');
+        return view('public.login');
     }
     public function login_action(Request $req) {
         return $this->run_login($req);
     }
 
     public function register_page() {
-        return view('login.register');
+        return view('public.register');
     }
     public function register_action(Request $req) {
         
@@ -32,11 +32,11 @@ class LoginRegisterManager extends Controller
                 
                 $output = $this->run_login($req);
             } else {
-                $output = view('login.register', ['username_error' => $req->name]);
+                $output = view('public.register', ['username_error' => $req->name]);
             }
 
         } else {
-            $output = view('login.register', ['password_error' => true]);
+            $output = view('public.register', ['password_error' => true]);
         }
         
 
@@ -63,7 +63,7 @@ class LoginRegisterManager extends Controller
         if (Auth::attempt($credentials)) {
             $output = Redirect::to(route('user:home'));
         } else {
-            $output = view('login.login', ['login_error' => true]);
+            $output = view('public.login', ['login_error' => true]);
         }
         return $output;
     }
