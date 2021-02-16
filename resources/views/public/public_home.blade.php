@@ -14,14 +14,25 @@
   <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-          <img src="https://img.icons8.com/nolan/96/question-mark.png"/>
-          Hai mai avuto problemi nel fare regali od acquisti personali che richiedessero una spesa comune? E' difficile tener traccia di chi 
-          ha già saldato il suo debito e chi no? Se la risposta è si, allora sei nel posto giusto!
-          <br>
-          Gift Traker è il sito che ti permette di seguire ogni passaggio dalla creazione di una lista di oggetti all'acquisto degli stessi
-          in modo facile e veloce. Ogni membro dovrà registrarsi e potrà cosi nell'apposita sezione gestire tutte le transazioni per suddividere la 
-          spesa.
-          
+
+          <div class="jumbotron">
+          <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+              <hr class="my-4">
+              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+              <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+          </div>
+
+            <!-- <img src="https://img.icons8.com/nolan/96/question-mark.png"/> 
+            Hai mai avuto problemi nel fare regali od acquisti personali che richiedessero una spesa comune? E' difficile tener traccia di chi 
+            ha già saldato il suo debito e chi no? Se la risposta è si, allora sei nel posto giusto!
+            <br>
+            Gift Traker è il sito che ti permette di seguire ogni passaggio dalla creazione di una lista di oggetti all'acquisto degli stessi
+            in modo facile e veloce. Ogni membro dovrà registrarsi e potrà cosi nell'apposita sezione gestire tutte le transazioni per suddividere la 
+            spesa.
+            -->
         </div>
     </div>
     <div class="row">
