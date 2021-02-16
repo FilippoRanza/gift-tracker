@@ -7,6 +7,7 @@
 @section('navbar')
   @include('public.public_navbar')
 @endsection
+
 @section('body')
 <h1>Ciao</h1>
 
