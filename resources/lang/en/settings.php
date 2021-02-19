@@ -10,5 +10,5 @@ return [
     'set-locale' => 'Set Language',  
     'error-msg' => 'The old password is incorrect, check again',
     'reset-password' => 'Reset Password',
-    'old-password' => 'old password',
+    'old-password' => 'Old Password',
 ];

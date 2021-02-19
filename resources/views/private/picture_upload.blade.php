@@ -17,9 +17,7 @@
     </style>
 
     <div class="row">
-        <div class="col-sm-1">
-        </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 offset-sm-2">
             <form id="image-form">
                 @csrf
                 <span id="old-picture" class="preview-pic">

@@ -17,7 +17,7 @@
     
         <div class="col-lg-12 ">
         </br>
-          <div class="jumbotron">
+          <div class="jumbotron jumbotron-color">
         
                 
               <h1 class="display-4 main_title">Gift Tracker</h1>
@@ -42,7 +42,7 @@
     <div class="row">
 
       <div class="col-lg-4 pb-5">
-        <div class="jumbotron jumbotron-fluid h-100">
+        <div class="jumbotron jumbotron-fluid jumbotron-color h-100">
           <div class="container">
             
             <h1 class="display-4 main_title"> <img class="icon_home" src="https://img.icons8.com/nolan/96/wedding-gift.png"/> Catalogo</h1>
@@ -52,7 +52,7 @@
       </div>
 
       <div class="col-lg-4 pb-5">
-        <div class="jumbotron jumbotron-fluid h-100">
+        <div class="jumbotron jumbotron-fluid jumbotron-color h-100">
           <div class="container">
             
             <h1 class="display-4 main_title"> <img class="icon_home" src="https://img.icons8.com/dusk/64/000000/coins.png"/> Acquisti</h1>
@@ -62,7 +62,7 @@
       </div>
 
       <div class="col-lg-4 pb-5">
-        <div class="jumbotron jumbotron-fluid h-100">
+        <div class="jumbotron jumbotron-fluid jumbotron-color h-100">
           <div class="container">
             <!-- -->
             <h1 class="display-4 main_title"> <img class="icon_home" src="https://img.icons8.com/nolan/100/combo-chart.png"/> Debitore o Creditore?</h1>
