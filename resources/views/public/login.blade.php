@@ -30,7 +30,7 @@
                         <br>
                         <input type="password" required="required" name="password"  class="form-control" placeholder="Password">
                         <br>
-                        <input type="submit" class="btn btn-primary">
+                        <input type="submit" class="btn btn-secondary text-center" value="Accedi">
                     </form>
 
 

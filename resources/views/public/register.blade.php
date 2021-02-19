@@ -29,7 +29,7 @@
                         <input type="email" required="required" name="email"  class="form-control input" placeholder="Email">
                         <br>
                         @include('input_new_password')
-                        <input type="submit" class="btn btn-primary">
+                        <input type="submit" class="btn btn-secondary" value="Registrati">
                     </form>
                 </div>
             </div>
