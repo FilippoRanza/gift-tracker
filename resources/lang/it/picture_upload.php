@@ -3,8 +3,8 @@
 
 return [
 	'browse' => 'Imposta Immagine',
-	'select' => 'Imposta :target ',
-	'remove' => 'Rimuovi :target',
+	'select' => 'Imposta Immagine',
+	'remove' => 'Rimuovi Immagine',
 	'adjust' => 'Ridimensiona Immagine',
 	'save' => 'Salva',
 	'close' => 'Chiudi',

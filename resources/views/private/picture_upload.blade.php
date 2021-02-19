@@ -27,7 +27,7 @@
                 <br>
                 <span id="image-select-container">
                     <div class="custom-file">
-                        <input id="image-select" class="custom-file-input"  type="file" accept="image/*" onchange="toogle_image_selector(event)">
+                        <input id="image-select" class="custom-file-input" type="file" accept="image/*" onchange="toogle_image_selector(event)">
                         <label class="custom-file-label" for="image-select">{{ __('picture_upload.browse') }}</label>
                     </div>
                     

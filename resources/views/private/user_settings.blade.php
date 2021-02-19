@@ -11,7 +11,7 @@
 <div class="container">
     <div class="card">
         
-        <div class="card-body">
+        <div class="card-body jumbotron-color">
             <h4 class="card-title">{{ __('settings.set-pic') }}</h4>  
             @include('private.picture_upload', ['set_pic_url' => 'settings:set-profile-pic', 'del_pic_url' => 'settings:del-profile-pic', 'has_pic' => $user->profile_pic, 'update_id' => 'profile-pic-navbar', 'target' => 'Profile'])
         </div>
@@ -20,7 +20,7 @@
     <div class="card">
         <div class="col-sm-1">
         </div>
-        <div class="card-body">
+        <div class="card-body jumbotron-color">
             <h4 class="card-title">{{ __('settings.reset-password') }}</h4>
             <div class="row">
                 <div class="col-sm-1">
@@ -43,7 +43,7 @@
     <div class="card">
         <div class="col-sm-1">
         </div>
-        <div class="card-body">
+        <div class="card-body jumbotron-color">
             <h4 class="card-title">{{ __('settings.set-locale') }}</h4>
             <div class="col-sm-1">
             </div>
