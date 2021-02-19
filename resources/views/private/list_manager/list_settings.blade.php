@@ -62,9 +62,9 @@
                         <input type="text" id="set-recipient" required="required" class="form-control" placeholder="recipient" value="{{ $recipient }}" name="recipient">
                     
                         @if ($recipient)
-                            <button class="btn btn-primary " id="add-recipient" >{{ __('list_settings.update') }}</button> 
+                            <button class="btn btn-secondary " id="add-recipient" >{{ __('list_settings.update') }}</button> 
                         @else
-                            <button class="btn btn-primary " id="add-recipient">{{ __('list_settings.set') }}</button> 
+                            <button class="btn btn-secondary " id="add-recipient">{{ __('list_settings.set') }}</button> 
                         @endif
                     </form>
                     @if($recipient)

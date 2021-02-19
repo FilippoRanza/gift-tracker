@@ -8,4 +8,5 @@ return [
 	'adjust' => 'Ridimensiona Immagine',
 	'save' => 'Salva',
 	'close' => 'Chiudi',
+	'select_label' => 'Seleziona',
 ];

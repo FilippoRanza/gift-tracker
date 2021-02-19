@@ -36,7 +36,7 @@
                                     </div>
                                 
                                     <br>
-                                    <button type="submit" class="btn btn-primary">{{ __('personal_list.add-list-button') }}</button>
+                                    <button type="submit" class="btn btn-secondary">{{ __('personal_list.add-list-button') }}</button>
                                 </form>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                         
                                             <div class="form-row">
                                                 <div class="col">
-                                                    <a class="btn btn-primary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
+                                                    <a class="btn btn-secondary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
                                                 </div>
                                                 <div class="col">
                                                     <form method="POST" action="{{ route('list:delete') }}">
@@ -82,7 +82,7 @@
                                 <h3 class="card-title">{{ __('personal_list.add-list-advice') }}</h3>
                                 <h5 class="card-subtitle">{{ __('personal_list.add-list-advice-subtitle') }}</h5>
                                 <form autofocus onsubmit="document.getElementById('add-link').click();">
-                                    <button class="btn btn-primary form-control"  type="submit">{{ __('personal_list.add-list-advice-button') }}</button>
+                                    <button class="btn btn-secondary form-control"  type="submit">{{ __('personal_list.add-list-advice-button') }}</button>
                                 </form>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                         - {{ $list->updated_at->diffForHumans() }}    
                                         @endif</h4>
                                     <div class="input-group">
-                                        <a class="btn btn-primary" href="{{ route('list:old', ['id' => $list->id]) }}">
+                                        <a class="btn btn-secondary" href="{{ route('list:old', ['id' => $list->id]) }}">
                                             {{ __('personal_list.go-to-list') }}
                                         </a>
                                     </div>

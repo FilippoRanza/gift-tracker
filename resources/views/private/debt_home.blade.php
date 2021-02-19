@@ -48,7 +48,7 @@
                                 @endif
                                 
                             @else
-                                <input type="submit" class="btn btn-primary form-control" value="{{ __('debt_home.settle') }}">
+                                <input type="submit" class="btn btn-secondary form-control" value="{{ __('debt_home.settle') }}">
                             @endif
                         </form>
                     </div>

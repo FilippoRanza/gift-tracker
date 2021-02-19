@@ -10,6 +10,11 @@
      crossorigin="anonymous"></script>
                 
     <script src="{{ URL::to('/') }}/static/scripts/profile_pic_util.js"></script>
+    <style>
+        .custom-file-input ~ .custom-file-label::after {
+            content: "{{ __('picture_upload.select_label')}}";
+        }
+    </style>
 
     <div class="row">
         <div class="col-sm-1">
@@ -26,8 +31,8 @@
                 <span  id="image-preview"></span>
                 <br>
                 <span id="image-select-container">
-                    <div class="custom-file">
-                        <input id="image-select" class="custom-file-input" type="file" accept="image/*" onchange="toogle_image_selector(event)">
+                    <div class="custom-file" id="image-select">
+                        <input id="image-select" class="custom-file-input"  type="file" accept="image/*" onchange="toogle_image_selector(event)" aria-describedby="fileHelp">
                         <label class="custom-file-label" for="image-select">{{ __('picture_upload.browse') }}</label>
                     </div>
                     
@@ -36,7 +41,7 @@
                     <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
                 @endif
                 <input type="hidden" id="upload-data" name="image">
-                <input type="submit"  value="{{ __('picture_upload.select', ['target' => $target]) }}" class="btn btn-primary form-control">
+                <input type="submit"  value="{{ __('picture_upload.select', ['target' => $target]) }}" class="btn btn-secondary form-control">
             </form>
         </div>
     </div> 
@@ -82,7 +87,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" onclick="remove_image();" data-dismiss="modal">{{ __('picture_upload.close') }}</button>
-              <button type="button" class="btn btn-primary" onclick="get_cropped_image();">{{ __('picture_upload.save') }}</button>
+              <button type="button" class="btn btn-secondary" onclick="get_cropped_image();">{{ __('picture_upload.save') }}</button>
             </div>
           </div>
         </div>

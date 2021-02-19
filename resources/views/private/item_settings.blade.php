@@ -20,7 +20,7 @@
                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                 <input class="form-control input" type="text" id="name-field" name="name" value="{{ $item->name }}">
-                                <input type="submit" class="btn btn-primary" value="{{ __('item_settings.set-name') }}">
+                                <input type="submit" class="btn btn-secondary" value="{{ __('item_settings.set-name') }}">
                             </div>
                         </div>
                     </form>
@@ -31,7 +31,7 @@
                             <div class="form-inline">
                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                 <input class="form-control input" type="number" min="0.01" step="0.01" id="price" name="price" value="{{ $item->price / 100 }}">
-                                <input type="submit" value="{{ __('item_settings.set-price') }}" class="btn btn-primary" >
+                                <input type="submit" value="{{ __('item_settings.set-price') }}" class="btn btn-secondary" >
                             </div> 
                         </div>
                     </form>
@@ -44,7 +44,7 @@
                                 <div class="form-inline">
                                     <input type="hidden" value="{{ $item->id }}" name="item">
                                     <input class="form-control input" type="url" id="url-field" name="url" value="{{ $item->site }}">
-                                    <input type="submit" class="btn btn-primary" value="{{ __('item_settings.set-url') }}">
+                                    <input type="submit" class="btn btn-secondary" value="{{ __('item_settings.set-url') }}">
                                 </div>                        
                             </div>
                         </form>

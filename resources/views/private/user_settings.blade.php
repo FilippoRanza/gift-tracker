@@ -31,7 +31,7 @@
                         <input class="form-control" required="required" type="password" placeholder="{{ __('settings.old-password') }}" name="old">
                         <br>
                         @include('input_new_password')
-                        <input type="submit" class="btn btn-primary form-control" value="{{ __('settings.reset-password') }}">
+                        <input type="submit" class="btn btn-secondary form-control" value="{{ __('settings.reset-password') }}">
                     </form>
                 </div>    
             </div>

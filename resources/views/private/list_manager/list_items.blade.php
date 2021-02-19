@@ -12,7 +12,7 @@
                             <input  type="text" id="name"  required="required" class="form-control" name="name" id="name" placeholder="{{ __('list_items.name') }}" autofocus>
                             <label class="col-form-label" for="price">{{ __('list_items.price') }}</label>
                             <input type="number" id="price" min="0.01" required="required" class="form-control" step="0.01" id="price" name="price" placeholder="€">
-                            <button class="btn btn-primary form-control" id="add-item"  type="submit">{{ __('list_items.add-item') }}</button>        
+                            <button class="btn btn-secondary form-control" id="add-item"  type="submit">{{ __('list_items.add-item') }}</button>        
                         </form>
                     </div>
                 </div>    
@@ -67,9 +67,9 @@
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                                 @if ($guest_only)
-                                                    <input type="submit" class="btn btn-primary form-control" value="{{ __('list_items.select') }}" disabled>
+                                                    <input type="submit" class="btn btn-secondary form-control" value="{{ __('list_items.select') }}" disabled>
                                                 @else
-                                                    <input type="submit" class="btn btn-primary form-control" value="{{ __('list_items.select') }}">
+                                                    <input type="submit" class="btn btn-secondary form-control" value="{{ __('list_items.select') }}">
                                                 @endif
                                             </form>
                                             

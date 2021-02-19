@@ -34,7 +34,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-8">
-                            <a type="button" class="btn btn-primary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">{{ __('purchase_list.info') }}</a>
+                            <a type="button" class="btn btn-secondary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">{{ __('purchase_list.info') }}</a>
                         </div>
                     </div>
                 </div>                          

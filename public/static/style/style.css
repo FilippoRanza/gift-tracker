@@ -98,6 +98,7 @@ tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-to
 
 }
 
+
 /*-----KappaH */
 
 .jumbotron-color{
@@ -107,3 +108,5 @@ tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-to
 .base-background-color{
     background-color: #d9d9d9;
 }
+
+
