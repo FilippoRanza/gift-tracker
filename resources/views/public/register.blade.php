@@ -9,11 +9,15 @@
 
 
 @section('body')
-    @includeWhen(isset($password_error), 'error', ['message' => "Password and Confirm Field don't match"])
+    @includeWhen(isset($password_error), 'error', ['message' => "Il campo `password` ed il campo `conferma password` sono diversi: devono corrispondere"])
     @if (isset($username_error))
-        @include('error', ['message' => "$username_error has already been taken, try with a new one"])    
+        @include('error', ['message' => "Il nome utente: `$username_error` è già stato registrato. Sceglierne uno differente"])    
     @endif
     
+    @if (isset($email_error))
+        @include('error', ['message' => "L'indirizzo : `$email_error` è già registrato. Utilizzare un altro indirizzo"])    
+    @endif
+
 
     <br>    
     <br>

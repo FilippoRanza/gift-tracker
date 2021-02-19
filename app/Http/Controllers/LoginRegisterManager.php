@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
+define("RIDEF_NAME", 1);
+define("RIDEF_EMAIL", 2);
+define("CORRECT", 0);
+
 class LoginRegisterManager extends Controller
 {
     public function login_page() {
@@ -23,7 +27,8 @@ class LoginRegisterManager extends Controller
     public function register_action(Request $req) {
         
         if($req->password == $req->confirm) {
-            if ($this->check_user($req->name, $req->email)) {
+            $status = $this->check_account_info($req->name, $req->email);
+            if ($status == CORRECT) {
                 $new_user = new User();
                 $new_user->name = $req->name;
                 $new_user->email = $req->email;
@@ -31,8 +36,10 @@ class LoginRegisterManager extends Controller
                 $new_user->save();
                 
                 $output = $this->run_login($req);
-            } else {
+            } elseif ($status == RIDEF_NAME) {
                 $output = view('public.register', ['username_error' => $req->name]);
+            } elseif ($status == RIDEF_EMAIL) {
+                $output = view('public.register', ['email_error' => $req->email]);
             }
 
         } else {
@@ -42,7 +49,7 @@ class LoginRegisterManager extends Controller
 
         return $output;
     }
-
+    
 
     public function logout() {
         if(Auth::check()) {
@@ -51,11 +58,24 @@ class LoginRegisterManager extends Controller
         return Redirect::to(route('login'));
     }
 
+    function check_account_info($name, $email) {
+        if (! $this->check_user($name)) {
+            return RIDEF_NAME;
+        } elseif (! $this->check_email($email)) {
+            return RIDEF_EMAIL;
+        } else {
+            return CORRECT;
+        }
+    }
 
-    function check_user($name, $email) {
+    function check_user($name) {
         $n = User::all()->where('name', $name);
+        return ($n->count() == 0);
+    }
+
+    function check_email($email) {
         $e = User::all()->where('email', $email);
-        return ($n->count() == 0) && ($e->count() == 0);
+        return ($e->count() == 0);
     }
 
     function run_login(Request $req) {
