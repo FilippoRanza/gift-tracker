@@ -25,7 +25,7 @@
         <div class="container-fluid base-background-color">
             @yield('body')
         </div>
-        <div>
+        <div class="base-background-color">
             @yield('foot')
         </div>
         
