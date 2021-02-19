@@ -20,7 +20,7 @@
     <div class="container">
         <div class="form-group">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body jumbotron-color">
                     <h2 class="main_title">Gift Tracker</h2>
                     <form method="POST" action="{{ route('register:action') }}">
                         @csrf
@@ -35,7 +35,7 @@
             </div>
             <br>
             <div class="card">
-                <div class="card-body">
+                <div class="card-body jumbotron-color">
                     <p class="card-text  text-center">
                         Have an account? <a href="{{ route('login') }}">Log in</a>
                     </p>
