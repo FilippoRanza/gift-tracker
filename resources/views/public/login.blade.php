@@ -26,9 +26,9 @@
                     <h2 class="main_title">Gift Tracker</h2>
                     <form method="POST" action="{{ route('login:action') }}">
                         @csrf
-                        <input type="text" required="required" name="name" placeholder="user name"  class="form-control" autofocus>
+                        <input type="text" required="required" name="name" placeholder="Nome Utente"  class="form-control" autofocus>
                         <br>
-                        <input type="password" required="required" name="password"  class="form-control" placeholder="password">
+                        <input type="password" required="required" name="password"  class="form-control" placeholder="Password">
                         <br>
                         <input type="submit" class="btn btn-primary">
                     </form>
@@ -41,7 +41,7 @@
             <div class="card">
                 <div class="card-body">
                     <p class="card-text text-center">
-                        Don't have an account? <a href="{{ route('register:page') }}">Register</a>
+                        Non hai ancora un account? <a href="{{ route('register:page') }}">Registrati</a>
                     </p>
                 </div>
             </div>
