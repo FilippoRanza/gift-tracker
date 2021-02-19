@@ -65,9 +65,12 @@
             console.log(curr);
         }
         var avail = json['locales'];
+        var name_long = json['locales-long'];
         avail.forEach(element => {
+            console.log(element);
             var checked = element == curr ? 'checked' : '';
-            var html = `<div class="form-check"><input class="form-check-input" ${checked} name="locale" type="radio" value="${element}" id="radio-${element}"><label for="radio-${element}">${element}</label></div>`;
+            var name = name_long[element];
+            var html = `<div class="form-check"><input class="form-check-input" ${checked} name="locale" type="radio" value="${element}" id="radio-${element}"><label for="radio-${element}">${name}</label></div>`;
             $('#locale-selection').append(html);
         });
     });

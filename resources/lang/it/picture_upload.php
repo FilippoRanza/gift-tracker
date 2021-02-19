@@ -2,7 +2,7 @@
 
 
 return [
-	'browse' => 'Imposta Immagine',
+	'browse' => 'Seleziona Immagine',
 	'select' => 'Imposta Immagine',
 	'remove' => 'Rimuovi Immagine',
 	'adjust' => 'Ridimensiona Immagine',

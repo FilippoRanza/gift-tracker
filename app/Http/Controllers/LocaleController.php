@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 define("LOCALES", ['en', 'it']);
+define("LOCALES_LONG", ['en' => 'English 🇬🇧', 'it' => 'Italiano 🇮🇹']);
 
 class LocaleController extends Controller
 {
@@ -29,6 +30,7 @@ class LocaleController extends Controller
         $user = Auth::user();
         $output = [
             'locales' => LOCALES,
+            'locales-long' => LOCALES_LONG,
             'current' => $user->locale,
             'default' => App::getLocale(),
         ];
