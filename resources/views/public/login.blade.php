@@ -19,10 +19,10 @@
     @endif
     <br>
     <br>
-    <div class="container jumbotron-color">
+    <div class="container">
         <div class="form-group">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body jumbotron-color">
                     <h2 class="main_title">Gift Tracker</h2>
                     <form method="POST" action="{{ route('login:action') }}">
                         @csrf
@@ -39,7 +39,7 @@
             </div>
             <br>
             <div class="card">
-                <div class="card-body">
+                <div class="card-body jumbotron-color">
                     <p class="card-text text-center">
                         Non hai ancora un account? <a href="{{ route('register:page') }}">Registrati</a>
                     </p>
