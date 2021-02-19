@@ -3,7 +3,7 @@
     <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control" placeholder="{{ __('set_password.new-password') }}">
     <br>
     <div>
-        <p class="small grey">Una buona password dovrebbe contenere almeno una lettera minuscola, una mauscola, un numero, un carattere speciale e lunga almeno sei caratteri</p>
+        <p class="small text-secondary">Una buona password dovrebbe contenere almeno una lettera minuscola, una mauscola, un numero, un carattere speciale e lunga almeno sei caratteri</p>
     </div>
     <div class="password-strength">
         <span id="box-1" class="strength-block block-1"></span>
