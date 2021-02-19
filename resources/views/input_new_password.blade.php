@@ -2,6 +2,10 @@
 <span>
     <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control" placeholder="{{ __('set_password.new-password') }}">
     <br>
+    <div>
+        <p>La password deve contenere almeno un numero, una lettera ...</p>
+    </div>
+    <br>
     <div class="password-strength">
         <span id="box-1" class="strength-block block-1"></span>
         <span id="box-2" class="strength-block block-2"></span>
