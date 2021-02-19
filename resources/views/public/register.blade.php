@@ -41,7 +41,17 @@
             <div class="card">
                 <div class="card-body jumbotron-color">
                     <p class="card-text  text-center">
-                        Hai già un account? <a href="{{ route('login') }}">Accedi</a>
+                        Hai già un account? <a href="{{ route('login:page') }}">Accedi</a>
+    
+                    </p>
+                </div>
+            </div>
+            <br>
+
+            <div class="card">
+                <div class="card-body jumbotron-color">
+                    <p class="card-text  text-center">
+                        Non sai cosa fare? <a href="{{ route('login') }}">Torna alla Home</a>
                     </p>
                 </div>
             </div>
