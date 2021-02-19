@@ -19,7 +19,7 @@
     @endif
     <br>
     <br>
-    <div class="container">
+    <div class="container jumbotron-color">
         <div class="form-group">
             <div class="card">
                 <div class="card-body">
