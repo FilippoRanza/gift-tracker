@@ -22,7 +22,7 @@
         <div>
             @yield('navbar')
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid base-background-color">
             @yield('body')
         </div>
         <div>
