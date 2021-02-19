@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'new-password' => 'password',
-    'confirm-password' => 'conferma password',
+    'new-password' => 'Password',
+    'confirm-password' => 'Conferma Password',
 ];
