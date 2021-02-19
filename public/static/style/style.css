@@ -98,3 +98,6 @@ tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-to
 
 }
 
+.jumbotron-color{
+    background-color: #e9ecef;
+}
