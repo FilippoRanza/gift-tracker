@@ -1,7 +1,7 @@
 @extends('private.user_base')
 
 @section('body')
-<h2>{{ __('debt_home.title') }}</h2>
+<h1>{{ __('debt_home.title') }}</h1>
 <hr>
 
 @if ($notify)
