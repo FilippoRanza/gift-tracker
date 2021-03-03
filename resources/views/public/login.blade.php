@@ -13,10 +13,13 @@
 
 
 @section('body')
-
-    @if (isset($login_error))
-        @include('error', ['message' => 'Username or Password is INCORRECT!'])
+    @if (isset($username_error))
+        @include('error', ['message' => {{ __("error_msg.login_username_error") }}])    
     @endif
+    @if (isset($password_error))
+        @include('error', ['message' => {{ __("error_msg.login_password_error") }}])
+    @endif
+
     <br>
     <br>
     <div class="container">

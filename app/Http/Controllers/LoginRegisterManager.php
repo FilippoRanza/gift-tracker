@@ -73,17 +73,26 @@ class LoginRegisterManager extends Controller
         return ($n->count() == 0);
     }
 
+    function exist_user($name) {
+        $n = User::all()->where('name', $name);
+        return ($n->count() == 1);
+    }
+
     function check_email($email) {
         $e = User::all()->where('email', $email);
         return ($e->count() == 0);
     }
 
     function run_login(Request $req) {
-        $credentials = $req->only('name', 'password');
-        if (Auth::attempt($credentials)) {
-            $output = Redirect::to(route('user:home'));
-        } else {
-            $output = view('public.login', ['login_error' => true]);
+        if($this->exist_user($req->name)) {
+            $credentials = $req->only('name', 'password');
+            if (Auth::attempt($credentials)) {
+                $output = Redirect::to(route('user:home'));
+            } else {
+                $output = view('public.login', ['password_error' => true]);
+            }
+        }else {
+            $output = view('public.login', ['username_error' => $req->name]);
         }
         return $output;
     }
