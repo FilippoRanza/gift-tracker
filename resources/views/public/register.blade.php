@@ -9,13 +9,13 @@
 
 
 @section('body')
-    @includeWhen(isset($password_error), 'error', ['message' => "Il campo `password` ed il campo `conferma password` sono diversi: devono corrispondere"])
+    @includeWhen(isset($password_error), 'error', ['message' => {{ __("error_msg.register_password_match_error") }}])
     @if (isset($username_error))
-        @include('error', ['message' => "Il nome utente: `$username_error` è già stato registrato. Sceglierne uno differente"])    
+        @include('error', ['message' => {{ __("error_msg.register_username_error") }}])    
     @endif
     
     @if (isset($email_error))
-        @include('error', ['message' => "L'indirizzo : `$email_error` è già registrato. Utilizzare un altro indirizzo"])    
+        @include('error', ['message' => {{ __("error_msg.register_email_error") }}])    
     @endif
 
 
