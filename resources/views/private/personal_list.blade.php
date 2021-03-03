@@ -15,11 +15,13 @@
       </div>
 
     @endif
-    <ul class="nav nav-tabs" role="tablist" >
-        <li class="nav-item"><a class="nav-link" id="active-link" onclick="set_current('active', 'active-link');" data-toggle="tab" href="#active">{{ __('personal_list.active-tab') }}</a></li>
-        <li class="nav-item"><a class="nav-link" id="add-link" onclick="set_current('add', 'add-link');" data-toggle="tab" href="#add">{{ __('personal_list.add-tab') }}</a></li>
-        <li class="nav-item"><a class="nav-link" id="old-link" onclick="set_current('old', 'old-link');" data-toggle="tab" href="#old">{{ __('personal_list.archived-tab') }}</a></li>
-    </ul>
+    <div class="container">
+        <ul class="nav nav-tabs" role="tablist" >
+            <li class="nav-item"><a class="nav-link" id="active-link" onclick="set_current('active', 'active-link');" data-toggle="tab" href="#active">{{ __('personal_list.active-tab') }}</a></li>
+            <li class="nav-item"><a class="nav-link" id="add-link" onclick="set_current('add', 'add-link');" data-toggle="tab" href="#add">{{ __('personal_list.add-tab') }}</a></li>
+            <li class="nav-item"><a class="nav-link" id="old-link" onclick="set_current('old', 'old-link');" data-toggle="tab" href="#old">{{ __('personal_list.archived-tab') }}</a></li>
+        </ul>
+    </div>
     <div class="tab-content">
         <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab">
                 <div class="container">
