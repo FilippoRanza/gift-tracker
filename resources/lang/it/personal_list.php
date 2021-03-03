@@ -14,7 +14,7 @@ return [
 	'go-to-list' => 'Vai',
 	'delete-list' => 'Rimuovi',
 	'add-list-advice' => 'Aggiungi una Nuova Lista',
-	'add-list-advice-subtitle' => 'Non ci solo Liste attive!',
+	'add-list-advice-subtitle' => 'Non hai ancora creato una lista',
 	'add-list-advice-button' => 'Crea nuova lista',
 	'old-list-title' => 'Vecchie Liste',
 ];

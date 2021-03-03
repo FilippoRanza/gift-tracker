@@ -87,11 +87,10 @@
                                 <br>
                                 <h5 class="card-subtitle">{{ __('personal_list.add-list-advice-subtitle') }}</h5>
                                 <br>
-                                <div class="sm-2">
-                                    <form autofocus onsubmit="document.getElementById('add-link').click();">
-                                        <button class="btn btn-secondary form-control"  type="submit">{{ __('personal_list.add-list-advice-button') }}</button>
-                                    </form>
-                                </div>
+                                <form autofocus onsubmit="document.getElementById('add-link').click();">
+                                    <button class="btn btn-secondary"  type="submit">{{ __('personal_list.add-list-advice-button') }}</button>
+                                </form>
+
                             </div>
                         </div>
                     </div>    
