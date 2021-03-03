@@ -5,10 +5,11 @@
 
 @section('body')
     @if ($active_list)
-        <h1>{{ __('contribute_list.active-title') }}</h1>
-        <hr>
-
+        <h2>{{ __('contribute_list.active-title') }}</h2>
         <ul class="list-group">
+
+        
+
             @foreach ($active_list as $list)
                 <li class="list-group-item">
                     <div class="container">
