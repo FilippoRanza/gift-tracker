@@ -10,6 +10,7 @@ return [
     'update' => 'Update',
     'set' => 'Set',
     'delete' => 'Delete',
+    'mode-use-message' => 'You can enable or disable this mode at any moment and whenever you want'
 ];
 
 

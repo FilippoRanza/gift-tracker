@@ -20,7 +20,7 @@
                         
                     </form>                
                     <br>
-                    <p class="small text-secondary">{{ __("list_description.guest-only-description") }}</p>
+                    <p class="small text-secondary">{{ __("list_description.guest-only-description") }}<br>{{ __("list_settings.mode-use-message") }}</p>
                            
                     
                     <form method="POST" class="input-group" action="{{ route('vote:toggle_mode') }}">
@@ -39,7 +39,7 @@
                        
                     </form>
                     <br>
-                    <p class="small text-secondary">{{ __("list_description.poll-mode-description") }}</p>
+                    <p class="small text-secondary">{{ __("list_description.poll-mode-description") }}<br>{{ __("list_settings.mode-use-message") }}</p>
 
                     @if ($list->poll)
                         
