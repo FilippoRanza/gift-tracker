@@ -1,4 +1,4 @@
-<div class="container">
+
     <div class="card">
         <div class="card-body">
             <h3 class="card-title">{{ __('list_settings.title') }}</h3>
@@ -88,4 +88,3 @@
             </div>
         </div>
     </div>
-</div>

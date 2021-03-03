@@ -1,4 +1,4 @@
-<div class="container mb-3">
+
     @if (!$list->poll)
         <div class="container mb-3">
             <div class="card">
@@ -50,4 +50,4 @@
             </div>
         </div>
     </div>
-</div>
+
