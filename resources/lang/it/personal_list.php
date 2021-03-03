@@ -17,6 +17,6 @@ return [
 	'add-list-advice-subtitle' => 'Non hai ancora creato una lista',
 	'add-list-advice-button' => 'Crea nuova lista',
 	'old-list-title' => 'Vecchie Liste',
-    'poll-mode-question' => '🎁 Vuoi votare per decidere assime cosa acquistare?',
+    'poll-mode-question' => '🎁 Vuoi votare per decidere assieme cosa acquistare?',
     'poll-mode-description' => 'Dopo aver creato la lista naviga nella sezione impostazioni della lista e abilita la modalità voto',
 ];

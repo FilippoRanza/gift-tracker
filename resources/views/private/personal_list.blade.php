@@ -56,10 +56,11 @@
                 @if (count($user_lists))
                     
                     <ul class="list-group">
-                        <h3>Liste Attive</h3>
-                        @foreach ($user_lists as $list)
-                            <li class="list-group-item">
-                                <div class="card">
+                        <div class="card">
+                            <h3>Liste Attive</h3>
+                            @foreach ($user_lists as $list)
+                                <li class="list-group-item">
+                                
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $list->name }}</h4>
                                         <div class="input-group">
@@ -78,9 +79,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                        @endforeach
+                               
+                                </li>
+                         @endforeach
+                        </div>
                     </ul>    
                 @else
                     <div class=""> 
