@@ -18,4 +18,6 @@ return [
     'old-list-title' => 'Old Lists',
     'poll-mode-question' => '🎁 Do you want to vote to choose which item to purchase?',
     'poll-mode-description' => 'After creating the list go to the list\'s settings section and enable the poll mode',
+    'guest-only-question' => 'Do you want to create a list where you are only the administrator?',
+    'guest-only-description' => 'After creating the list go to the list\'s settings section and enable the "Don\'t take part to the purchase" mode',
 ];

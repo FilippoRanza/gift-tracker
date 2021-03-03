@@ -19,4 +19,6 @@ return [
 	'old-list-title' => 'Vecchie Liste',
     'poll-mode-question' => '🎁 Vuoi votare per decidere assime cosa acquistare?',
     'poll-mode-description' => 'Dopo aver creato la lista naviga nella sezione impostazioni della lista e abilita la modalità voto',
+    'guest-only-question' => 'Vuoi creare una lista di cui sei solo l\'amministratore ?',
+    'guest-only-description' => 'Dopo aver creato la lista naviga nella sezione impostazioni della lista e abilita la modalità "Non partecipo all\'acquisto"',
 ];
