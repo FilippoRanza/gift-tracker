@@ -7,5 +7,5 @@ return [
 	'user-purchase' => 'I miei Acquisti',
 	'user-debt' => 'Debiti',
 	'user-settings' => 'Impostazioni',
-	'logout' => 'esci',
+	'logout' => 'Esci',
 ];
