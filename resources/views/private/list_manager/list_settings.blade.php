@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">{{ __('list_settings.settinfs') }}</h4>
+            <h4 class="card-title">{{ __('list_settings.title') }}</h4>
             <div class="form-group">
                 <div class="form-row">
                     <form method="POST" class="input-group" action="{{ route('list:guest_only') }}">
