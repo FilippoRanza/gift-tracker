@@ -54,8 +54,9 @@
         <div class="tab-pane fade show" id="active" role="tabpanel" aria-labelledby="active-tab"> <!-- Liste attive -->
             <div class="container">
                 @if (count($user_lists))
-                    <h3>Lists</h3>
+                    
                     <ul class="list-group">
+                        <h3>Liste Attive</h3>
                         @foreach ($user_lists as $list)
                             <li class="list-group-item">
                                 <div class="card">
