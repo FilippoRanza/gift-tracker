@@ -33,12 +33,12 @@
                                     @csrf
                                     <input type="text" required="required" class="form-control" placeholder="Nome lista" name="name">
                                     <br>
-                                    <div class="form-check">
-                                        <input  type="checkbox" class="form-check-input"  id="guest_only" name="guest_only"> 
-                                        <label  class="form-check-label" for="guest_only">{{ __('personal_list.guest-only') }}</label>
-                                        <br>
-                                        <p class="small text-secondary">{{ __("list_description.guest-only-description") }}</p>
-                                    </div>
+                                    
+
+                                    <br>
+                                    <h6>{{ __("personal_list.guest-only-question") }}</h6>
+                                    <p class="small text-secondary">{{ __("list_description.guest-only-description") }}<br>{{ __("personal_list.guest-only-description") }}</p>
+                                    
                                     <br>
                                     <h6>{{ __("personal_list.poll-mode-question") }}</h6>
                                     <p class="small text-secondary"> {{ __("list_description.poll-mode-description") }}<br>{{ __("personal_list.poll-mode-description") }}</p>

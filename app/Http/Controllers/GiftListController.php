@@ -50,11 +50,8 @@ class GiftListController extends Controller
             $list->owner =  Auth::id();
             $list->name = $req->name;
             $list->done = false;
-            if ($req->guest_only == 'on') {
-                $list->guest_only = true;
-            } else {
-                $list->guest_only = false;
-            }
+            $list->guest_only = false;
+            
             $list->duplicated = $this->dup;
             $list->save();
             $output = Redirect::to(route('list:manage', ['id' => $list->id]));
