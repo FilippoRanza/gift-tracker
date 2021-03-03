@@ -17,6 +17,9 @@
                                 <input type="checkbox"  id="guest-only" onchange="this.form.submit()" data-toggle="toggle">
                             @endif
                         </div>
+                        <br>
+                        <p class="small text-secondary">L'opzione "Non partecipo alla spesa" permette di creare una lista in cui l'acquisto degli oggetti al suo interno è permesso solo ai partecipanti che inserirai. Tu non potrai effettuare acquisti, ma solo gestire la lista.</p>
+                                    
                     </form>
                     
                     <form method="POST" class="input-group" action="{{ route('vote:toggle_mode') }}">
