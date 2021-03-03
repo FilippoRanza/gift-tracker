@@ -17,19 +17,11 @@
           <li class="nav-item">
             <a class="nav-link"  href="{{ route('debt:list') }}">{{ __('nav_bar.user-debt') }}</a> 
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('settings:index') }}">{{ __('nav_bar.user-settings') }}</a>
-          </li>
+          
         </ul>
         <ul class="navbar-nav ml-md-auto">
             <li class="nav-item">
-              <a class="nav-link">
-                @if ($user->profile_pic)
-                  <img class="navbar-nav-svg rounded" id="profile-pic-navbar" src="{{ URL::to('/') }}/storage/{{ $user->profile_pic }}">
-                @else
-                  {{ $user->name }}  
-                @endif
-              </a>
+            <a class="nav-link" href="{{ route('settings:index') }}">{{ __('nav_bar.user-settings') }}</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}">{{ __('nav_bar.logout') }}</a>  
