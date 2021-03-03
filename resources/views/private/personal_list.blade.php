@@ -58,6 +58,9 @@
                         <div class="card">
                             <div class="card-body">
                             <h3 class="card-title">Liste Attive</h3>
+                                <br>
+                                <p class="small text-secondary">In questa sezione puoi vedere tutte le liste al momento attive.</p>
+                                <br>
                                 @foreach ($user_lists as $list)
                                     <li class="list-group-item">
                                         
