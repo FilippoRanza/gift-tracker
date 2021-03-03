@@ -99,27 +99,33 @@
         </div>
         <div class="tab-pane fade show" id="old" role="tabpanel" aria-labelledby="old-tab">
             <div class="container">
-                <h3>{{ __('personal_list.old-list-title') }}</h3>
-                <ul class="list-group">
-                    @foreach ($old_lists as $list)
-                        <li class="list-group-item">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title"> 
-                                        {{ $list->name }} 
-                                        @if ($list->duplicated)
-                                        - {{ $list->updated_at->diffForHumans() }}    
-                                        @endif</h4>
-                                    <div class="input-group">
-                                        <a class="btn btn-secondary" href="{{ route('list:old', ['id' => $list->id]) }}">
-                                            {{ __('personal_list.go-to-list') }}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
+                <div class="">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>{{ __('personal_list.old-list-title') }}</h3>
+                            <ul class="list-group">
+                                @foreach ($old_lists as $list)
+                                    <li class="list-group-item">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title"> 
+                                                    {{ $list->name }} 
+                                                    @if ($list->duplicated)
+                                                    - {{ $list->updated_at->diffForHumans() }}    
+                                                    @endif</h4>
+                                                <div class="input-group">
+                                                    <a class="btn btn-secondary" href="{{ route('list:old', ['id' => $list->id]) }}">
+                                                        {{ __('personal_list.go-to-list') }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
