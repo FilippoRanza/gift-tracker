@@ -23,7 +23,7 @@
         </ul>
     </div>
     <div class="tab-content">
-        <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab">
+        <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab"> <!-- Nuova lista -->
                 <div class="container">
                     <br>
                     <div class="">
@@ -32,12 +32,13 @@
                                 <h4 class="card-title">{{ __('personal_list.add-list-title') }}</h4>
                                 <form method="POST" action="{{ route('list:new') }}">
                                     @csrf
-                                    <input type="text" required="required" class="form-control" placeholder="name" name="name">
+                                    <input type="text" required="required" class="form-control" placeholder="Nome lista" name="name">
+                                    <br>
                                     <div class="form-check">
                                         <input  type="checkbox" class="form-check-input"  id="guest_only" name="guest_only"> 
                                         <label  class="form-check-label" for="guest_only">{{ __('personal_list.guest-only') }}</label>
                                     </div>
-                                
+                        
                                     <br>
                                     <button type="submit" class="btn btn-secondary">{{ __('personal_list.add-list-button') }}</button>
                                 </form>
@@ -47,7 +48,7 @@
                     </div>
                 </div>
             </div>
-        <div class="tab-pane fade show" id="active" role="tabpanel" aria-labelledby="active-tab">
+        <div class="tab-pane fade show" id="active" role="tabpanel" aria-labelledby="active-tab"> <!-- Liste attive -->
             <div class="container">
                 @if (count($user_lists))
                     <h3>Lists</h3>
@@ -79,7 +80,7 @@
                     </ul>    
                 @else
                     <br>
-                    <div class="">
+                    <div class=""> 
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">{{ __('personal_list.add-list-advice') }}</h3>
