@@ -2,8 +2,8 @@
 
 
 @section('body')
-    <h3>{{ $list->name }} - {{ $user->name }}</h3>
-    
+    <h1>Gestione Lista: {{ $list->name }}</h1>
+    <hr>
     <div>
         @includeWhen(isset($item_err), 'error', ['message' => __('manage_list.item-err', ['item' => $item_err, 'list' => $list->name])])
         @includeWhen(isset($user_err), 'error', ['message' => __('manage_list.user-err', ['name' => $user_err])])
