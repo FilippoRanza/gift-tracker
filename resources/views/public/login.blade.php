@@ -14,10 +14,10 @@
 
 @section('body')
     @if (isset($username_error))
-        @include('error', ['message' => {{ __("error_msg.login_username_error") }}])    
+        @include('error', ['message' =>  __("error_msg.login_username_error", ['username_error' => $username_error]) ])    
     @endif
     @if (isset($password_error))
-        @include('error', ['message' => {{ __("error_msg.login_password_error") }}])
+        @include('error', ['message' =>  __("error_msg.login_password_error")])
     @endif
 
     <br>

@@ -9,13 +9,13 @@
 
 
 @section('body')
-    @includeWhen(isset($password_error), 'error', ['message' => {{ __("error_msg.register_password_match_error") }}])
+    @includeWhen(isset($password_error), 'error', ['message' =>  __("error_msg.register_password_match_error") ])
     @if (isset($username_error))
-        @include('error', ['message' => {{ __("error_msg.register_username_error") }}])    
+        @include('error', ['message' =>  __("error_msg.register_username_error", ['username_error' => $username_error]) ])    
     @endif
     
     @if (isset($email_error))
-        @include('error', ['message' => {{ __("error_msg.register_email_error") }}])    
+        @include('error', ['message' =>  __("error_msg.register_email_error", ['email_error' => $email_error]) ])    
     @endif
 
 
