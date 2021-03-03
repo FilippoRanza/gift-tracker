@@ -37,7 +37,7 @@
                                         <input  type="checkbox" class="form-check-input"  id="guest_only" name="guest_only"> 
                                         <label  class="form-check-label" for="guest_only">{{ __('personal_list.guest-only') }}</label>
                                         <br>
-                                        <p class="small text-secondary">L'opzione "Non partecipo alla spesa" permette di creare una lista in cui l'acquisto degli oggetti al suo interno è permesso solo ai partecipanti che inserirai. Tu non potrai effettuare acquisti, ma solo gestire la lista.</p>
+                                        <p class="small text-secondary">{{ __("list_description.guest-only-description") }}</p>
                                     </div>
                         
                                     <br>
