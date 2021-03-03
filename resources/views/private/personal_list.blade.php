@@ -65,7 +65,7 @@
                                             <h4 class="card-title">{{ $list->name }}</h4>
                                             <div class="input-group">
                                             
-                                                <div class="form-row">
+                                                <div class="row">
                                                     <div class="col">
                                                         <a class="btn btn-secondary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
                                                     </div>
