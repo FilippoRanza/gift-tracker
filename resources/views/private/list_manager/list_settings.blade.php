@@ -17,10 +17,11 @@
                                 <input type="checkbox"  id="guest-only" onchange="this.form.submit()" data-toggle="toggle">
                             @endif
                         </div>
-                        <br>
-                        <p class="small text-secondary">{{ __("list_description.guest-only-description") }}</p>
-                                    
-                    </form>
+                        
+                    </form>                
+                    <br>
+                    <p class="small text-secondary">{{ __("list_description.guest-only-description") }}</p>
+                           
                     
                     <form method="POST" class="input-group" action="{{ route('vote:toggle_mode') }}">
                         @csrf
@@ -35,7 +36,11 @@
                                 <input type="checkbox" id="toggle-vote" onchange="this.form.submit()" data-toggle="toggle">
                             @endif
                         </div>
+                       
                     </form>
+                    <br>
+                    <p class="small text-secondary">{{ __("list_description.poll-mode-description") }}</p>
+
                     @if ($list->poll)
                         
                             <form class="input-group" action="{{ route('vote:clear') }}" method="POST">
