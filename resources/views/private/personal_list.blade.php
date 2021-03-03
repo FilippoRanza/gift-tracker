@@ -54,34 +54,35 @@
         <div class="tab-pane fade show" id="active" role="tabpanel" aria-labelledby="active-tab"> <!-- Liste attive -->
             <div class="container">
                 @if (count($user_lists))
-                    
                     <ul class="list-group">
                         <div class="card">
-                            <h3>Liste Attive</h3>
-                            @foreach ($user_lists as $list)
-                                <li class="list-group-item">
-                                
-                                    <div class="card-body">
-                                        <h4 class="card-title">{{ $list->name }}</h4>
-                                        <div class="input-group">
-                                        
-                                            <div class="form-row">
-                                                <div class="col">
-                                                    <a class="btn btn-secondary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
-                                                </div>
-                                                <div class="col">
-                                                    <form method="POST" action="{{ route('list:delete') }}">
-                                                        @csrf
-                                                        <input type="hidden" value="{{ $list->id }}" name="list">
-                                                        <button type="submit" class="btn btn-danger">{{ __('personal_list.delete-list') }}</button>
-                                                    </form>
+                            <div class="card-body">
+                            <h3 class="card-title">Liste Attive</h3>
+                                @foreach ($user_lists as $list)
+                                    <li class="list-group-item">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">{{ $list->name }}</h4>
+                                                <div class="input-group">
+                                                
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <a class="btn btn-secondary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
+                                                        </div>
+                                                        <div class="col">
+                                                            <form method="POST" action="{{ route('list:delete') }}">
+                                                                @csrf
+                                                                <input type="hidden" value="{{ $list->id }}" name="list">
+                                                                <button type="submit" class="btn btn-danger">{{ __('personal_list.delete-list') }}</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                               
-                                </li>
-                         @endforeach
+                                    </li>
+                                @endforeach
+                            </div>
                         </div>
                     </ul>    
                 @else
