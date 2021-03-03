@@ -2,7 +2,8 @@
 
 @section('body')
 <div>
-<h2>{{ __('personal_list.title') }}</h2>
+<h1>{{ __('personal_list.title') }}</h1>
+<hr>
     @if (isset($error))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <div>
