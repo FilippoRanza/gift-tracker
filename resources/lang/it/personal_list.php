@@ -8,7 +8,7 @@ return [
 	'add-tab' => 'Nuova Lista',
 	'archived-tab' => 'Liste Archiviate',
 	'add-list-title' => 'Crea nuova Lista',
-	'guest-only' => 'Solo per Partecipanti',
+	'guest-only' => 'Non partecipo alla spesa',
 	'add-list-button' => 'Crea Lista',
 	'active-list-title' => 'Liste',
 	'go-to-list' => 'Vai',

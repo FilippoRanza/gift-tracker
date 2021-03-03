@@ -37,8 +37,7 @@
                                         <input  type="checkbox" class="form-check-input"  id="guest_only" name="guest_only"> 
                                         <label  class="form-check-label" for="guest_only">{{ __('personal_list.guest-only') }}</label>
                                         <br>
-                                        <p class="small text-secondary">L'opzione "solo per partecipanti" permette di creare una lista in cui -----Si è deciso di non spostare la card in cui è presentato il messaggio perchè in primo luogo il messaggio è presentato in una
-card grande e di colore giallo che risulta molto evidente, in secondo luogo la pagina di login viene ricaricata quindi l'utente </p>
+                                        <p class="small text-secondary">L'opzione "Non partecipo alla spesa" permette di creare una lista in cui l'acquisto degli oggetti al suo interno è permesso solo ai partecipanti che inserirai. Tu non potrai effettuare acquisti, ma solo gestire la lista.</p>
                                     </div>
                         
                                     <br>

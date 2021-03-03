@@ -7,7 +7,7 @@ return [
     'add-tab' => 'Add List',
     'archived-tab' => 'Archived Lists', 
     'add-list-title' => 'Create a new List',
-    'guest-only' => 'Guest Only',
+    'guest-only' => "Don't take part to the purchase",
     'add-list-button' => 'Create List',
     'active-list-title' => 'Lists',
     'go-to-list' => 'Go',
