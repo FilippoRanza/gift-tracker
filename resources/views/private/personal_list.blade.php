@@ -29,7 +29,7 @@
                     <div class="">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">{{ __('personal_list.add-list-title') }}</h4>
+                                <h3 class="card-title">{{ __('personal_list.add-list-title') }}</h3>
                                 <form method="POST" action="{{ route('list:new') }}">
                                     @csrf
                                     <input type="text" required="required" class="form-control" placeholder="Nome lista" name="name">
