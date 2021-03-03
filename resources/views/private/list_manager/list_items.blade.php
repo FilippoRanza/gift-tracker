@@ -13,7 +13,8 @@
                             <input  type="text" id="name"  required="required" class="form-control" name="name" id="name" placeholder="{{ __('list_items.name') }}" autofocus>
                             <label class="col-form-label" for="price">{{ __('list_items.price') }}</label>
                             <input type="number" id="price" min="0.01" required="required" class="form-control" step="0.01" id="price" name="price" placeholder="€">
-                            <button class="btn btn-secondary form-control" id="add-item"  type="submit">{{ __('list_items.add-item') }}</button>        
+                            <br>
+                            <button class="btn btn-secondary" id="add-item"  type="submit">{{ __('list_items.add-item') }}</button>        
                         </form>
                     </div>
                 </div>    
