@@ -29,6 +29,9 @@
                         <input type="text" required="required" name="name" placeholder="Nome Utente"  class="form-control" autofocus>
                         <br>
                         <input type="password" required="required" name="password"  class="form-control" placeholder="Password">
+                        <div class="invalid-feedback">
+                                Inserire un codice valido. I codici sono del tipo XXXXX-XXXXX-XXXXX-XXXXX.
+                        </div>
                         <br>
                         <input type="submit" class="btn btn-secondary text-center" value="Accedi">
                     </form>
@@ -55,4 +58,10 @@
             </div>
         </div>
     </div>
+
+    <script src="{{ URL::to('/') }}/static/scripts/popup_script.js">
+
+    </script>
 @endsection
+
+
