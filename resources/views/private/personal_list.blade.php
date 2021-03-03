@@ -39,7 +39,9 @@
                                         <br>
                                         <p class="small text-secondary">{{ __("list_description.guest-only-description") }}</p>
                                     </div>
-                        
+                                    <br>
+                                    <h6>{{ __("personal_list.poll-mode-question") }}</h6>
+                                    <p class="small text-secondary"> {{ __("list_description.poll-mode-description") }}<br>{{ __("personal_list.poll-mode-description") }}</p>
                                     <br>
                                     <button type="submit" class="btn btn-secondary">{{ __('personal_list.add-list-button') }}</button>
                                 </form>

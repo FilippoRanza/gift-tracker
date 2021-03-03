@@ -16,5 +16,6 @@ return [
     'add-list-advice-subtitle' => 'There are no active list',
     'add-list-advice-button' => 'Create a new List',
     'old-list-title' => 'Old Lists',
-    
+    'poll-mode-question' => '🎁 Do you want to vote to choose which item to purchase?',
+    'poll-mode-description' => 'After creating the list go to the list\'s settings section and enable the poll mode',
 ];
