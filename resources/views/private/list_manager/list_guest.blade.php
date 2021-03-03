@@ -3,7 +3,7 @@
         <div class="container mb-3">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('list_guest.add-title') }}</h4>
+                    <h3 class="card-title">{{ __('list_guest.add-title') }}</h3>
                     <form  method="POST" class="input-group form-inline" action="{{ route('list:add_guest') }}">
                         @csrf
                         <input type="hidden" value="{{ $list->id }}" name="list">
@@ -19,7 +19,7 @@
     <div class="container mb-3">
         <div class="card">
             <div class="card-body">
-                <h5>{{ __('list_guest.current-title') }}</h5>
+                <h4>{{ __('list_guest.current-title') }}</h4>
                 <ul class="list-group">
                     @foreach ($guests as $guest)
                         <li class="list-group-item">
