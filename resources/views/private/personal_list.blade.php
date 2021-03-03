@@ -25,7 +25,6 @@
     <div class="tab-content">
         <div class="tab-pane fade show" id="add" role="tabpanel" aria-labelledby="add-tab"> <!-- Nuova lista -->
                 <div class="container">
-                    <br>
                     <div class="">
                         <div class="card">
                             <div class="card-body">
@@ -79,7 +78,6 @@
                         @endforeach
                     </ul>    
                 @else
-                    <br>
                     <div class=""> 
                         <div class="card">
                             <div class="card-body">
