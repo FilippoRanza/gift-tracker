@@ -65,17 +65,17 @@
                                             <h4 class="card-title">{{ $list->name }}</h4>
                                             <div class="input-group">
                                             
-                                                <div class="row">
-                                                    <div class="col">
+                                                <div class="form-row">
+                                                    
                                                         <a class="btn btn-secondary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
-                                                    </div>
-                                                    <div class="col">
+                                                  
+                                                   
                                                         <form method="POST" action="{{ route('list:delete') }}">
                                                             @csrf
                                                             <input type="hidden" value="{{ $list->id }}" name="list">
                                                             <button type="submit" class="btn btn-danger">{{ __('personal_list.delete-list') }}</button>
                                                         </form>
-                                                    </div>
+                                                  
                                                 </div>
                                             </div>
                                         </div>
