@@ -29,6 +29,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">{{ __('personal_list.add-list-title') }}</h3>
+                                <p class="small text-secondary">In questa sezione puoi creare una nuova lista.</p>
                                 <form method="POST" action="{{ route('list:new') }}">
                                     @csrf
                                     <input type="text" required="required" class="form-control" placeholder="Nome lista" name="name">
@@ -58,9 +59,9 @@
                         <div class="card">
                             <div class="card-body">
                             <h3 class="card-title">Liste Attive</h3>
-                                <br>
+                                
                                 <p class="small text-secondary">In questa sezione puoi vedere tutte le liste al momento attive.</p>
-                                <br>
+                                
                                 @foreach ($user_lists as $list)
                                     <li class="list-group-item">
                                         
@@ -113,6 +114,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>{{ __('personal_list.old-list-title') }}</h3>
+                            <p class="small text-secondary">In questa sezione puoi vedere tutte le liste archiviate, ovvero quelle di qui è stato fatto l'acquisto.</p>
                             <ul class="list-group">
                                 @foreach ($old_lists as $list)
                                     <li class="list-group-item">
