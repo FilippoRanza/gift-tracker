@@ -11,7 +11,7 @@ return [
 	'guest-only' => 'Non partecipo alla spesa',
 	'add-list-button' => 'Crea Lista',
 	'active-list-title' => 'Liste',
-	'go-to-list' => 'Vai',
+	'go-to-list' => 'Gestisci lista',
 	'delete-list' => 'Rimuovi',
 	'add-list-advice' => 'Aggiungi una Nuova Lista',
 	'add-list-advice-subtitle' => 'Non hai ancora creato una lista',

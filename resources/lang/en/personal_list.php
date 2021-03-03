@@ -10,7 +10,7 @@ return [
     'guest-only' => "Don't take part to the purchase",
     'add-list-button' => 'Create List',
     'active-list-title' => 'Lists',
-    'go-to-list' => 'Go',
+    'go-to-list' => 'Manage List',
     'delete-list' => 'Delete',
     'add-list-advice' => 'Add a New List',
     'add-list-advice-subtitle' => 'There are no active list',
