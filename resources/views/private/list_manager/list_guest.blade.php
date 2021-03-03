@@ -1,6 +1,6 @@
 
     @if (!$list->poll)
-        <div class="container mb-3">
+        
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">{{ __('list_guest.add-title') }}</h3>
@@ -12,11 +12,11 @@
                     </form>
                 </div>
             </div>
-        </div>   
+          
         <br> 
     @endif
     
-    <div class="container mb-3">
+    
         <div class="card">
             <div class="card-body">
                 <h4>{{ __('list_guest.current-title') }}</h4>
@@ -49,5 +49,5 @@
                 </ul>
             </div>
         </div>
-    </div>
+   
 
