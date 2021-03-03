@@ -3,7 +3,7 @@
 
 return [
     'title' => 'Settings',
-    'guest-only' => 'Guest Only',
+    'guest-only' => "Don't take part to the purchase",
     'poll' => 'Poll Mode',
     'clear-votes' => 'Clear Votes',
     'recipient' => 'Gift Recipient',
