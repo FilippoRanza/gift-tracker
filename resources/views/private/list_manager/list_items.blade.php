@@ -1,9 +1,10 @@
 @if (!$list->poll)
-    <div class="container">
+    
         <div class="card">
             <div class="input-group">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('list_items.add-title') }}</h4>
+                    
+                    <h3 class="card-title">{{ __('list_items.add-title') }}</h3>
                     <div class="form-group col">
                         <form  method="POST" action="{{ route('list:add_item') }}">
                             @csrf
@@ -18,12 +19,12 @@
                 </div>    
             </div>  
         </div>
-    </div>     
+        
     <br>
 @endif
 
 
-<div class="container">
+
     @if ($list->ready && $list->poll)
         <div>
             <form method="POST" action="{{ route('purchase:automatic') }}">
@@ -35,7 +36,7 @@
     @endif
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ __('list_items.current-title') }}</h5>
+            <h4 class="card-title">{{ __('list_items.current-title') }}</h4>
             <ul class="list-group">
                 @foreach ($items as $item)
                     <li class="list-group-item">
@@ -94,4 +95,4 @@
             </ul>
         </div>
     </div>
-</div>
+
