@@ -67,7 +67,7 @@
                                             
                                                 <div class="form-row">
                                                     
-                                                        <a class="btn btn-secondary" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
+                                                        <a class="btn btn-secondary pr-2" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
                                                   
                                                    
                                                         <form method="POST" action="{{ route('list:delete') }}">

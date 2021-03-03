@@ -8,7 +8,7 @@
                         @csrf
                         <input type="hidden" value="{{ $list->id }}" name="list">
                         <input type="text" id="guest-name" required="required" class="form-control" name="name" autofocus placeholder="{{ __('list_guest.input-name') }}">
-                        <input type="submit" id="add-guest" class="btn btn-secondary mb-2 ml-2" value="{{ __('list_guest.submit') }}" >
+                        <input type="submit" id="add-guest" class="btn btn-secondary mb-2 pl-2" value="{{ __('list_guest.submit') }}" >
                     </form>
                 </div>
             </div>
