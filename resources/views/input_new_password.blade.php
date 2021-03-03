@@ -16,6 +16,9 @@
     <br>
     <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="{{ __('set_password.confirm-password') }}">
     <br>
+    <div>
+        <p class="small text-secondary">Le password devono coincidere</p>
+    </div>
 </span>
 <script src="{{ URL::to('/') }}/static/scripts/validate_new_password.js"></script>
 

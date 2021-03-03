@@ -26,6 +26,7 @@
             <div class="card">
                 <div class="card-body jumbotron-color">
                     <h2 class="main_title">Gift Tracker</h2>
+                    <br>
                     <form method="POST" action="{{ route('register:action') }}">
                         @csrf
                         <input type="text"  required="required" class="form-control" name="name" placeholder="Nome Utente">
