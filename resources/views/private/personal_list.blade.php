@@ -66,15 +66,16 @@
                                             <div class="input-group">
                                             
                                                 <div class="form-row">
-                                                    
+                                                        <div class="col-2"
                                                         <a class="btn btn-secondary pr-2" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('personal_list.go-to-list') }}</a> 
-                                                  
-                                                   
+                                                        </div>
+                                                        <div class= "col-2 offset-1"
                                                         <form method="POST" action="{{ route('list:delete') }}">
                                                             @csrf
                                                             <input type="hidden" value="{{ $list->id }}" name="list">
                                                             <button type="submit" class="btn btn-danger">{{ __('personal_list.delete-list') }}</button>
                                                         </form>
+                                                        </div>
                                                   
                                                 </div>
                                             </div>
