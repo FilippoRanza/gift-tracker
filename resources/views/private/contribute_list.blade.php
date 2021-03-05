@@ -9,6 +9,7 @@
         <hr>
         <div class="container">
             <ul class="list-group">
+                <p class= "small text-secondary">Qui sono visibili tutte le liste in cui partecipi ed in cui dovete ancora scegliere cosa comprare</p>
                 @foreach ($active_list as $list)
                     <li class="list-group-item">
                         <div class="container">
@@ -46,6 +47,7 @@
         <hr>
         <div class="container">
             <ul class="list-group">
+            <p class= "small text-secondary">Qui sono visibili tutte le liste in cui hai partecipato</p>
                 @foreach ($archived_list as $list)
                     <li class="list-group-item">
                         <div class="container">
