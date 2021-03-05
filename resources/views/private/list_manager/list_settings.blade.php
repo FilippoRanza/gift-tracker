@@ -62,12 +62,13 @@
             <h4 class="card-title">
                 {{ __('list_settings.recipient') }}
             </h4>
+            <p class="small text-secondary">Se questa lista è per un regalo, qui puoi impostare il nome della persona a cui fare il regalo</p>
             <div class="input-group">
                 <div class="form-inline">
                     <form method="POST"  action="{{ route('list:recipient') }}">
                         @csrf
                         <input type="hidden" value="{{ $list->id }}" name="list">    
-                        <input type="text" id="set-recipient" required="required" class="form-control" placeholder="recipient" value="{{ $recipient }}" name="recipient">
+                        <input type="text" id="set-recipient" required="required" class="form-control" placeholder="Nome" value="{{ $recipient }}" name="recipient">
                     
                         @if ($recipient)
                             <button class="btn btn-secondary " id="add-recipient" >{{ __('list_settings.update') }}</button> 
