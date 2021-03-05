@@ -18,6 +18,8 @@
 
 
 <ul class="list-group">
+    <p class= "small text-secondary">Qui sono visibili tutti i debiti e crediti che hai nei confronti degli altri utenti</p>
+
     @foreach ($debts as $debt)
         <li class="list-group-item">
             <div class="container">

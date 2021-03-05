@@ -2,7 +2,7 @@
 
 
 return [
-	'title' => 'I miei Debiti',
+	'title' => 'I miei Debiti e Crediti',
 	'notify' => 'Notifica|Notifiche',
 	'debt' => 'Debito',
 	'credit' => 'Credito',
