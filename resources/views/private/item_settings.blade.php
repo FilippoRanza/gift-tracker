@@ -5,7 +5,7 @@
 <script src="{{ URL::to('/') }}/static/scripts/run_ajax.js"></script>
 
     <h3>{{ __('item_settings.title') }}</h3>
-    <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('item_settings.back') }}{{ $list->name }}</a></h6>
+    <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('item_settings.back') }} {{ $list->name }}</a></h6>
     <hr>
 
     <div class="container">
@@ -45,7 +45,8 @@
                                     <input type="hidden" value="{{ $item->id }}" name="item">
                                     <input class="form-control input" type="url" id="url-field" name="url" value="{{ $item->site }}">
                                     <input type="submit" class="btn btn-secondary" value="{{ __('item_settings.set-url') }}">
-                                </div>                        
+                                </div>  
+                                <p class="small text-secondary">Puoi aggiungere un indirizzo URL di una pagina per questo prodotto</p>                      
                             </div>
                         </form>
                         <form 
@@ -76,7 +77,7 @@
                         @csrf
                         <input type="hidden" value="{{ $item->id }}" name="item">
                         <input type="hidden" value="{{ $list->id }}" name="list">
-                        <input type="submit" class="btn btn-danger form-control" value="{{ __('item_settings.delete') }}">
+                        <input type="submit" class="btn btn-danger" value="{{ __('item_settings.delete') }}">
                     </form>
                 </div>
             </div>

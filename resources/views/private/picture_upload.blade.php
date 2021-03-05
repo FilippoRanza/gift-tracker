@@ -39,7 +39,7 @@
                     <input type="hidden" id="hidden-id" name="id" value="{{ $id }}">
                 @endif
                 <input type="hidden" id="upload-data" name="image">
-                <input type="submit"  value="{{ __('picture_upload.select', ['target' => $target]) }}" class="btn btn-secondary form-control">
+                <input type="submit"  value="{{ __('picture_upload.select', ['target' => $target]) }}" class="btn btn-secondary">
             </form>
         </div>
     </div> 
