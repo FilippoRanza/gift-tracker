@@ -4,8 +4,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}"> 
 <script src="{{ URL::to('/') }}/static/scripts/run_ajax.js"></script>
 
-    <h3>{{ __('item_settings.title') }}</h3>
-    <h6><a class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('item_settings.back') }} {{ $list->name }}</a></h6>
+    <h1>{{ __('item_settings.title') }}</h1>
     <hr>
 
     <div class="container">
@@ -79,6 +78,7 @@
                         <input type="hidden" value="{{ $list->id }}" name="list">
                         <input type="submit" class="btn btn-danger" value="{{ __('item_settings.delete') }}">
                     </form>
+                    <button class="btn btn-link" href="{{ route('list:manage', ['id' => $list->id]) }}">{{ __('item_settings.back') }} {{ $list->name }}</button>
                 </div>
             </div>
         </div>
