@@ -23,8 +23,9 @@
                             </div>
                             <div class="col-sm-4">
                                  <div>
-                                    <a type="button" class="btn btn-secondary form-control pb-2" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">{{ __('purchase_list.info') }}</a>
+                                    <a type="button" class="btn btn-secondary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">{{ __('purchase_list.info') }}</a>
                                 </div>
+                                <br>
                                 <form class="form-group" action="{{ route('purchase:void') }}" method="POST">
                                     @csrf
                                     <input type="hidden" value="{{ $purchase->id }}" name="purchase">
