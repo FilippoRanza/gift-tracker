@@ -3,7 +3,7 @@
 
 return [
 	'title' => 'Informazioni Prodotto',
-	'back' => 'Torna indietro',
+	'back' => 'Torna alla lista',
 	'info' => 'Informazioni prodotto',
 	'name' => 'Nome',
 	'set-name' => 'Imposta Nome',

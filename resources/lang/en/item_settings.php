@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Item Info',
-    'back' => 'Back to',
+    'back' => 'Back to the list',
     'info' => 'Item Info',
     'name' => 'Name',
     'set-name' => "Set Name",
