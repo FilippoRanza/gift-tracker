@@ -5,6 +5,7 @@
                 <div class="card-body">
                     
                     <h3 class="card-title">{{ __('list_items.add-title') }}</h3>
+                    <p class="small text-secondary">Qui puoi aggiungere quanti prodotti vuoi tra cui poi scegliere</p>
                     <div class="form-group col">
                         <form  method="POST" action="{{ route('list:add_item') }}">
                             @csrf
@@ -38,6 +39,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">{{ __('list_items.current-title') }}</h4>
+            <p class="small text-secondary">Queste sono le opzioni di acquisto di questa lista. Scegline una da comprare. Puoi aggiungere o modificare le impostazioni di un prodotto tramite il bottone modifica</p>
             <ul class="list-group">
                 @foreach ($items as $item)
                     <li class="list-group-item">
@@ -69,9 +71,9 @@
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                                 @if ($guest_only)
-                                                    <input type="submit" class="btn btn-secondary form-control" value="{{ __('list_items.select') }}" disabled>
+                                                    <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.select') }}" disabled>
                                                 @else
-                                                    <input type="submit" class="btn btn-secondary form-control" value="{{ __('list_items.select') }}">
+                                                    <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.select') }}">
                                                 @endif
                                             </form>
                                             

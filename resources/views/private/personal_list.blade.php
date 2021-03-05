@@ -114,7 +114,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>{{ __('personal_list.old-list-title') }}</h3>
-                            <p class="small text-secondary">In questa sezione puoi vedere tutte le liste archiviate, ovvero quelle di qui è stato fatto l'acquisto.</p>
+                            <p class="small text-secondary">In questa sezione puoi vedere tutte le liste archiviate, ovvero quelle di cui è stato fatto l'acquisto.</p>
                             <ul class="list-group">
                                 @foreach ($old_lists as $list)
                                     <li class="list-group-item">

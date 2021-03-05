@@ -8,7 +8,7 @@ return [
     'current-title' => 'Current Items',
     'automatic' => 'Make Automatic Purchase',
     'vote' => 'Vote',
-    'select' => 'Select',
+    'select' => 'Buy',
     'modify' => 'Modify',
     'web' => 'web'
 ];

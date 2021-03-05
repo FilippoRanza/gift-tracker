@@ -9,7 +9,7 @@ return [
 	'current-title' => 'Prodotti Attuali',
 	'automatic' => 'Acquisto Automatico',
 	'vote' => 'Vota',
-	'select' => 'Seleziona',
+	'select' => 'Compra',
 	'modify' => 'Modifica',
 	'web' => 'web',
 ];
