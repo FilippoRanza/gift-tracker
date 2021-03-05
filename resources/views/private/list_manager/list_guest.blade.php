@@ -54,31 +54,33 @@
    
 
 <script>
-console.log('DDDDD');
-$('#guest-name').on('input', function() {
-        $('#dropdown-menu').empty();
-        var new_name = $('#guest-name').val();
-        var list_id = $('#list-id').val();
-        var post_data =  {
-            'current' : new_name,
-            'list_id': list_id,
-            '_token': $('meta[name=csrf-token]').attr('content')
-        };
-        console.log(post_data);
-        var url = "{{ route('list:list-users') }}";
-        $.ajax({
-            url: url,
-            data: post_data,
-            type: "post",
-            dataType: "json",
-        }).done(function (json) {
-            var names = json['names'];
-            var drop_down = $('#dropdown-menu');
-            names.forEach(function(elem) {
-                console.log(elem);
-                drop_down.append(`<li>${elem}</li>`)
-            });
-        });
-        
+    $('#guest-name').on('input', function() {
+            $('#dropdown-menu').empty();
+            var new_name = $('#guest-name').val();
+            var list_id = $('#list-id').val();
+            var post_data =  {
+                'current' : new_name,
+                'list_id': list_id,
+                '_token': $('meta[name=csrf-token]').attr('content')
+            };
+            console.log(post_data);
+            var url = "{{ route('list:list-users') }}";
+            $.ajax({
+                url: url,
+                data: post_data,
+                type: "post",
+                dataType: "json",
+            }).done(function (json) {
+                var names = json['names'];
+                var drop_down = $('#dropdown-menu');
+                names.forEach(function(elem) {
+                    drop_down.append(`<li><button class="dropdown-item" onclick="selectUser('${elem}')" type="button">${elem}</button></li>`)
+                });
+            });       
     });
+    function selectUser(name) {
+        $('#guest-name').val(name);
+    }
+
+
 </script>
