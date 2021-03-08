@@ -5,4 +5,6 @@ return [
     'owner' => 'Owner',
     'unsubscribe' => 'Unsubscribe',
     'archived-title' => 'My Archived Contribute List',
+    'info' => 'Here you can see all the lists in which you participate and where you still have to choose what to buy',
+    'archived-info' => 'Here you can see all the lists in which you participated',
 ];

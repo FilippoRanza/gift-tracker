@@ -1,6 +1,5 @@
 <?php
 
-
 return [
 	'title' => 'Le mie Liste Regalo',
 	'error-msg' => 'La Lista :name esiste già!',
@@ -10,7 +9,7 @@ return [
 	'add-list-title' => 'Crea nuova Lista',
 	'guest-only' => 'Non partecipo alla spesa',
 	'add-list-button' => 'Crea Lista',
-	'active-list-title' => 'Liste',
+	'active-list-title' => 'Liste Attive',
 	'go-to-list' => 'Gestisci lista',
 	'delete-list' => 'Rimuovi',
 	'add-list-advice' => 'Aggiungi una Nuova Lista',
@@ -21,4 +20,8 @@ return [
     'poll-mode-description' => 'Dopo aver creato la lista naviga nella sezione impostazioni della lista e abilita la modalità voto',
     'guest-only-question' => 'Vuoi creare una lista di cui sei solo l\'amministratore ?',
     'guest-only-description' => 'Dopo aver creato la lista naviga nella sezione impostazioni della lista e abilita la modalità "Non partecipo all\'acquisto"',
+	'add-list-info' => 'In questa sezione puoi creare una nuova lista.',
+	'add-list-name' => 'Nome Lista',
+	'active-list-info' => 'In questa sezione puoi vedere tutte le liste al momento attive.',
+	'archived-info' => 'In questa sezione puoi vedere tutte le liste archiviate, ovvero quelle di cui è stato fatto l\'acquisto.',
 ];

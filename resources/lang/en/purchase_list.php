@@ -7,5 +7,6 @@ return [
     'price' => 'Price',
     'delete' => 'Delete',
     'void' => 'Void',
-    'info' => 'Info' 
+    'info-button' => 'Info', 
+    'info' => 'In this section you can view the products purchased by you for each list',
 ];

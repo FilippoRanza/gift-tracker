@@ -7,5 +7,6 @@ return [
     'item-tab' => "List's Items",
     'guest-tab' => "List's Guests",
     'settings-tab' => "Settings",
+    'title' => 'Manged List: ',
 ];
 

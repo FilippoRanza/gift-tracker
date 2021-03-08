@@ -2,7 +2,7 @@
 
 
 @section('body')
-    <h1>Gestione Lista: {{ $list->name }}</h1>
+    <h1>{{ __('manage_list.title') }}{{ $list->name }}</h1>
     <hr>
     <div>
         @includeWhen(isset($item_err), 'error', ['message' => __('manage_list.item-err', ['item' => $item_err, 'list' => $list->name])])

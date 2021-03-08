@@ -12,4 +12,6 @@ return [
 	'select' => 'Compra',
 	'modify' => 'Modifica',
 	'web' => 'web',
+	'info' => 'Qui puoi aggiungere quanti prodotti vuoi tra cui poi scegliere',
+	'purchase_info' => 'Queste sono le opzioni di acquisto di questa lista. Scegline una da comprare. Puoi aggiungere o modificare le impostazioni di un prodotto tramite il bottone modifica',
 ];
