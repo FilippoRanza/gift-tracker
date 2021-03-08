@@ -62,6 +62,9 @@ Route::group(['prefix' => '/userlist', 'middleware' => ['auth', 'set_locale']], 
     Route::post('/recipient/add', ['as' => 'list:recipient', 'uses' => 'GiftListController@recipient']);
     Route::post('/recipient/delete', ['as' => 'list:recipient_delete', 'uses' => 'GiftListController@recipient_delete']);
 
+    Route::post('/listusersbybegin', ['as' => 'list:list-users', 'uses' => 'DynamicUserAdd@list_users_by_key']);
+
+
 });
 
 
