@@ -8,7 +8,7 @@
      <div class="container">
        <div class="card">
             <div class="card-body">
-                <a class="card-title" href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }} </a>
+                <h3 class="card-title"><a href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }} </a></h3>
                 <p class="small text-secondary"> {{ __('info.list-info')  }} </p>
             </div>
         </div>        
@@ -41,34 +41,6 @@
             </div>
         </div>  
 
-
-
     </div> 
-
-    <ul>
-        <li>
-            <h5><a href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }} </a> </h5>
-            <p> {{ __('info.list-info')  }} </p>
-        </li>
-        <li>
-            <h5><a href="{{ route('list:guest') }}">{{ __('nav_bar.contribute-list') }} </a> </h5>
-            <p> {{ __('info.contribute-info')  }} </p>
-        </li>
-        <li>
-            <h5><a href="{{ route('purchase:list') }}">{{ __('nav_bar.user-purchase') }} </a> </h5>
-            <p> {{ __('info.purchase-info')  }} </p>
-        </li>
-        <li>
-            <h5><a href="{{ route('debt:list') }}">{{ __('nav_bar.user-debt') }} </a> </h5>
-            <p> {{ __('info.debt-info')  }} </p>
-        </li>
-        <li>
-            <h5><a href="{{ route('settings:index') }}">{{ __('nav_bar.user-settings') }} </a> </h5>
-            <p> {{ __('info.settings')  }} </p>
-        </li>
-    </ul>
-
-
-
 
 @endsection
