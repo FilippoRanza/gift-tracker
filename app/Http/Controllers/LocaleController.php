@@ -28,7 +28,8 @@ class LocaleController extends Controller
             $url = route('settings:index');
         }
 
-        return Redirect::to($url);
+        $cookie = cookie()->forever('locale', $locale);
+        return Redirect::to($url)->withCookie($cookie);
     }
 
     public function available_locales(Request $req) 
