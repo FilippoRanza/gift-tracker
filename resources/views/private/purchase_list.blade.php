@@ -25,6 +25,7 @@
                                  <div>
                                     <a type="button" class="btn btn-secondary form-control" href="{{ route('purchase:info', ['id' => $purchase->id ]) }}">{{ __('purchase_list.info') }}</a>
                                 </div>
+                                <br>
                                 <form class="form-group" action="{{ route('purchase:void') }}" method="POST">
                                     @csrf
                                     <input type="hidden" value="{{ $purchase->id }}" name="purchase">
