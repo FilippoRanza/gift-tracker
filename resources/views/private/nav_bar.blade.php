@@ -20,6 +20,17 @@
           
         </ul>
         <ul class="navbar-nav ml-md-auto">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="locale-flag" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+            </a>
+            <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                <form onchange="submit();" action="{{ route('locale:set') }}" method="POST">
+                    @csrf
+                    <div id="nav-bar-locale-list"></div>   
+                </form>
+            </div>
+            </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('settings:index') }}">{{ __('nav_bar.user-settings') }}</a>
             </li>
@@ -32,3 +43,11 @@
         </ul>
       </div>
 </nav>
+
+<script src="{{ URL::to('/') }}/static/scripts/add_locale.js"></script>
+<script>
+  add_locale("{{ route('locale:list') }}", '#nav-bar-locale-list', function (name) {
+    $('#locale-flag').append(name);
+  });
+
+</script>
