@@ -58,13 +58,22 @@ class LocaleController extends Controller
 
     function get_current_locale(Request $req) {
         $user = Auth::user();
-        if($user) {
-            return $user->locale;
-        } elseif ($req->cookie('locale')) {
-            return $req->cookie('locale');
+        if ($req->cookie('locale')) {
+            $default = $req->cookie('locale');
         } else {
-            return App::getLocale();
+            $default = App::getLocale();
         }
+
+        if($user) {
+            if($user->locale) {
+                $output = $user->locale;
+            } else {
+                $output = $default;
+            }
+        } else {
+            $output = $default;
+        }
+        return $output;
     }
 
 }
