@@ -18,7 +18,7 @@
 
 
 <ul class="list-group">
-    <p class= "small text-secondary">Qui sono visibili tutti i debiti e crediti che hai nei confronti degli altri utenti</p>
+    <p class= "small text-secondary">{{ __('debt_home.info') }}</p>
 
     @foreach ($debts as $debt)
         <li class="list-group-item">

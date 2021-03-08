@@ -1,6 +1,5 @@
 <?php
 
-
 return [
 	'title' => 'I miei Debiti e Crediti',
 	'notify' => 'Notifica|Notifiche',
@@ -9,4 +8,5 @@ return [
 	'mark' => 'Segna come Regolato',
 	'confirm' => 'Attendo la Conferma',
 	'settle' => 'Regolato',
+	'info' => 'Qui sono visibili tutti i debiti e crediti che hai nei confronti degli altri utenti',
 ];
