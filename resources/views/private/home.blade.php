@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title"><a href="{{ route('purchase:list') }}">{{ __('nav_bar.user-purchase') }} </a></h3>
-                <p class="small text-secondary"> {{ __('info.purchase-info')  } </p>
+                <p class="small text-secondary"> {{ __('info.purchase-info')  }} </p>
             </div>
         </div>    
 
