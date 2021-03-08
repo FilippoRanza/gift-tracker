@@ -8,12 +8,12 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title"><a href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }} </a></h3>
+                <a class="card-title" href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }} </a>
                 <p class="small text-secondary"> {{ __('info.list-info')  }} </p>
             </div>
         </div>        
 
-        <div class="card">
+        <!--<div class="card">
             <div class="card-body">
                 <h3 class="card-title"><a href="{{ route('list:guest') }}">{{ __('nav_bar.contribute-list') }} </a></h3>
                 <p class="small text-secondary"> {{ __('info.contribute-info')  }} </p>
@@ -39,7 +39,7 @@
                 <h3 class="card-title"><a href="{{ route('settings:index') }}">{{ __('nav_bar.user-settings') }} </a></h3>
                 <p class="small text-secondary"> {{ __('info.settings')  }} </p>
             </div>
-        </div>    
+        </div> -->   
 
 
 
