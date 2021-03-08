@@ -9,4 +9,5 @@ return [
 	'void' => 'Annulla',
 	'info-button' => 'Info',
 	'info' => 'In questa sezione puoi visualizzare i prodotti comprati da te per ogni lista',
+	'no-current-puchase' => 'Al momento non ci sono acquisti nel tuo storico'
 ];

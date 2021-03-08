@@ -15,51 +15,57 @@
         </button>
     </div>
 @endif
+@if($debts)
+    <div class="container"> 
+        <p class= "small text-secondary">{{ __('debt_home.info') }}</p>
 
+    <ul class="list-group">
 
-<ul class="list-group">
-    <p class= "small text-secondary">{{ __('debt_home.info') }}</p>
-
-    @foreach ($debts as $debt)
-        <li class="list-group-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h4>
-                            @if ($debt->pic)
-                                <img src="{{ URL::to('/') }}/storage/{{ $debt->pic }}" class="profile-pic">
-                            @endif
-                            {{ $debt->name }}
-                        </h4>
-                        @if ($debt->debt->amount > 0)
-                            {{ __('debt_home.debt') }}: <span style="color:red">€ {{-$debt->debt->amount  / 100 }} </span>
-                        @else
-                            {{ __('debt_home.credit') }}: <span style="color:green">€ {{-$debt->debt->amount  / 100 }} </span>    
-                        @endif
-                        
-                    </div>
-                    <div class="col-sm-3">
-                        <form method="POST" action="{{ route('debt:settle') }}">
-                            @csrf
-                            <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
-                            @if ($debt->debt->amount > 0)
-                                @if ($debt->marked)
-                                    <input type="submit" class="btn btn-info form-control" value="{{ __('debt_home.confirm') }}" disabled>
-                                @else
-                                    <input type="submit" class="btn btn-info form-control" value="{{ __('debt_home.mark') }}">    
+        @foreach ($debts as $debt)
+            <li class="list-group-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>
+                                @if ($debt->pic)
+                                    <img src="{{ URL::to('/') }}/storage/{{ $debt->pic }}" class="profile-pic">
                                 @endif
-                                
+                                {{ $debt->name }}
+                            </h4>
+                            @if ($debt->debt->amount > 0)
+                                {{ __('debt_home.debt') }}: <span style="color:red">€ {{-$debt->debt->amount  / 100 }} </span>
                             @else
-                                <input type="submit" class="btn btn-secondary form-control" value="{{ __('debt_home.settle') }}">
+                                {{ __('debt_home.credit') }}: <span style="color:green">€ {{-$debt->debt->amount  / 100 }} </span>    
                             @endif
-                        </form>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <form method="POST" action="{{ route('debt:settle') }}">
+                                @csrf
+                                <input type="hidden" value="{{ $debt->debt->id }}" name="debt">
+                                @if ($debt->debt->amount > 0)
+                                    @if ($debt->marked)
+                                        <input type="submit" class="btn btn-info form-control" value="{{ __('debt_home.confirm') }}" disabled>
+                                    @else
+                                        <input type="submit" class="btn btn-info form-control" value="{{ __('debt_home.mark') }}">    
+                                    @endif
+
+                                @else
+                                    <input type="submit" class="btn btn-secondary form-control" value="{{ __('debt_home.settle') }}">
+                                @endif
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-           
-        </li>
-    @endforeach
-</ul>
 
+
+            </li>
+        @endforeach
+    </ul>
+    </div>
+@else
+    <div class="container">
+        <p class="text-secondary"> {{ __('debt_home.no-current-debt') }}</p>
+    </div>
+@endif
 @endsection

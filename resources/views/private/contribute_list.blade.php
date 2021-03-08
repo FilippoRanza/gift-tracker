@@ -4,9 +4,10 @@
 
 
 @section('body')
+    <h1>{{ __('contribute_list.active-title') }}</h1>
+    <hr>
     @if ($active_list)
-        <h1>{{ __('contribute_list.active-title') }}</h1>
-        <hr>
+        
         <div class="container">
             <ul class="list-group">
                 <p class= "small text-secondary">{{ __('contribute_list.info') }}</p>
@@ -41,7 +42,16 @@
                 @endforeach
             </ul>
         </div>
+    @else
+        <div class="container">
+            <p class="text-secondary">{{ __('contribute_list.no-current-contrib') }}</p>
+        </div>
+
+        <br>
+        <br>
     @endif
+
+
     @if ($archived_list)    
         <h1>{{ __('contribute_list.archived-title') }}</h1>
         <hr>
