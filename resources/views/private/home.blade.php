@@ -1,9 +1,9 @@
 @extends('private.user_base')
 
 @section('body')
-    <h1>Benvenuto: {{ $user->name }}</h1>
+    <h1>{{ __('info.welcome') }}{{ $user->name }}</h1>
     <hr>
-    <p class="small text-secondary">Questa è la home di Gift Traker. Da qui puoi avere accesso e controllare tutto quello che ti serve per i tuoi acquisti</p>
+    <p class="small text-secondary">{{ __('info.info') }}</p>
 
      <div class="container">
        <div class="card">
