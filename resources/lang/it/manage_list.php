@@ -1,6 +1,5 @@
 <?php
 
-
 return [
 	'item-err' => 'Il prodotto :item è già stato inserito nella lista :list',
 	'user-err' => 'Utente :name non ESISTE',
@@ -8,4 +7,5 @@ return [
 	'item-tab' => 'Prodotti nella Lista',
 	'guest-tab' => 'Lista dei Partecipanti',
 	'settings-tab' => 'Impostazioni ',
+	'title' => 'Gestione Lista: ',
 ];
