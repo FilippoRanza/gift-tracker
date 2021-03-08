@@ -29,10 +29,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="card-title">{{ __('personal_list.add-list-title') }}</h3>
-                                <p class="small text-secondary">In questa sezione puoi creare una nuova lista.</p>
+                                <p class="small text-secondary">{{ __('personal_list.add-list-info') }}</p>
                                 <form method="POST" action="{{ route('list:new') }}">
                                     @csrf
-                                    <input type="text" required="required" class="form-control" placeholder="Nome lista" name="name">
+                                    <input type="text" required="required" class="form-control" placeholder="{{ __('personal_list.add-list-name') }}" name="name">
                                     <br>
                                     
 
@@ -58,9 +58,9 @@
                     <ul class="list-group">
                         <div class="card">
                             <div class="card-body">
-                            <h3 class="card-title">Liste Attive</h3>
+                            <h3 class="card-title">{{ __('personal_list.active-list-title') }}</h3>
                                 
-                                <p class="small text-secondary">In questa sezione puoi vedere tutte le liste al momento attive.</p>
+                                <p class="small text-secondary">{{ __('personal_list.active-list-info') }}</p>
                                 
                                 @foreach ($user_lists as $list)
                                     <li class="list-group-item">
@@ -114,7 +114,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h3>{{ __('personal_list.old-list-title') }}</h3>
-                            <p class="small text-secondary">In questa sezione puoi vedere tutte le liste archiviate, ovvero quelle di cui è stato fatto l'acquisto.</p>
+                            <p class="small text-secondary">{{ __('personal_list.archived-info') }}</p>
                             <ul class="list-group">
                                 @foreach ($old_lists as $list)
                                     <li class="list-group-item">

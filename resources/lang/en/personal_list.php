@@ -9,7 +9,7 @@ return [
     'add-list-title' => 'Create a new List',
     'guest-only' => "Don't take part to the purchase",
     'add-list-button' => 'Create List',
-    'active-list-title' => 'Lists',
+    'active-list-title' => 'Active Lists',
     'go-to-list' => 'Manage List',
     'delete-list' => 'Delete',
     'add-list-advice' => 'Add a New List',
@@ -20,4 +20,8 @@ return [
     'poll-mode-description' => 'After creating the list go to the list\'s settings section and enable the poll mode',
     'guest-only-question' => 'Do you want to create a list where you are only the administrator?',
     'guest-only-description' => 'After creating the list go to the list\'s settings section and enable the "Don\'t take part to the purchase" mode',
+    'add-list-info' => 'In this section you can create a new list.',
+	'add-list-name' => 'List Name',
+	'active-list-info' => 'In this section you can see all the currently active lists.',
+	'archived-info' => 'In this section you can see all the archived lists, i.e. those that have been purchased.',
 ];
