@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['prefix' => '/public'], function() {
+Route::group(['prefix' => '/public', 'middleware' => ['set_locale']], function() {
     Route::get('/home', ['as' => 'login', 'uses' => 'WorldHomeController@home']);
     // user login
     Route::get('/login', ['as' => 'login:page', 'uses' => 'LoginRegisterManager@login_page']);
@@ -137,6 +137,9 @@ Route::group(['prefix' => '/item/settings', 'middleware' => ['auth', 'set_locale
 //locale settings
 Route::group(['prefix' => '/locale', 'middleware' => 'auth'], function() {
     Route::post('/set', ['as' => 'locale:set', 'uses' => 'LocaleController@set_locale']);
+});
+
+Route::group(['prefix' => '/locale-list'], function() {
     Route::get('/list', ['as' => 'locale:list', 'uses' => 'LocaleController@available_locales']);
 });
 

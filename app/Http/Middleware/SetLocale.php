@@ -18,9 +18,23 @@ class SetLocale
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if($user->locale) {
-            App::setLocale($user->locale);
+        if ($user) {
+            if($user->locale) {
+                App::setLocale($user->locale);
+            } else {
+                $this->set_locale_from_cookie($request);
+            }
+        } else {
+            $this->set_locale_from_cookie($request);
         }
+
         return $next($request);
+    }
+
+    function set_locale_from_cookie($request) {
+        $locale = $request->cookie('locale');
+        if($locale) {
+            App::setLocale($locale);
+        }
     }
 }

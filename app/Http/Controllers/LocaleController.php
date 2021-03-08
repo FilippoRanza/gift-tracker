@@ -22,7 +22,13 @@ class LocaleController extends Controller
             $user->save();
         }
 
-        return Redirect::to(route('settings:index'));
+        if($req->input('current-url')) {
+            $url = $req->input('current-url');
+        } else {
+            $url = route('settings:index');
+        }
+
+        return Redirect::to($url);
     }
 
     public function available_locales() 

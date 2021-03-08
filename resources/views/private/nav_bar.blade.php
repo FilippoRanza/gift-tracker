@@ -25,6 +25,7 @@
             <div class="dropdown-menu locale-dropdown"  aria-labelledby="navbarDropdown">
                 <form onchange="submit();" action="{{ route('locale:set') }}" method="POST">
                     @csrf
+                    <input type="hidden" name="current-url" value="{{ URL::current() }}">
                     <div class="text-center " id="nav-bar-locale-list"></div>   
                 </form>
             </div>
