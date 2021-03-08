@@ -9,7 +9,7 @@
                         <input type="hidden" id="list-id" value="{{ $list->id }}" name="list">
                         <input type="text" autocomplete="off" id="guest-name" required="required" class="autocomplete form-control" data-toggle="dropdown"  name="name" autofocus placeholder="{{ __('list_guest.input-name') }}">
                         
-                        <ul class="dropdown-menu" hidden="hidden" id="dropdown-menu" role="menu">
+                        <ul class="dropdown-menu w-50" hidden="hidden" id="dropdown-menu" role="menu">
                         </ul>
                         <input type="submit" id="add-guest" class="btn btn-secondary mb-2 pl-2" value="{{ __('list_guest.submit') }}" >
                     </form>
