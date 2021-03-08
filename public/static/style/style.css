@@ -60,6 +60,11 @@ tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before, .tooltip.bs-tooltip-to
     border-top-color: #343a40;
 }
 
+.locale-dropdown {
+    color: white;
+    background-color: #343a40;
+}
+
 .block-1 {
     
     background: linear-gradient(to right, red, orangered);

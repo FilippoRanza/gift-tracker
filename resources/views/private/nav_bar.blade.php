@@ -21,13 +21,11 @@
         </ul>
         <ul class="navbar-nav ml-md-auto">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="locale-flag" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              
-            </a>
-            <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+            <a class="navbar-brand dropdown-toggle" href="#" id="locale-flag" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="dropdown-menu locale-dropdown"  aria-labelledby="navbarDropdown">
                 <form onchange="submit();" action="{{ route('locale:set') }}" method="POST">
                     @csrf
-                    <div id="nav-bar-locale-list"></div>   
+                    <div class="text-center " id="nav-bar-locale-list"></div>   
                 </form>
             </div>
             </li>
