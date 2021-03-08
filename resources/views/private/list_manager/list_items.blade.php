@@ -5,7 +5,7 @@
                 <div class="card-body">
                     
                     <h3 class="card-title">{{ __('list_items.add-title') }}</h3>
-                    <p class="small text-secondary">Qui puoi aggiungere quanti prodotti vuoi tra cui poi scegliere</p>
+                    <p class="small text-secondary">{{ __('list_items.info') }}</p>
                     <div class="form-group col">
                         <form  method="POST" action="{{ route('list:add_item') }}">
                             @csrf
@@ -39,7 +39,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">{{ __('list_items.current-title') }}</h4>
-            <p class="small text-secondary">Queste sono le opzioni di acquisto di questa lista. Scegline una da comprare. Puoi aggiungere o modificare le impostazioni di un prodotto tramite il bottone modifica</p>
+            <p class="small text-secondary">{{ __('list_items.purchase_info') }}</p>
             <ul class="list-group">
                 @foreach ($items as $item)
                     <li class="list-group-item">
