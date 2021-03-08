@@ -29,12 +29,12 @@
                     <br>
                     <form method="POST" action="{{ route('register:action') }}">
                         @csrf
-                        <input type="text"  required="required" class="form-control" name="name" placeholder="Nome Utente">
+                        <input type="text"  required="required" class="form-control" name="name" placeholder="{{ __('login.username') }}">
                         <br>
                         <input type="email" required="required" name="email"  class="form-control input" placeholder="Email">
                         <br>
                         @include('input_new_password')
-                        <input type="submit" class="btn btn-secondary" value="Registrati">
+                        <input type="submit" class="btn btn-secondary" value="{{ __('login.register') }}">
                     </form>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="card">
                 <div class="card-body jumbotron-color">
                     <p class="card-text  text-center">
-                        Hai già un account? <a href="{{ route('login:page') }}">Accedi</a>
+                    {{ __('login.login_tip') }} <a href="{{ route('login:page') }}">{{ __('login.login') }}</a>
     
                     </p>
                 </div>
@@ -52,7 +52,7 @@
             <div class="card">
                 <div class="card-body jumbotron-color">
                     <p class="card-text  text-center">
-                        Non sai cosa fare? <a href="{{ route('login') }}">Torna alla Home</a>
+                    {{ __('login.info') }} <a href="{{ route('login') }}">{{ __('login.go_home') }}</a>
                     </p>
                 </div>
             </div>
