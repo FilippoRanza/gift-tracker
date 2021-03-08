@@ -5,7 +5,7 @@
     <hr>
     <p class="small text-secondary">Questa è la home di Gift Traker. Da qui puoi avere accesso e controllare tutto quello che ti serve per i tuoi acquisti</p>
 
-     <!--<div class="container">
+     <div class="container">
        <div class="card">
             <div class="card-body">
                 <a class="card-title" href="{{ route('list:show') }}">{{ __('nav_bar.user-list') }} </a>
@@ -43,7 +43,7 @@
 
 
 
-    </div>-->  
+    </div> 
 
     <ul>
         <li>
