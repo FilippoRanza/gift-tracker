@@ -7,5 +7,6 @@ return [
 	'price' => 'Prezzo',
 	'delete' => 'Rimuovi',
 	'void' => 'Annulla',
-	'info' => 'Info',
+	'info-button' => 'Info',
+	'info' => 'In questa sezione puoi visualizzare i prodotti comprati da te per ogni lista',
 ];
