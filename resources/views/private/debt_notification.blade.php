@@ -3,7 +3,8 @@
 @section('body')
 
     @if (count($confirm))
-        <h2>{{ __('debt_notification.confirm-settle') }}</h2>        
+        <h1>{{ __('debt_notification.confirm-settle') }}</h1>        
+        <hr>
         <ul class="list-group">
             @foreach ($confirm as $debt)
                 <li class="list-group-item">
