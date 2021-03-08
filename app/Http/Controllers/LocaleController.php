@@ -31,15 +31,40 @@ class LocaleController extends Controller
         return Redirect::to($url);
     }
 
-    public function available_locales() 
+    public function available_locales(Request $req) 
     {
-        $user = Auth::user();
+        $current = $this->get_current_locale($req);
+        error_log($current);
         $output = [
             'locales' => LOCALES,
             'locales-long' => LOCALES_LONG,
-            'current' => $user->locale,
+            'current' => $current,
             'default' => App::getLocale(),
         ];
         return response()->json($output);
     }
+
+    public function set_cookie_locale(Request $req)
+    {
+        $locale = $req->locale;
+        if(in_array($locale, LOCALES)) {
+            $cookie = cookie()->forever('locale', $locale);
+            $output  = Redirect::to($req->input('current-url'))->withCookie($cookie);
+        } else {
+            abort(404);
+        }
+        return $output;
+    }
+
+    function get_current_locale(Request $req) {
+        $user = Auth::user();
+        if($user) {
+            return $user->locale;
+        } elseif ($req->cookie('locale')) {
+            return $req->cookie('locale');
+        } else {
+            return App::getLocale();
+        }
+    }
+
 }

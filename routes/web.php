@@ -135,12 +135,13 @@ Route::group(['prefix' => '/item/settings', 'middleware' => ['auth', 'set_locale
 });
 
 //locale settings
-Route::group(['prefix' => '/locale', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => '/userlocale', 'middleware' => 'auth'], function() {
     Route::post('/set', ['as' => 'locale:set', 'uses' => 'LocaleController@set_locale']);
 });
 
-Route::group(['prefix' => '/locale-list'], function() {
+Route::group(['prefix' => '/publiclocale'], function() {
     Route::get('/list', ['as' => 'locale:list', 'uses' => 'LocaleController@available_locales']);
+    Route::post('/set', ['as' => 'locale:set-cookie', 'uses' => 'LocaleController@set_cookie_locale']);
 });
 
 

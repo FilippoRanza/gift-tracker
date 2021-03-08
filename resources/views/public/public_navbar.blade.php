@@ -5,6 +5,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-md-auto">
+
+        @include('navbar-locale-menu', ['post_url' => route('locale:set-cookie')])
         <li class="nav-item">
             <a class="nav-link" href="{{ route('login:page') }}">Accedi</a>
           </li>
