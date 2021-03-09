@@ -58,9 +58,9 @@
                                             <input type="hidden" value="{{ $item->id }}" name="item">
                                             <input type="hidden" value="{{ $list->id }}" name="list">
                                             @if ($voted)
-                                                <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.vote') }}" disabled>    
+                                                <input type="submit" class="btn btn-success " value="{{ __('list_items.vote') }}" disabled>    
                                             @else
-                                                <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.vote') }}">
+                                                <input type="submit" class="btn btn-success " value="{{ __('list_items.vote') }}">
                                             @endif
                                         
                                         </form>
@@ -71,9 +71,9 @@
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                                 @if ($guest_only)
-                                                    <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.select') }}" disabled>
+                                                    <input type="submit" class="btn btn-success " value="{{ __('list_items.select') }}" disabled>
                                                 @else
-                                                    <input type="submit" class="btn btn-success form-control" value="{{ __('list_items.select') }}">
+                                                    <input type="submit" class="btn btn-success " value="{{ __('list_items.select') }}">
                                                 @endif
                                             </form>
                                             
@@ -81,7 +81,7 @@
                                                 @csrf
                                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                                 <input type="hidden" value="{{ $list->id }}" name="list">
-                                                <input type="submit" class="btn btn-secondary form-control" value="{{ __('list_items.modify') }}">
+                                                <input type="submit" class="btn btn-secondary" value="{{ __('list_items.modify') }}">
                                             </form>
                                             @if ($item->site)
                                                 <div class="col">
