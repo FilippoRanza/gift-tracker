@@ -4,6 +4,7 @@
 <br>
 <div class="container">
     <br>
+    <a class="text-secondary" href="{{ url()->previous() }}">Torna indietro?</a>
     <div class="col-sm-6 col-md-8 offset-md-2">
         <div class="card">
             <div class="card-body">
