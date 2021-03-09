@@ -8,4 +8,6 @@ return [
 	'user-debt' => 'Debiti',
 	'user-settings' => 'Impostazioni',
 	'logout' => 'Esci',
+	'login' => 'Accedi',
+    'register' => 'Registrati',
 ];
