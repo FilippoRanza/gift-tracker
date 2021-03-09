@@ -127,7 +127,7 @@
                                                     @endif</h4>
                                                 <div class="input-group">
                                                     <a class="btn btn-secondary" href="{{ route('list:old', ['id' => $list->id]) }}">
-                                                        {{ __('personal_list.go-to-list') }}
+                                                        {{ __('personal_list.go-to-archived-list') }}
                                                     </a>
                                                 </div>
                                             </div>

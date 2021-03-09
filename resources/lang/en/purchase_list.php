@@ -8,6 +8,7 @@ return [
     'delete' => 'Delete from History',
     'void' => 'Void Purchase',
     'info-button' => 'Purchase Info', 
-    'info' => 'In this section you can view the products purchased by you for each list',
-    'no-current-puchase' => 'At the current time there aren\'t purchases in your history'
+    'info' => 'In this section you can view the history of your purchases',
+    'no-current-puchase' => 'At the current time there aren\'t purchases in your history',
+    'product-name' => 'Product name:',
 ];

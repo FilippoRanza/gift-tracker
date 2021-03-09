@@ -15,7 +15,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <h4>{{ $purchase->item }}</h4>
+                                    <h4>{{__('purchase_list.product-name')}} {{ $purchase->item }}</h4>
                                     <ul>
                                         <li>{{ __('purchase_list.for') }}: {{ $purchase->recipient }}</li>
                                         <li>{{ __('purchase_list.price') }}: € {{ $purchase->price / 100 }}</li>
