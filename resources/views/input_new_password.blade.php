@@ -1,6 +1,7 @@
 
 <span>
-    <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control" placeholder="{{ __('set_password.new-password') }}">
+    <input type="password" oninput="check_password();" id="password-field" required="required" name="password" class="form-control"
+     placeholder="{{ __('set_password.new-password', ['key' => __('set_password.new-key')]) }}">
     <br>
     <div>
         <p class="small text-secondary">{{ __("set_password.password-msg") }}</p>
@@ -14,7 +15,7 @@
     </div>
 
     <br>
-    <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="{{ __('set_password.confirm-password') }}">
+    <input type="password" required="required" oninput="compare_password();" name="confirm" class="form-control input" id="confirm-field"  placeholder="{{ __('set_password.confirm-password', ['key' => __('set_password.new-key')]) }}">
     <br>
     <div>
         <p class="small text-secondary">{{ __("set_password.password-match") }}</p>
