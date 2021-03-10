@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-include 'list_helper.php';
+include_once 'list_helper.php';
 
 class PollManager extends Controller
 {

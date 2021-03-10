@@ -28,13 +28,16 @@
 
 
     @if ($list->ready && $list->poll)
-        <div>
-            <form method="POST" action="{{ route('purchase:automatic') }}">
-                @csrf
-                <input type="hidden" value="{{ $list->id }}" name="list">
-                <input type="submit" class="btn btn-success" value="{{ __('list_items.automatic') }}">
-            </form>
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" action="{{ route('purchase:automatic') }}">
+                    @csrf
+                    <input type="hidden" value="{{ $list->id }}" name="list">
+                    <input type="submit" class="btn btn-success" value="{{ __('list_items.automatic', ['name' => $win_name]) }}">
+                </form>
+            </div>
         </div>
+        <br>
     @endif
     <div class="card">
         <div class="card-body">

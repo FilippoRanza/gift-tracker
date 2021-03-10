@@ -7,7 +7,7 @@ return [
 	'price' => 'Prezzo',
 	'add-item' => 'Aggiungi',
 	'current-title' => 'Prodotti Attuali',
-	'automatic' => 'Acquisto Automatico',
+	'automatic' => 'Procedi con l\'acquisto di: :name ',
 	'vote' => 'Vota',
 	'select' => 'Compra',
 	'modify' => 'Modifica',

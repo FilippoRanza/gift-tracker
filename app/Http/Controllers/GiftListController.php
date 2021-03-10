@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-include 'list_helper.php';
+include_once 'list_helper.php';
 
 class GuestListInfo {
     function __construct($list_name, $list_id, $list_owner, $poll)
@@ -271,9 +271,11 @@ class GiftListController extends Controller
         if (can_view_list($list, false)) {
             $items = $list->items()->get();
             $guests = $list->group()->get();
+            $win_name = $this->get_winning_item_name($list);
             $output = view('private.manage_list', 
                 ['user' => Auth::user(),
                  'list' => $list,
+                 'win_name' => $win_name,
                  'voted' => has_voted($list->id),
                  'items' => $items, 
                  'guests' => $guests, 
@@ -288,6 +290,19 @@ class GiftListController extends Controller
         }
         return $output;
     }
+
+    function get_winning_item_name($list) {
+        if($list->ready) {
+            $controller = new PollManager();
+            $item_id = $controller->get_winner($list->id);
+            $item = Item::findOrFail($item_id);
+            $output = $item->name;
+        } else {
+            $output = null;
+        }
+        error_log($output);
+        return $output;
+    } 
 
     function remove_user_from_list($user_id, $list_id) {
         $membership = ListGuest::all()->

@@ -6,7 +6,7 @@ return [
     'price' => 'Price',
     'add-item' => 'Add Item',
     'current-title' => 'Current Items',
-    'automatic' => 'Make Automatic Purchase',
+    'automatic' => 'Procede to purchase: :name',
     'vote' => 'Vote',
     'select' => 'Buy',
     'modify' => 'Modify',
