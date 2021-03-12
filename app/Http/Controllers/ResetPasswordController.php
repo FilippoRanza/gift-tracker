@@ -20,7 +20,7 @@ class ResetPasswordController extends Controller
             if (Hash::check($old, $user->password)){
                 $user->password = Hash::make($new);
                 $user->save();
-                $output = Redirect::to(route('settings:index'));
+                $output = Redirect::to(route('settings:index', ['success' => 'ok']));
             } else {
                 $output = Redirect::to(route('settings:index', ['password' => 'err']));;
             }    

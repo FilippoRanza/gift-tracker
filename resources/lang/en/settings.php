@@ -11,4 +11,5 @@ return [
     'error-msg' => 'The old password is incorrect, check again',
     'reset-password' => 'Reset Password',
     'old-password' => 'Old Password',
+    'success-password' => 'Password update successfully',
 ];
