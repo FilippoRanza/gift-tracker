@@ -8,6 +8,7 @@
 <h1>{{ __('settings.title') }}</h1>
 <hr>
 @includeWhen(isset($error), 'error', ['message' => __('settings.error-msg')])
+@includeWhen(isset($success), 'private.password-change-success', ['message' => __('settings.success-password')])
 <div class="container ">
     <div class="card">
         

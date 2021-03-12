@@ -11,4 +11,5 @@ return [
     'error-msg' => 'La vecchia password è scorretta, controlla e riprova',
     'reset-password' => 'Reimposta Password',
     'old-password' => 'Vecchia Password',
+    'success-password' => 'Password aggiornata con successo'
 ];

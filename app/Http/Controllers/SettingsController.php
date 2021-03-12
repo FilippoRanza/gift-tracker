@@ -14,6 +14,9 @@ class SettingsController extends Controller
         if(isset($req->password)) {
             $args['error'] = true;
         }
+        if(isset($req->success)) {
+            $args['success'] = true;
+        }
         return view('private.user_settings', $args);
     }
 }
