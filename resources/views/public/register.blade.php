@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', '__('login.tab-register-name')')
+@section('title', __('login.tab-register-name'))
 
 
 @section('navbar')

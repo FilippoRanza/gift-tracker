@@ -1,5 +1,5 @@
 @extends('private.user_base')
-@section('title', '__('manage_list.tab-name')')
+@section('title', __('manage_list.tab-name'))
 
 @section('body')
     <h1>{{ __('manage_list.title') }}{{ $list->name }}</h1>

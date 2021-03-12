@@ -1,5 +1,5 @@
 @extends('private.user_base')
-@section('title', '__('settings.tab-name')')
+@section('title', __('settings.tab-name'))
 
 @section('body')
 <meta name="csrf-token" content="{{ csrf_token() }}"> 

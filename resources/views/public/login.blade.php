@@ -1,7 +1,7 @@
 @extends('base')
 
 
-@section('title', '__('login.tab-name')')
+@section('title', __('login.tab-name'))
 
 
 
