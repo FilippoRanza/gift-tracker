@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'tab-name' => 'Gestione Lista',
 	'item-err' => 'Il prodotto :item è già stato inserito nella lista :list',
 	'user-err' => 'Utente :name non ESISTE',
 	'guest-err' => 'Utente :guest è già stato aggiunto alla lista :list',

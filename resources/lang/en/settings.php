@@ -4,6 +4,7 @@
 //user settings localization
 //language: English
 return [
+    'tab-name' => 'Settings',
     'title' => 'Settings',
     'set-pic' => 'Set Profile Picture',
     'reset-password' => 'Reset Password',

@@ -1,6 +1,8 @@
 <?php 
 
 return [
+    'tab-name' => 'Accedi',
+    'tab-register-name' => 'Registrati',
     'username' => 'Nome Utente',
     'login' => 'Accedi',
     'register_tip'=> 'Non hai ancora un account?',

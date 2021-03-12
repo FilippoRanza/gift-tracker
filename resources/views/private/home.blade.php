@@ -1,5 +1,5 @@
 @extends('private.user_base')
-
+@section('title', 'Gift Tracker')
 @section('body')
     <h1>{{ __('info.welcome') }}{{ $user->name }}</h1>
     <hr>

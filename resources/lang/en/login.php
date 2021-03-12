@@ -1,6 +1,8 @@
 <?php 
 
 return [
+    'tab-name' => 'Login',
+    'tab-register-name' => 'Register',
     'username' => 'Username',
     'login' => 'Login',
     'register_tip'=> "Don't have an account yet?",

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'tab-name' => 'Manage List',
     'item-err' => 'The Item :item has already been inserted into the list :list',
     'user-err' => 'User :name does not EXIST',
     'guest-err' => 'User :guest has already been added to :list',

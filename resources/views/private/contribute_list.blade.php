@@ -1,6 +1,6 @@
 @extends('private.user_base')
 
-@section('title', 'Contribute List')
+@section('title', '__('contribute_list.tab-name')')
 
 
 @section('body')

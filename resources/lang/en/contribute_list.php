@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'tab-name' => 'Contribute List',
     'active-title' => 'My Active Contribute List',
     'owner' => 'Owner',
     'unsubscribe' => 'Unsubscribe',

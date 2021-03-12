@@ -3,6 +3,7 @@
 //user settings localization
 //language: Italian
 return [
+    'tab-name' => 'Impostazioni',
     'title' => 'Impostazioni',
     'set-pic' => 'Imposta Immagine Profilo',
     'reset-password' => 'Reimposta Password',

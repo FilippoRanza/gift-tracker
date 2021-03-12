@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'tab-name' => 'Lista Contributi',
 	'active-title' => 'Le mie Contribuzioni Attive',
 	'owner' => 'Proprietario',
 	'unsubscribe' => 'Annulla Iscrizione',

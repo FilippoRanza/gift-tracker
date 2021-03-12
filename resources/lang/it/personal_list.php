@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'tab-name' => 'Le mie Liste',
 	'title' => 'Le mie Liste Regalo',
 	'error-msg' => 'La Lista :name esiste già!',
 	'active-tab' => 'Liste Attive',

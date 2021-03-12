@@ -2,6 +2,7 @@
 
 
 return [
+    'tab-name' => 'Purchase',
     'title' => 'My purchase list',
     'for' => 'For',
     'price' => 'Price',

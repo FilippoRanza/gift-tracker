@@ -1,5 +1,5 @@
 @extends('private.user_base')
-
+@section('title', '__('personal_list.tab-name')')
 @section('body')
 <div>
 <h1>{{ __('personal_list.title') }}</h1>

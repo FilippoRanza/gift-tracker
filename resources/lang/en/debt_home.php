@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'tab-name' => 'Debt and Credit',
     'title' => 'My Debt and Credit',
     'notify' => 'Notification|Notifications',
     'debt' => 'Debt',
