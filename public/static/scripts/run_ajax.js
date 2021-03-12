@@ -1,5 +1,11 @@
 function run_ajax(url, form, callback = undefined) {
-        
+    var tick_name = 'div-tick';
+    console.log(tick_name);
+    var tick_div = document.getElementById(tick_name);
+    console.log(tick_div);
+    if(tick_div !== null) {
+        return;
+    }
     var data = $(form).serializeArray();
     var post_data = {'_token': $('meta[name=csrf-token]').attr('content')};
     var key;
@@ -17,5 +23,6 @@ function run_ajax(url, form, callback = undefined) {
         if(callback !== undefined) {
             callback(json);
         }
+        $(form).append(`<div class='inline-block' id=${tick_name}>✔️</div>`);
     });      
 }

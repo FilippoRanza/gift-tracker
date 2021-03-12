@@ -21,6 +21,7 @@
                                 <input type="hidden" value="{{ $list->id }}" name="list">
                                 <input class="form-control input" type="text" id="name-field" name="name" value="{{ $item->name }}">
                                 <input type="submit" class="btn btn-secondary" value="{{ __('item_settings.set-name') }}">
+
                             </div>
                         </div>
                     </form>
@@ -32,6 +33,7 @@
                                 <input type="hidden" value="{{ $item->id }}" name="item">
                                 <input class="form-control input" type="number" min="0.01" step="0.01" id="price" name="price" value="{{ $item->price / 100 }}">
                                 <input type="submit" value="{{ __('item_settings.set-price') }}" class="btn btn-secondary" >
+
                             </div> 
                         </div>
                     </form>
@@ -145,6 +147,13 @@
             }
         });
         return false;
+    });
+    $('.input').on('input', function(event) {
+        var tick_div = document.getElementById("div-tick");
+        console.log(event);
+        if(tick_div) {
+            tick_div.remove();
+        }
     });
 </script>
 
