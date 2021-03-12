@@ -23,6 +23,6 @@ function run_ajax(url, form, callback = undefined) {
         if(callback !== undefined) {
             callback(json);
         }
-        $(form).append(`<div class='inline-block' id=${tick_name}>✔️</div>`);
+        $(form).find('.form-inline').append(`<div id=${tick_name}>✔️</div>`);
     });      
 }
