@@ -109,7 +109,7 @@ class PurchaseController extends Controller
             $participants++;
         }
 
-        $price_per_capita = (int)$item->price / $participants;
+        $price_per_capita = (int)($item->price / $participants);
         $id = Auth::id();
         foreach($guests->get() as $guest) {
             if ($guest->id != $id) {
